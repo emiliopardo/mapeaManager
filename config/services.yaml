@@ -1,0 +1,119 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: 'en'
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/*'
+        exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    App\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
+
+    admin.mapea_core:
+        class: App\Admin\MapeaCoreAdmin
+        arguments: [~, App\Entity\MapeaCore, App\Controller\MapeaCoreAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_mapea, label: Cores }
+        public: true
+
+    admin.user:
+        class: App\Admin\UserAdmin
+        arguments: [~, App\Entity\User, App\Controller\UserAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: Users }
+        public: true
+
+    admin.mapea_control:
+        class: App\Admin\MapeaControlAdmin
+        arguments: [~, App\Entity\MapeaControl, App\Controller\MapeaControlAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_mapea, label: Controls }
+        public: true
+
+    admin.mapea_plugin:
+        class: App\Admin\MapeaPluginAdmin
+        arguments: [~, App\Entity\MapeaPlugin, App\Controller\MapeaPluginAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_mapea, label: Plugins }
+        public: true
+        
+    admin.group:
+        class: App\Admin\GroupAdmin
+        arguments: [~, App\Entity\Group, App\Controller\GroupAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_user, label: Group }
+        public: true
+
+    admin.mapea_wmc:
+        class: App\Admin\MapeaWMCAdmin
+        arguments: [~, App\Entity\MapeaWMC, App\Controller\MapeaWMCAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_layers, label: 'WMC' }
+        public: true
+
+    admin.mapea_layer_wms:
+        class: App\Admin\MapeaLayerWMSAdmin
+        arguments: [~, App\Entity\MapeaLayerWMS, App\Controller\MapeaLayerWMSAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_layers, label: "WMS Layer" }
+        public: true
+
+    admin.mapea_control_config_by_id:
+        class: App\Admin\MapeaControlConfigByIdAdmin
+        arguments: [~, App\Entity\MapeaControlConfig, App\Controller\MapeaControlConfigByIdAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: MapeaControlConfig }
+        public: true
+
+    admin.mapea_plugin_config_by_id:
+        class: App\Admin\MapeaPluginConfigByIdAdmin
+        arguments: [~, App\Entity\MapeaPluginConfig, App\Controller\MapeaPluginConfigByIdAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: MapeaPluginConfig }
+        public: true
+
+    admin.mapea_control_config:
+        class: App\Admin\MapeaControlConfigAdmin
+        arguments: [~, App\Entity\MapeaControlConfig, App\Controller\MapeaControlConfigAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_mapea_configuration, label: "Controls Configurations" }
+        public: true
+
+    admin.mapea_plugin_config:
+        class: App\Admin\MapeaPluginConfigAdmin
+        arguments: [~, App\Entity\MapeaPluginConfig, App\Controller\MapeaPluginConfigAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_mapea_configuration, label: "Plugins Configurations" }
+        public: true
+
+    admin.mapea_configured_plugin:
+        class: App\Admin\MapeaConfiguredPluginAdmin
+        arguments: [~, App\Entity\MapeaConfiguredPlugin, App\Controller\MapeaConfiguredPluginAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: MapeaConfiguredPlugin }
+        public: true
+
+    admin.mapea_configured_control:
+        class: App\Admin\MapeaConfiguredControlAdmin
+        arguments: [~, App\Entity\MapeaConfiguredControl, App\Controller\MapeaConfiguredControlAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: MapeaConfiguredControl }
+        public: true

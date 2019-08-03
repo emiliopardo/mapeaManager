@@ -1,0 +1,44 @@
+sonata_admin:
+    title: 'Mapea Manager'
+    title_logo: build/static/sigCorporativo150x150.png
+    #options:
+    #   use_select2:    false # disable select2
+    dashboard:
+        blocks:
+            - { type: sonata.admin.block.admin_list, position: left}
+        
+        groups:
+            sonata_mapea:
+                label: Mapea
+                items:
+                    - admin.mapea_core
+                    - admin.mapea_control
+                    - admin.mapea_control_config
+                    - admin.mapea_plugin
+                    - admin.mapea_plugin_config
+            sonata_mapea_configuration:
+                label: Configurations
+                items:
+                    - admin.mapea_configured_control
+                    - admin.mapea_configured_plugin 
+            sonata_layers:
+                label: Layers
+                items:
+                    - admin.mapea_wmc
+                    - admin.mapea_layer_wms
+            sonata_user:
+                label: User
+                items:
+                    - admin.user
+                    - admin.group
+        
+    security:
+        handler: sonata.admin.security.handler.role
+
+        role_admin: ROLE_ADMIN
+        role_super_admin: ROLE_SUPER_ADMIN
+      
+sonata_block:
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts: [admin]

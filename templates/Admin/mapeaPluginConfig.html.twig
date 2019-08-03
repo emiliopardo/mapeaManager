@@ -1,0 +1,15 @@
+
+{% if mapeaPluginConfig is empty %}
+    <option value="empty" selected="selected">This plugin hasn't config paramaters</option>
+{% else %}
+    {% for configuration in mapeaPluginConfig %}    
+        {% if loop.first %}
+            <option value="{{ configuration.id }}" selected="selected">{{ configuration.description }}</option>
+        {% else %}
+            <option value="{{ configuration.id }}">{{ configuration.description }}</option>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+
+

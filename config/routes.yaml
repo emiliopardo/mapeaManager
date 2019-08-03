@@ -1,0 +1,16 @@
+index:
+    path: /
+    controller: fos_user.security.controller:loginAction
+
+mapea-control-config-by-IdControl:
+    path: config-by-idcontrol
+    controller: App\Controller\MapeaControlConfigByIdAdminController::getMapeaControlConfigAction
+    options:
+        expose: true
+mapea-plugin-config-by-IdPlugin:
+    path: config-by-idplugin
+    controller: App\Controller\MapeaPluginConfigByIdAdminController::getMapeaPluginConfigAction
+    options:
+        expose: true        
+
+

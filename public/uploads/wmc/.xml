@@ -1,0 +1,956 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gmd:MD_Metadata xmlns:gmd="http://www.isotc211.org/2005/gmd"
+                 xmlns:srv="http://www.isotc211.org/2005/srv"
+                 xmlns:gco="http://www.isotc211.org/2005/gco"
+                 xmlns:xlink="http://www.w3.org/1999/xlink"
+                 xmlns:gmx="http://www.isotc211.org/2005/gmx"
+                 xmlns:gts="http://www.isotc211.org/2005/gts"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xmlns:p="http://www.isotc211.org/2005/gmd"
+                 xmlns:gml="http://www.opengis.net/gml"
+                 xsi:schemaLocation="http://www.isotc211.org/2005/gmd http://schemas.opengis.net/iso/19139/20060504/gmd/gmd.xsd  http://www.isotc211.org/2005/gmx http://schemas.opengis.net/iso/19139/20060504/gmx/gmx.xsd">
+  <gmd:fileIdentifier>
+      <gco:CharacterString>{ADFB5BEB-AC8C-49D8-8F7D-CBA6729E7407}_100094_es</gco:CharacterString>
+  </gmd:fileIdentifier>
+  <gmd:language>
+      <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="spa"/>
+  </gmd:language>
+  <gmd:characterSet>
+    <!--2.1.3-->
+    <gmd:MD_CharacterSetCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_CharacterSetCode"
+                               codeListValue="utf8"/>
+  </gmd:characterSet>
+  <gmd:hierarchyLevel>
+      <gmd:MD_ScopeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_ScopeCode"
+                        codeListValue="dataset"/>
+  </gmd:hierarchyLevel>
+  <gmd:contact>
+    <!--2.1.6. -->
+    <gmd:CI_ResponsibleParty>
+         <gmd:organisationName>
+            <gco:CharacterString>Instituto de Estadística y Cartografía de Andalucía. Junta de Andalucía</gco:CharacterString>
+         </gmd:organisationName>
+         <gmd:contactInfo>
+            <gmd:CI_Contact>
+               <gmd:phone>
+            <!--2.1.6.II.c) -->
+            <gmd:CI_Telephone>
+                     <gmd:voice>
+                        <gco:CharacterString>0034 900 101 407</gco:CharacterString>
+                     </gmd:voice>
+                     <gmd:voice>
+                        <gco:CharacterString>0034 955 033 800</gco:CharacterString>
+                     </gmd:voice>
+                     <gmd:facsimile>
+                        <gco:CharacterString>0034 955 033 816</gco:CharacterString>
+                     </gmd:facsimile>
+                  </gmd:CI_Telephone>
+               </gmd:phone>
+               <gmd:address>
+            <!--2.1.6.II.b) -->
+            <gmd:CI_Address>
+                     <gmd:deliveryPoint>
+                        <gco:CharacterString>Pabellón de Nueva Zelanda. C/ Leonardo Da Vinci, nº 21. Isla de La Cartuja. 41071-SEVILLA.</gco:CharacterString>
+                     </gmd:deliveryPoint>
+                     <gmd:city>
+                        <gco:CharacterString>Sevilla</gco:CharacterString>
+                     </gmd:city>
+                     <gmd:administrativeArea>
+                        <gco:CharacterString>Andalucía</gco:CharacterString>
+                     </gmd:administrativeArea>
+                     <gmd:postalCode>
+                        <gco:CharacterString>41071</gco:CharacterString>
+                     </gmd:postalCode>
+                     <gmd:country>
+                        <gco:CharacterString>España</gco:CharacterString>
+                     </gmd:country>
+                     <gmd:electronicMailAddress>
+                        <gco:CharacterString>cartografia@juntadeandalucia.es</gco:CharacterString>
+                     </gmd:electronicMailAddress>
+                  </gmd:CI_Address>
+               </gmd:address>
+               <gmd:onlineResource>
+            <!--2.1.6.I.b) -->
+            <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>http://www.juntadeandalucia.es/institutodeestadisticaycartografia</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:function>
+                        <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                   codeListValue="information"/>
+                     </gmd:function>
+                  </gmd:CI_OnlineResource>
+               </gmd:onlineResource>
+            </gmd:CI_Contact>
+         </gmd:contactInfo>
+         <gmd:role>
+        <!--2.1.6.I.c) -->
+        <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_RoleCode"
+                             codeListValue="pointOfContact"/>
+         </gmd:role>
+      </gmd:CI_ResponsibleParty>
+  </gmd:contact>
+  <gmd:dateStamp>
+      <gco:DateTime>2019-06-28T09:07:50</gco:DateTime>
+  </gmd:dateStamp>
+  <gmd:metadataStandardName>
+      <gco:CharacterString>ISO 19115:2003/Cor.1:2006 Geographic Information - Metadata</gco:CharacterString>
+  </gmd:metadataStandardName>
+  <gmd:metadataStandardVersion>
+      <gco:CharacterString>IS</gco:CharacterString>
+  </gmd:metadataStandardVersion>
+  <gmd:referenceSystemInfo>
+    <!--Punto 2.4.1.-->
+    <gmd:MD_ReferenceSystem>
+         <gmd:referenceSystemIdentifier>
+            <gmd:RS_Identifier>
+               <gmd:authority>
+            <!--Punto 2.4.1.a)-->
+            <gmd:CI_Citation>
+                     <gmd:title>
+                        <gco:CharacterString>European Petroleum Survey Group (EPSG)</gco:CharacterString>
+                     </gmd:title>
+                     <gmd:date>
+                        <gmd:CI_Date>
+                           <gmd:date>
+                              <gco:Date>1986-01-01</gco:Date>
+                           </gmd:date>
+                           <gmd:dateType>
+                              <gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode"
+                                                   codeListValue="creation"/>
+                           </gmd:dateType>
+                        </gmd:CI_Date>
+                     </gmd:date>
+                  </gmd:CI_Citation>
+               </gmd:authority>
+               <gmd:code>
+                  <gco:CharacterString>http://www.opengis.net/def/crs/EPSG/0/25830</gco:CharacterString>
+               </gmd:code>
+               <gmd:codeSpace>
+                  <gco:CharacterString>INSPIRE RS registry</gco:CharacterString>
+               </gmd:codeSpace>
+            </gmd:RS_Identifier>
+         </gmd:referenceSystemIdentifier>
+      </gmd:MD_ReferenceSystem>
+  </gmd:referenceSystemInfo>
+  <gmd:referenceSystemInfo>
+    <!--Punto 2.4.1.-->
+    <gmd:MD_ReferenceSystem>
+         <gmd:referenceSystemIdentifier>
+            <gmd:RS_Identifier>
+               <gmd:code>
+                  <gco:CharacterString>http://www.opengis.net/def/crs/EPSG/0/3042</gco:CharacterString>
+               </gmd:code>
+               <gmd:codeSpace>
+                  <gco:CharacterString>INSPIRE RS registry</gco:CharacterString>
+               </gmd:codeSpace>
+            </gmd:RS_Identifier>
+         </gmd:referenceSystemIdentifier>
+      </gmd:MD_ReferenceSystem>
+  </gmd:referenceSystemInfo>
+  <gmd:metadataExtensionInfo>
+      <gmd:MD_MetadataExtensionInformation>
+         <gmd:extensionOnLineResource>
+            <gmd:CI_OnlineResource>
+               <gmd:linkage>
+                  <gmd:URL>http://www.ideandalucia.es</gmd:URL>
+               </gmd:linkage>
+               <gmd:function>
+                  <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_OnLineFunctionCode"
+                                             codeListValue="information"/>
+               </gmd:function>
+            </gmd:CI_OnlineResource>
+         </gmd:extensionOnLineResource>
+      </gmd:MD_MetadataExtensionInformation>
+  </gmd:metadataExtensionInfo>
+  <gmd:identificationInfo>
+      <gmd:MD_DataIdentification>
+         <gmd:citation>
+            <gmd:CI_Citation>
+               <gmd:title>
+                  <gco:CharacterString>Ortofotografía de Andalucía (2010 - 2011)</gco:CharacterString>
+               </gmd:title>
+               <gmd:alternateTitle>
+                  <gco:CharacterString>Ortofoto 2010_11</gco:CharacterString>
+               </gmd:alternateTitle>
+               <gmd:date>
+            <!--2.2.4.-->
+            <gmd:CI_Date>
+              <!--2.2.4.2.b -->
+              <gmd:date>
+                        <gco:Date>2011-11-15</gco:Date>
+                     </gmd:date>
+                     <gmd:dateType>
+                        <gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode"
+                                             codeListValue="creation"/>
+                     </gmd:dateType>
+                  </gmd:CI_Date>
+               </gmd:date>
+               <gmd:identifier>
+                  <gmd:RS_Identifier>
+                     <gmd:code>
+                        <gco:CharacterString>SPA.AND.IECA.CDE.ORTOFOTO.2010_2011</gco:CharacterString>
+                     </gmd:code>
+                     <gmd:codeSpace>
+                        <gco:CharacterString>IECA</gco:CharacterString>
+                     </gmd:codeSpace>
+                  </gmd:RS_Identifier>
+               </gmd:identifier>
+               <gmd:citedResponsibleParty>
+            <!--2.2.9.-->
+            <gmd:CI_ResponsibleParty>
+                     <gmd:organisationName>
+                        <gco:CharacterString>Instituto de Estadística y Cartografía de Andalucía. Junta de Andalucía</gco:CharacterString>
+                     </gmd:organisationName>
+                     <gmd:contactInfo>
+                <!--2.2.9.1.-->
+                <gmd:CI_Contact>
+                           <gmd:phone>
+                              <gmd:CI_Telephone>
+                                 <gmd:voice>
+                                    <gco:CharacterString>0034 900 101 407</gco:CharacterString>
+                                 </gmd:voice>
+                                 <gmd:voice>
+                                    <gco:CharacterString>0034 955 033 800</gco:CharacterString>
+                                 </gmd:voice>
+                                 <gmd:facsimile>
+                                    <gco:CharacterString>0034 955 033 816</gco:CharacterString>
+                                 </gmd:facsimile>
+                              </gmd:CI_Telephone>
+                           </gmd:phone>
+                           <gmd:address>
+                              <gmd:CI_Address>
+                                 <gmd:deliveryPoint>
+                                    <gco:CharacterString>Pabellón de Nueva Zelanda. C/ Leonardo Da Vinci, nº 21. Isla de La Cartuja. 41071-SEVILLA.</gco:CharacterString>
+                                 </gmd:deliveryPoint>
+                                 <gmd:city>
+                                    <gco:CharacterString>Sevilla</gco:CharacterString>
+                                 </gmd:city>
+                                 <gmd:administrativeArea>
+                                    <gco:CharacterString>Andalucía</gco:CharacterString>
+                                 </gmd:administrativeArea>
+                                 <gmd:postalCode>
+                                    <gco:CharacterString>41071</gco:CharacterString>
+                                 </gmd:postalCode>
+                                 <gmd:country>
+                                    <gco:CharacterString>España</gco:CharacterString>
+                                 </gmd:country>
+                                 <gmd:electronicMailAddress>
+                                    <gco:CharacterString>cartografia@juntadeandalucia.es</gco:CharacterString>
+                                 </gmd:electronicMailAddress>
+                              </gmd:CI_Address>
+                           </gmd:address>
+                           <gmd:onlineResource>
+                    <!--2.2.9.1.b)-->
+                    <gmd:CI_OnlineResource>
+                                 <gmd:linkage>
+                                    <gmd:URL>http://www.juntadeandalucia.es/institutodeestadisticaycartografia</gmd:URL>
+                                 </gmd:linkage>
+                                 <gmd:function>
+                                    <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                               codeListValue="information"/>
+                                 </gmd:function>
+                              </gmd:CI_OnlineResource>
+                           </gmd:onlineResource>
+                           <gmd:hoursOfService>
+                              <gco:CharacterString>9:00-14:00</gco:CharacterString>
+                           </gmd:hoursOfService>
+                        </gmd:CI_Contact>
+                     </gmd:contactInfo>
+                     <gmd:role>
+                <!--2.2.9.2-->
+                <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_RoleCode"
+                                         codeListValue="originator"/>
+                     </gmd:role>
+                  </gmd:CI_ResponsibleParty>
+               </gmd:citedResponsibleParty>
+               <gmd:presentationForm>
+            <!--2.2.6-->
+            <gmd:CI_PresentationFormCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_PresentationFormCode"
+                                               codeListValue="imageDigital"/>
+               </gmd:presentationForm>
+            </gmd:CI_Citation>
+         </gmd:citation>
+         <gmd:abstract>
+            <gco:CharacterString>Ortofotografía de Andalucía en color elaborada a 50 cm de resolución, partiendo de vuelos fotogramétricos digitales del año 2010, de 0.45 metros de resolución geométrica para el cuadrante Suroeste, y de 0.34 metros de resolución geométrica para el cuadrante Sureste.
+				Ortofotografía de Andalucía en color elaborada a 50 cm de resolución, partiendo de vuelos fotogramétricos digitales del año 2011, de 0.45 metros de resolución geométrica para el cuadrante Noroeste, y de 0.45 metros de resolución geométrica para el cuadrante Noreste.
+
+				Estos vuelos fotogramétricos fueron realizados dentro del proyecto Plan Nacional de Ortofotografía Aérea Básico (PNOA Básico).
+
+				La dirección del proyecto es asumida por el Ministerio de Fomento, a través de la Dirección General del Instituto Geográfico Nacional (IGN) y el Centro Nacional de Información Geográfica (CNIG), coordinados con los Ministerios interesados y con las Comunidades Autónomas y sus Consejerías y Organismos competentes, cofinanciado por la Consejería de Agricultura, Pesca y Medio Ambiente, siendo el Instituto de Estadística y Cartografía de Andalucía el organismo que asume las competencias en la materia, 
+				La producción se realiza de manera descentralizada por cada equipo autonómico, siendo el IGN el responsable de la validación final, y la integración de los productos resultantes.</gco:CharacterString>
+         </gmd:abstract>
+         <gmd:purpose>
+            <gco:CharacterString>El Plan Nacional de Ortofotografía Aérea (PNOA) tiene como objetivo la obtención de ortofotografías aéreas digitales con resolución de 25 ó 50 cm y modelos digitales de elevaciones (MDE) de alta precisión de todo el territorio español, con un período de actualización de 2 ó 3 años, según las zonas.
+				La fotografía aérea es la base para la realización de cartografía y la información geográfica en general, ocupación del suelo, urbanismo y ordenación del territorio, catastro, gestión forestal, hidrografía, etc. Utilizando los mismos datos fotogramétricos de partida, se consigue además una perfecta coherencia geométrica y temporal de las bases de datos cartográficos y geográficos existentes en todas las administraciones.</gco:CharacterString>
+         </gmd:purpose>
+         <gmd:pointOfContact>
+        <!--2.2.9.-->
+        <gmd:CI_ResponsibleParty>
+               <gmd:organisationName>
+                  <gco:CharacterString>Instituto de Estadística y Cartografía de Andalucía. Junta de Andalucía</gco:CharacterString>
+               </gmd:organisationName>
+               <gmd:contactInfo>
+                  <gmd:CI_Contact>
+                     <gmd:phone>
+                <!--2.2.9.1.e)-->
+                <gmd:CI_Telephone>
+                           <gmd:voice>
+                              <gco:CharacterString>0034 900 101 407</gco:CharacterString>
+                           </gmd:voice>
+                           <gmd:voice>
+                              <gco:CharacterString>0034 955 033 800</gco:CharacterString>
+                           </gmd:voice>
+                           <gmd:facsimile>
+                              <gco:CharacterString>0034 955 033 816</gco:CharacterString>
+                           </gmd:facsimile>
+                        </gmd:CI_Telephone>
+                     </gmd:phone>
+                     <gmd:address>
+                <!--2.2.9.1.d)-->
+                <gmd:CI_Address>
+                           <gmd:deliveryPoint>
+                              <gco:CharacterString>Pabellón de Nueva Zelanda. C/ Leonardo Da Vinci, nº 21. Isla de La Cartuja. 41071-SEVILLA.</gco:CharacterString>
+                           </gmd:deliveryPoint>
+                           <gmd:city>
+                              <gco:CharacterString>Sevilla</gco:CharacterString>
+                           </gmd:city>
+                           <gmd:administrativeArea>
+                              <gco:CharacterString>Andalucía</gco:CharacterString>
+                           </gmd:administrativeArea>
+                           <gmd:postalCode>
+                              <gco:CharacterString>41071</gco:CharacterString>
+                           </gmd:postalCode>
+                           <gmd:country>
+                              <gco:CharacterString>España</gco:CharacterString>
+                           </gmd:country>
+                           <gmd:electronicMailAddress>
+                              <gco:CharacterString>cartografia@juntadeandalucia.es</gco:CharacterString>
+                           </gmd:electronicMailAddress>
+                        </gmd:CI_Address>
+                     </gmd:address>
+                     <gmd:onlineResource>
+                <!--2.2.9.1.b)-->
+                <gmd:CI_OnlineResource>
+                           <gmd:linkage>
+                              <gmd:URL>http://www.juntadeandalucia.es/institutodeestadisticaycartografia</gmd:URL>
+                           </gmd:linkage>
+                           <gmd:function>
+                              <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                         codeListValue="information"/>
+                           </gmd:function>
+                        </gmd:CI_OnlineResource>
+                     </gmd:onlineResource>
+                     <gmd:hoursOfService>
+                        <gco:CharacterString>9:00-14:00</gco:CharacterString>
+                     </gmd:hoursOfService>
+                  </gmd:CI_Contact>
+               </gmd:contactInfo>
+               <gmd:role>
+                  <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_RoleCode"
+                                   codeListValue="pointOfContact"/>
+                  <!--2.2.9.2-->
+          </gmd:role>
+            </gmd:CI_ResponsibleParty>
+         </gmd:pointOfContact>
+         <gmd:resourceMaintenance>
+            <gmd:MD_MaintenanceInformation>
+               <gmd:maintenanceAndUpdateFrequency>
+                  <gmd:MD_MaintenanceFrequencyCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_MaintenanceFrequencyCode"
+                                                   codeListValue="notPlanned"/>
+               </gmd:maintenanceAndUpdateFrequency>
+            </gmd:MD_MaintenanceInformation>
+         </gmd:resourceMaintenance>
+         <gmd:graphicOverview>
+            <gmd:MD_BrowseGraphic>
+               <gmd:fileName>
+                  <gco:CharacterString>http://factorylab01.intranet.ieca.junta-andalucia.es/geonetwork/srv/api/records/%7BADFB5BEB-AC8C-49D8-8F7D-CBA6729E7407%7D_100094_es/attachments/ORTO2010-2011.png</gco:CharacterString>
+               </gmd:fileName>
+               <gmd:fileDescription>
+                  <gco:CharacterString>ORTO2010-2011.png</gco:CharacterString>
+               </gmd:fileDescription>
+            </gmd:MD_BrowseGraphic>
+         </gmd:graphicOverview>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword>
+                  <gmx:Anchor xlink:href="http://inspire.ec.europa.eu/theme/oi">Ortoimágenes</gmx:Anchor>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="theme"/>
+               </gmd:type>
+               <gmd:thesaurusName>
+            <!--2.2.5.2-->
+            <gmd:CI_Citation>
+                     <gmd:title>
+                        <gmx:Anchor xlink:href="https://www.eionet.europa.eu/gemet/es/inspire-themes/">GEMET - INSPIRE themes, version 1.0</gmx:Anchor>
+                     </gmd:title>
+                     <gmd:date>
+                        <gmd:CI_Date>
+                           <gmd:date>
+                              <gco:Date>2008-06-01</gco:Date>
+                           </gmd:date>
+                           <gmd:dateType>
+                              <gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode"
+                                                   codeListValue="publication"/>
+                           </gmd:dateType>
+                        </gmd:CI_Date>
+                     </gmd:date>
+                  </gmd:CI_Citation>
+               </gmd:thesaurusName>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword>
+                  <gco:CharacterString>Andalucía</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="place"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword>
+                  <gco:CharacterString>2010</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="temporal"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:descriptiveKeywords>
+            <gmd:MD_Keywords>
+               <gmd:keyword>
+                  <gco:CharacterString>2011</gco:CharacterString>
+               </gmd:keyword>
+               <gmd:type>
+                  <gmd:MD_KeywordTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_KeywordTypeCode"
+                                          codeListValue="temporal"/>
+               </gmd:type>
+            </gmd:MD_Keywords>
+         </gmd:descriptiveKeywords>
+         <gmd:resourceConstraints>
+            <gmd:MD_Constraints>
+               <gmd:useLimitation>
+                  <gco:CharacterString>Licencia compatible con CC-BY 4.0 que ampara el uso libre y gratuito para cualquier propósito legítimo, siendo de estricta obligación reconocer y mencionar el origen y propiedad de los productos y servicios de información geográfica licenciados como del IGN, según se indica en la citada licencia al que remite el siguiente enlace:
+						http://www.ign.es/resources/licencia/Condiciones_licenciaUso_IGN.pdf</gco:CharacterString>
+               </gmd:useLimitation>
+            </gmd:MD_Constraints>
+         </gmd:resourceConstraints>
+         <gmd:resourceConstraints>
+            <gmd:MD_LegalConstraints>
+               <gmd:accessConstraints>
+            <!--2.2.13.1. a)-->
+            <gmd:MD_RestrictionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_RestrictionCode"
+                                          codeListValue="otherRestrictions"/>
+               </gmd:accessConstraints>
+               <gmd:otherConstraints>
+                  <gmx:Anchor xlink:href="http://inspire.ec.europa.eu/metadata-codelist/LimitationsOnPublicAccess/noLimitations">There are no limitations on public access to spatial data sets and services</gmx:Anchor>
+               </gmd:otherConstraints>
+            </gmd:MD_LegalConstraints>
+         </gmd:resourceConstraints>
+         <gmd:spatialRepresentationType>
+        <!--2.2.14-->
+        <gmd:MD_SpatialRepresentationTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_SpatialRepresentationTypeCode"
+                                                  codeListValue="grid"/>
+         </gmd:spatialRepresentationType>
+         <gmd:spatialResolution>
+        <!--2.2.15-->
+        <gmd:MD_Resolution>
+               <gmd:distance>
+                  <gco:Distance uom="cm">50</gco:Distance>
+               </gmd:distance>
+            </gmd:MD_Resolution>
+         </gmd:spatialResolution>
+         <gmd:language>
+            <gmd:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="spa"/>
+         </gmd:language>
+         <gmd:characterSet>
+        <!--2.2.17-->
+        <gmd:MD_CharacterSetCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_CharacterSetCode"
+                                     codeListValue="utf8"/>
+         </gmd:characterSet>
+         <gmd:topicCategory>
+            <gmd:MD_TopicCategoryCode>imageryBaseMapsEarthCover</gmd:MD_TopicCategoryCode>
+         </gmd:topicCategory>
+         <gmd:extent>
+        <!--2.2.19 EXTENSIÓN GEOGRÁFICA Y TEMPORAL DE LA SERIE-->
+        <gmd:EX_Extent>
+               <gmd:description>
+                  <gco:CharacterString>Puntos extremos del territorio andaluz</gco:CharacterString>
+               </gmd:description>
+               <gmd:geographicElement>
+                  <gmd:EX_GeographicBoundingBox>
+                     <gmd:westBoundLongitude>
+                        <gco:Decimal>-7.52141</gco:Decimal>
+                     </gmd:westBoundLongitude>
+                     <gmd:eastBoundLongitude>
+                        <gco:Decimal>-1.62607</gco:Decimal>
+                     </gmd:eastBoundLongitude>
+                     <gmd:southBoundLatitude>
+                        <gco:Decimal>35.93893</gco:Decimal>
+                     </gmd:southBoundLatitude>
+                     <gmd:northBoundLatitude>
+                        <gco:Decimal>38.73014</gco:Decimal>
+                     </gmd:northBoundLatitude>
+                  </gmd:EX_GeographicBoundingBox>
+               </gmd:geographicElement>
+               <gmd:temporalElement>
+                  <gmd:EX_TemporalExtent>
+                     <gmd:extent>
+                        <gml:TimePeriod gml:id="id001">
+                           <gml:begin>
+                              <gml:TimeInstant gml:id="id002">
+                                 <gml:timePosition>2010-06-15</gml:timePosition>
+                              </gml:TimeInstant>
+                           </gml:begin>
+                           <gml:end>
+                              <gml:TimeInstant gml:id="id003">
+                                 <gml:timePosition>2011-08-15</gml:timePosition>
+                              </gml:TimeInstant>
+                           </gml:end>
+                        </gml:TimePeriod>
+                     </gmd:extent>
+                  </gmd:EX_TemporalExtent>
+               </gmd:temporalElement>
+            </gmd:EX_Extent>
+         </gmd:extent>
+      </gmd:MD_DataIdentification>
+  </gmd:identificationInfo>
+  <gmd:distributionInfo>
+      <gmd:MD_Distribution>
+         <gmd:distributionFormat>
+        <!--2.3.1-->
+        <gmd:MD_Format>
+               <gmd:name>
+                  <gco:CharacterString>JPEG2000</gco:CharacterString>
+               </gmd:name>
+               <gmd:version>
+                  <gco:CharacterString>2</gco:CharacterString>
+               </gmd:version>
+               <gmd:specification>
+                  <gco:CharacterString>Desconocido</gco:CharacterString>
+               </gmd:specification>
+            </gmd:MD_Format>
+         </gmd:distributionFormat>
+         <gmd:distributor>
+        <!--2.2.9.-->
+        <gmd:MD_Distributor>
+               <gmd:distributorContact>
+                  <gmd:CI_ResponsibleParty>
+                     <gmd:organisationName>
+                        <gco:CharacterString>Instituto de Estadística y Cartografía de Andalucía. Junta de Andalucía</gco:CharacterString>
+                     </gmd:organisationName>
+                     <gmd:contactInfo>
+                <!--2.2.9.1.-->
+                <gmd:CI_Contact>
+                           <gmd:phone>
+                              <gmd:CI_Telephone>
+                                 <gmd:voice>
+                                    <gco:CharacterString>0034 900 101 407</gco:CharacterString>
+                                 </gmd:voice>
+                                 <gmd:voice>
+                                    <gco:CharacterString>0034 955 033 800</gco:CharacterString>
+                                 </gmd:voice>
+                                 <gmd:facsimile>
+                                    <gco:CharacterString>0034 955 033 816</gco:CharacterString>
+                                 </gmd:facsimile>
+                              </gmd:CI_Telephone>
+                           </gmd:phone>
+                           <gmd:address>
+                              <gmd:CI_Address>
+                                 <gmd:deliveryPoint>
+                                    <gco:CharacterString>Pabellón de Nueva Zelanda. C/ Leonardo Da Vinci, nº 21. Isla de La Cartuja. 41071-SEVILLA</gco:CharacterString>
+                                 </gmd:deliveryPoint>
+                                 <gmd:city>
+                                    <gco:CharacterString>Sevilla</gco:CharacterString>
+                                 </gmd:city>
+                                 <gmd:administrativeArea>
+                                    <gco:CharacterString>Andalucía</gco:CharacterString>
+                                 </gmd:administrativeArea>
+                                 <gmd:postalCode>
+                                    <gco:CharacterString>41071</gco:CharacterString>
+                                 </gmd:postalCode>
+                                 <gmd:country>
+                                    <gco:CharacterString>España</gco:CharacterString>
+                                 </gmd:country>
+                                 <gmd:electronicMailAddress>
+                                    <gco:CharacterString>cartografia@juntadeandalucia.es</gco:CharacterString>
+                                 </gmd:electronicMailAddress>
+                              </gmd:CI_Address>
+                           </gmd:address>
+                           <gmd:onlineResource>
+                    <!--2.2.9.1.b)-->
+                    <gmd:CI_OnlineResource>
+                                 <gmd:linkage>
+                                    <gmd:URL>http://www.juntadeandalucia.es/institutodeestadisticaycartografia</gmd:URL>
+                                 </gmd:linkage>
+                                 <gmd:function>
+                                    <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                               codeListValue="information"/>
+                                 </gmd:function>
+                              </gmd:CI_OnlineResource>
+                           </gmd:onlineResource>
+                           <gmd:hoursOfService>
+                              <gco:CharacterString>9:00-14:00</gco:CharacterString>
+                           </gmd:hoursOfService>
+                        </gmd:CI_Contact>
+                     </gmd:contactInfo>
+                     <gmd:role>
+                <!--2.2.9.2-->
+                <gmd:CI_RoleCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_RoleCode"
+                                         codeListValue="distributor"/>
+                     </gmd:role>
+                  </gmd:CI_ResponsibleParty>
+               </gmd:distributorContact>
+               <gmd:distributionOrderProcess>
+                  <gmd:MD_StandardOrderProcess>
+                     <gmd:fees>
+                        <gco:CharacterString>Gratuito</gco:CharacterString>
+                     </gmd:fees>
+                     <gmd:orderingInstructions>
+                        <gco:CharacterString>La descarga nos facilita los ficheros JP2 del producto</gco:CharacterString>
+                     </gmd:orderingInstructions>
+                     <gmd:turnaround>
+                        <gco:CharacterString>Directo</gco:CharacterString>
+                     </gmd:turnaround>
+                  </gmd:MD_StandardOrderProcess>
+               </gmd:distributionOrderProcess>
+            </gmd:MD_Distributor>
+         </gmd:distributor>
+         <gmd:transferOptions>
+            <gmd:MD_DigitalTransferOptions>
+               <gmd:onLine>
+            <!--2.3.2.Otras formas de consulta de la información.-->
+            <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>http://www.ideandalucia.es/wms/ortofoto2010?REQUEST=GetCapabilities&amp;SERVICE=WMS&amp;VERSION=1.3.0</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:protocol>
+                        <gco:CharacterString>OGC:WMS-1.3.0-http-get-capabilities</gco:CharacterString>
+                     </gmd:protocol>
+                     <gmd:description>
+                        <gco:CharacterString>Servicio WMS Ortofotografía de Andalucía 2010 - 2011</gco:CharacterString>
+                     </gmd:description>
+                     <gmd:function>
+                        <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                   codeListValue="information"/>
+                     </gmd:function>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>http://www.juntadeandalucia.es/institutodeestadisticaycartografia/prodCartografia/ortofotografias/index.htm</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:description>
+                        <gco:CharacterString>PÃ¡gina del producto OrtofotografÃ­as de AndalucÃ­a</gco:CharacterString>
+                     </gmd:description>
+                     <gmd:function>
+                        <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                   codeListValue="information"/>
+                     </gmd:function>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+                  <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>http://www.juntadeandalucia.es/institutodeestadisticaycartografia/prodCartografia/ortofotografias/orto11.htm</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:description>
+                        <gco:CharacterString>PÃ¡gina OrtofotografÃ­a en Color 0,5 metros/pixel (2010-2011)</gco:CharacterString>
+                     </gmd:description>
+                     <gmd:function>
+                        <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                   codeListValue="information"/>
+                     </gmd:function>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+               <gmd:onLine>
+            <!--2.3.2.Otras formas de consulta de la información.-->
+            <gmd:CI_OnlineResource>
+                     <gmd:linkage>
+                        <gmd:URL>http://www.juntadeandalucia.es/institutodeestadisticaycartografia/lineav2/web/</gmd:URL>
+                     </gmd:linkage>
+                     <gmd:description>
+                        <gco:CharacterString>Line@. Localizador de Información Espacial de Andalucía</gco:CharacterString>
+                     </gmd:description>
+                     <gmd:function>
+                        <gmd:CI_OnLineFunctionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_OnLineFunctionCode"
+                                                   codeListValue="download"/>
+                     </gmd:function>
+                  </gmd:CI_OnlineResource>
+               </gmd:onLine>
+            </gmd:MD_DigitalTransferOptions>
+         </gmd:transferOptions>
+      </gmd:MD_Distribution>
+  </gmd:distributionInfo>
+  <gmd:dataQualityInfo>
+      <gmd:DQ_DataQuality>
+         <gmd:scope>
+        <!--2.5.1-->
+        <gmd:DQ_Scope>
+               <gmd:level>
+                  <gmd:MD_ScopeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_ScopeCode"
+                                    codeListValue="dataset"/>
+               </gmd:level>
+            </gmd:DQ_Scope>
+         </gmd:scope>
+         <gmd:report>
+            <gmd:DQ_DomainConsistency>
+               <gmd:result>
+                  <gmd:DQ_ConformanceResult>
+                     <gmd:specification>
+                        <gmd:CI_Citation>
+                           <gmd:title>
+                              <gmx:Anchor xlink:href="http://data.europa.eu/eli/reg/2010/1089/2014-12-31">Reglamento (UE) n o 1089/2010 de la Comisión de 23 de noviembre de 2010 por el que se aplica la Directiva 2007/2/CE del Parlamento Europeo y del Consejo en lo que se refiere a la interoperabilidad de los conjuntos y los servicios de datos espaciales</gmx:Anchor>
+                           </gmd:title>
+                           <gmd:date>
+                              <gmd:CI_Date>
+                                 <gmd:date>
+                                    <gco:Date>2010-12-08</gco:Date>
+                                 </gmd:date>
+                                 <gmd:dateType>
+                        <!--2.5.2.a3)-->
+                        <gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode"
+                                                         codeListValue="publication"/>
+                                 </gmd:dateType>
+                              </gmd:CI_Date>
+                           </gmd:date>
+                        </gmd:CI_Citation>
+                     </gmd:specification>
+                     <gmd:explanation>
+                        <gco:CharacterString>Consultar el reglamento mencionado</gco:CharacterString>
+                     </gmd:explanation>
+                     <gmd:pass>
+                <!--2.5.2.c)-->
+                <gco:Boolean>true</gco:Boolean>
+                     </gmd:pass>
+                  </gmd:DQ_ConformanceResult>
+               </gmd:result>
+            </gmd:DQ_DomainConsistency>
+         </gmd:report>
+         <gmd:report>
+            <gmd:DQ_DomainConsistency>
+               <gmd:result>
+                  <gmd:DQ_ConformanceResult>
+                     <gmd:specification>
+                        <gmd:CI_Citation>
+                           <gmd:title>
+                              <gmx:Anchor xlink:href="http://data.europa.eu/eli/reg/2008/1205/2008-12-24">Reglamento (CE) n o 1205/2008 de la Comisión de 3 de diciembre de 2008 por el que se ejecuta la Directiva 2007/2/CE del Parlamento Europeo y del Consejo en lo que se refiere a los metadatos (Texto pertinente a efectos del EEE)</gmx:Anchor>
+                           </gmd:title>
+                           <gmd:date>
+                              <gmd:CI_Date>
+                                 <gmd:date>
+                                    <gco:Date>2008-12-04</gco:Date>
+                                 </gmd:date>
+                                 <gmd:dateType>
+                        <!--2.5.2.a3)-->
+                        <gmd:CI_DateTypeCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_DateTypeCode"
+                                                         codeListValue="publication"/>
+                                 </gmd:dateType>
+                              </gmd:CI_Date>
+                           </gmd:date>
+                        </gmd:CI_Citation>
+                     </gmd:specification>
+                     <gmd:explanation>
+                        <gco:CharacterString>Consultar el reglamento mencionado</gco:CharacterString>
+                     </gmd:explanation>
+                     <gmd:pass>
+                <!--2.5.2.c)-->
+                <gco:Boolean>true</gco:Boolean>
+                     </gmd:pass>
+                  </gmd:DQ_ConformanceResult>
+               </gmd:result>
+            </gmd:DQ_DomainConsistency>
+         </gmd:report>
+         <gmd:lineage>
+        <!--2.5.3-->
+        <gmd:LI_Lineage>
+               <gmd:statement>
+                  <gco:CharacterString>La ortofoto ha sido realizada basándose en imágenes aéreas digitales en color y se ha rectificado geométricamente utilizándose el Modelo Digital del Terreno (MDT) generado en el año 2008 en el que se han actualizado aquellos elementos como carreteras, puentes o viaductos que hayan sufrido cambios. Se ha hecho el mosaico y las mejoras radiométricas. Se incluyen también en el proceso de obtención de la ortofotografía, los datos de los sistemas GPS/INS e IMU, del avión y la cámara durante el vuelo fotogramétrico. Los parámetros de calidad general del producto se han hecho asegurando el cumplimiento de las prescripciones establecidas a lo largo de todo el proceso. 
+						En cuanto al sistema de referencia, las coordenadas del proyecto vienen dadas en ETRS89 con proyección UTM en el huso 30 N. Este producto ha sido sometido a los controles de calidad previstos según especificaciones PNOA, consiguiendo una precisión geométrica con un RMSE menor a 1 m.</gco:CharacterString>
+               </gmd:statement>
+               <gmd:processStep>
+            <!--2.5.3.1-->
+            <gmd:LI_ProcessStep>
+                     <gmd:description>
+                        <gco:CharacterString>1.- Preparación del Proyecto</gco:CharacterString>
+                     </gmd:description>
+                     <gmd:source>
+                        <gmd:LI_Source>
+                           <gmd:description>
+                              <gco:CharacterString>Se define el objeto del proyecto, plan de trabajo y cronograma de tiempos de ejecución, productos a generar y se asignan los recursos tecnológicos y el talento humano necesario para realizar la cartografía básica digital.</gco:CharacterString>
+                           </gmd:description>
+                        </gmd:LI_Source>
+                     </gmd:source>
+                  </gmd:LI_ProcessStep>
+               </gmd:processStep>
+               <gmd:processStep>
+            <!--2.5.3.1-->
+            <gmd:LI_ProcessStep>
+                     <gmd:description>
+                        <gco:CharacterString>2.- Vuelo fotogramétrico</gco:CharacterString>
+                     </gmd:description>
+                     <gmd:source>
+                        <gmd:LI_Source>
+                           <gmd:description>
+                              <gco:CharacterString>Proporciona el conjunto de fotografías necesarias para cubrir el territorio. Estas imágenes se obtienen desde un avión en cuyo fuselaje va instalada una cámara fotogramétrica. Habitualmente el solape longitudinal es del 60%, y el transversal del 25% con objeto de que cada elemento del terreno sea visto, al menos desde dos puntos de vista. Además del conjunto de pasadas longitudinales se efectuaron pasadas transversales y de costas con objeto de garantizar el resultado de la aerotriangulación. -Altura mínima sobre el terreno: 15677 ft. -Altura máxima sobre el terreno: 16275 ft. - Promedio desarrollada por el avión en el momento de la captura: 15891 ft.</gco:CharacterString>
+                           </gmd:description>
+                        </gmd:LI_Source>
+                     </gmd:source>
+                  </gmd:LI_ProcessStep>
+               </gmd:processStep>
+               <gmd:processStep>
+            <!--2.5.3.1-->
+            <gmd:LI_ProcessStep>
+                     <gmd:description>
+                        <gco:CharacterString>3.- Proceso de fotocontrol</gco:CharacterString>
+                     </gmd:description>
+                     <gmd:source>
+                        <gmd:LI_Source>
+                           <gmd:description>
+                              <gco:CharacterString>Determinación de coordenadas horizontales y verticales (a partir de GPS) de puntos existentes en el terreno, identificables en aerofotografías. Este proceso garantiza una correcta georreferenciación de las imágenes.</gco:CharacterString>
+                           </gmd:description>
+                        </gmd:LI_Source>
+                     </gmd:source>
+                  </gmd:LI_ProcessStep>
+               </gmd:processStep>
+               <gmd:processStep>
+            <!--2.5.3.1-->
+            <gmd:LI_ProcessStep>
+                     <gmd:description>
+                        <gco:CharacterString>4.- Aerotriangulación</gco:CharacterString>
+                     </gmd:description>
+                     <gmd:source>
+                        <gmd:LI_Source>
+                           <gmd:description>
+                              <gco:CharacterString>Este proceso permite determinar la posición y actitud que tenía la cámara en el momento de cada exposición, lo que se conoce como Parámetros de Orientación Externa (POE). Para cada imagen se tendrán seis parámetros: 3 coordenadas (X, Y, Z) y 3 giros (omega, phi, kappa). El proceso de aerotriangulación se ha efectuado mediante el método de ajuste simultáneo de haces para el conjunto de fotogramas correspondientes a cada vuelo fotogramétrico.</gco:CharacterString>
+                           </gmd:description>
+                        </gmd:LI_Source>
+                     </gmd:source>
+                  </gmd:LI_ProcessStep>
+               </gmd:processStep>
+               <gmd:processStep>
+            <!--2.5.3.1-->
+            <gmd:LI_ProcessStep>
+                     <gmd:description>
+                        <gco:CharacterString>5.- Restitución</gco:CharacterString>
+                     </gmd:description>
+                     <gmd:source>
+                        <gmd:LI_Source>
+                           <gmd:description>
+                              <gco:CharacterString>Se extrae de los modelos fotográficos espaciales los principales elementos del terreno (vías, drenajes, vegetación, construcciones, curvas de nivel, etc) que conforman la cartografía.</gco:CharacterString>
+                           </gmd:description>
+                        </gmd:LI_Source>
+                     </gmd:source>
+                  </gmd:LI_ProcessStep>
+               </gmd:processStep>
+               <gmd:processStep>
+            <!--2.5.3.1-->
+            <gmd:LI_ProcessStep>
+                     <gmd:description>
+                        <gco:CharacterString>6.- Correlación, generación y edición del modelo digital del terreno. En este caso, se ha utilizado el MDT generado en el año 2008, en el que se han actualizado aquellos elementos que hayan sufrido cambios.</gco:CharacterString>
+                     </gmd:description>
+                     <gmd:source>
+                        <gmd:LI_Source>
+                           <gmd:description>
+                              <gco:CharacterString>Para la realización de la ortofotografía se ha utilizado el Modelo Digital del Terreno (MDT) de proyectos anteriores de ortofotografías, revisado, depurado y actualizado a partir del vuelo 2008-2009. Las especificaciones técnicas del MDT son las siguientes:
+									Se obtiene un MDT por correlación automática y depuración estereoscópica interactiva; todos los puntos de la malla deben estar situado sobre el terreno ignorando las copas de los árboles, tejados de edificios y otros objetos artificiales que sobresalgan del mismo. En las zonas de agua, (mar, embalses y lagos) la cota de MDT será constante igual a la de la orilla.
+									La resolución del MDT se realiza mediante el paso de malla de 10 x 10 metros, y en las zonas donde la correlación no dé buenos resultados, se realiza una edición manual.
+									Se cumplen los siguientes requisitos: Error medio cuadrático especificados en el PNOA: RMSZ menor o igual a 2 metros. Error máximo menor o igual a 4 metros, no habiendo ningún punto con un error superior a 8 metros.</gco:CharacterString>
+                           </gmd:description>
+                        </gmd:LI_Source>
+                     </gmd:source>
+                  </gmd:LI_ProcessStep>
+               </gmd:processStep>
+               <gmd:processStep>
+            <!--2.5.3.1-->
+            <gmd:LI_ProcessStep>
+                     <gmd:description>
+                        <gco:CharacterString>7.- Ortorrectificación</gco:CharacterString>
+                     </gmd:description>
+                     <gmd:source>
+                        <gmd:LI_Source>
+                           <gmd:description>
+                              <gco:CharacterString>A partir de los fotogramas correctamente orientados y del MDT generado y depurado se llevó a cabo el proceso de ortorrectificación y de generación del mosaico con el correspondiente ajuste radiométrico para uniformizar el aspecto visual del producto, tanto en el interior de un bloque fotogramétrico como entre bloques contiguos. De esta forma se consiguó un mosaico continuo geométrica y radiométricamente.</gco:CharacterString>
+                           </gmd:description>
+                        </gmd:LI_Source>
+                     </gmd:source>
+                  </gmd:LI_ProcessStep>
+               </gmd:processStep>
+               <gmd:processStep>
+            <!--2.5.3.1-->
+            <gmd:LI_ProcessStep>
+                     <gmd:description>
+                        <gco:CharacterString>8.- Corte por hojas.</gco:CharacterString>
+                     </gmd:description>
+                     <gmd:source>
+                        <gmd:LI_Source>
+                           <gmd:description>
+                              <gco:CharacterString>La unidad de distribución son los cortes de hojas según el Real Decreto 1071/2007 a escala 1:10.000, con una zona de solape entre ortofotos contiguas. En cuanto al sistema de referencia, las coordenadas del proyecto vienen dadas en ETRS89 con proyección UTM en el huso 30 N. Este producto ha sido sometido a los controles de calidad previstos según especificaciones PNOA, consiguiendo una precisión geométrica con un RMSE menor a 1 m.</gco:CharacterString>
+                           </gmd:description>
+                        </gmd:LI_Source>
+                     </gmd:source>
+                  </gmd:LI_ProcessStep>
+               </gmd:processStep>
+               <gmd:source>
+                  <gmd:LI_Source>
+                     <gmd:description>
+                        <gco:CharacterString>El cuadrante Suroeste de Andalucía se ha elaborado a  50 cm de resolución. Se parte de un vuelo digital de 0.45 metros de resolución geométrica, con información en RGB, infrarrojo y pancromático realizado entre los meses de junio y julio del año 2010, con las cámaras métricas digitales DMC 105 y DMC 20, con cobertura estereoscópica de toda la zona de trabajo. El formato de las imágenes digitales es de 13.865 x 7.680 píxeles que permite la generación de imágenes por cada fotograma en RGB (rojo, verde, azul), y en RGBI (infrarrojo, rojo, verde, azul), con una profundidad radiométrica de 12 bits por cada canal. Las cámaras llevan instalado un objetivo distancia focal calibrada de 120 mm. 
+
+						El cuadrante Sureste de Andalucía se ha elaborado a  50 cm de resolución. Se parte de un vuelo digital de 0.34 metros de resolución geométrica, realizado en julio del año 2010, con la cámara métrica digital Ultracam XP, con cobertura estereoscópica de toda la zona de trabajo. El formato de las imágenes digitales es de 17.310 x 11.310 píxeles que permite la generación de imágenes por cada fotograma en RGB (rojo, verde, azul), y en RGBI (infrarrojo, rojo, verde, azul), con una profundidad radiométrica de 16 bits por cada canal. Las cámaras llevan instalado un objetivo distancia focal calibrada de 100.4 mm. 
+
+						El cuadrante Noroeste de Andalucía se ha elaborado a  50 cm de resolución. Se parte de un vuelo digital de 0.45 metros de resolución geométrica, realizado en agosto del año 2011, con la cámara métrica digital Ultracam XP-WA, con cobertura estereoscópica de toda la zona de trabajo. El formato de las imágenes digitales es de 17.310 x 11.310 píxeles que permite la generación de imágenes por cada fotograma en RGB (rojo, verde, azul), y en RGBI (infrarrojo, rojo, verde, azul), con una profundidad radiométrica de 14 bits por cada canal. Las cámaras llevan instalado un objetivo distancia focal calibrada de 70 mm. 
+
+						El cuadrante Noreste de Andalucía se ha elaborado a  50 cm de resolución. Se parte de un vuelo digital de 0.45 metros de resolución geométrica, con información en RGB, infrarrojo y pancromático realizado en el mes de agosto del año 2011, con las cámaras métricas digitales DMC 14, con cobertura estereoscópica de toda la zona de trabajo. El formato de las imágenes digitales es de 13.824 x 7.680 píxeles que permite la generación de imágenes por cada fotograma en RGB (rojo, verde, azul), y en RGBI (infrarrojo, rojo, verde, azul), con una profundidad radiométrica de 12 bits por cada canal. Las cámaras llevan instalado un objetivo distancia focal calibrada de 120 mm. 
+
+							- Período de creación: Junio y Julio de 2010 y Agosto de 2011
+							- Empresas de vuelo: Cuadrante Sureste: Azimut.
+                                  Cuadrante Suroeste: Stereocarto (Hifsa).
+                                  Cuadrante Noreste: ICC.
+                                  Cuadrante Noroeste: Geodata Air.</gco:CharacterString>
+                     </gmd:description>
+                  </gmd:LI_Source>
+               </gmd:source>
+            </gmd:LI_Lineage>
+         </gmd:lineage>
+      </gmd:DQ_DataQuality>
+  </gmd:dataQualityInfo>
+  <gmd:metadataConstraints>
+      <gmd:MD_Constraints>
+         <gmd:useLimitation>
+            <gco:CharacterString>La licencia de uso general a aplicar a la información estadística y cartográfica producida por el Sistema Estadístico y Cartográfico de Andalucía, salvo que se indique lo contrario, es la Creative Commons Reconocimiento 4.0 (CC BY 4.0) que implica la autorización para la reutilización de la información en condiciones no restrictivas, siendo posible la copia, distribución y comunicación pública, así como la producción de obras derivadas, incluso con finalidad comercial citando la autoría de acuerdo con el art. 29.2 de la Ley 3/2013 de 24 de julio por la que se aprueba el Plan Estadístico y Cartográfico de Andalucía 2013-2017, el cual ha ampliado su vigencia hasta 2020 por Ley 6/2017, de 27 de diciembre.
+http://www.juntadeandalucia.es/institutodeestadisticaycartografia/ieagen/avisoLegal/index.htm</gco:CharacterString>
+         </gmd:useLimitation>
+      </gmd:MD_Constraints>
+  </gmd:metadataConstraints>
+  <gmd:metadataConstraints>
+      <gmd:MD_LegalConstraints>
+         <gmd:accessConstraints>
+        <!--2.2.13.1. a)-->
+        <gmd:MD_RestrictionCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_RestrictionCode"
+                                    codeListValue="otherRestrictions"/>
+         </gmd:accessConstraints>
+         <gmd:otherConstraints>
+            <gco:CharacterString>Sin limitaciones de acceso público por cuestiones legales</gco:CharacterString>
+         </gmd:otherConstraints>
+      </gmd:MD_LegalConstraints>
+  </gmd:metadataConstraints>
+  <gmd:metadataMaintenance>
+      <gmd:MD_MaintenanceInformation>
+         <gmd:maintenanceAndUpdateFrequency>
+            <gmd:MD_MaintenanceFrequencyCode codeList="http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#MD_MaintenanceFrequencyCode"
+                                             codeListValue="asNeeded"/>
+         </gmd:maintenanceAndUpdateFrequency>
+         <gmd:maintenanceNote>
+            <gco:CharacterString>El recurso se actualiza según se considere necesario</gco:CharacterString>
+         </gmd:maintenanceNote>
+      </gmd:MD_MaintenanceInformation>
+  </gmd:metadataMaintenance>
+</gmd:MD_Metadata>
