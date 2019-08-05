@@ -35,16 +35,17 @@ final class UserAdmin extends AbstractAdmin
     {
         $listMapper
             ->add('username')
-            ->add('usernameCanonical')
+            #->add('usernameCanonical')
             ->add('email')
-            ->add('emailCanonical')
+            #->add('emailCanonical')
             ->add('enabled')
-            ->add('salt')
-            ->add('password')
+            #->add('salt')
+            #->add('password')
             ->add('lastLogin')
-            ->add('confirmationToken')
-            ->add('passwordRequestedAt')
-            ->add('roles')
+            #->add('confirmationToken')
+            #->add('passwordRequestedAt')
+            #->add('roles')
+            ->add('groups')
             //->add('id')
             ->add('_action', null, [
                 'actions' => [
@@ -59,16 +60,17 @@ final class UserAdmin extends AbstractAdmin
     {
         $formMapper
             ->add('username')
-            ->add('usernameCanonical')
+            #->add('usernameCanonical')
             ->add('email')
-            ->add('emailCanonical')
+            #->add('emailCanonical')
             ->add('enabled')
-            ->add('salt')
+            #->add('salt')
             ->add('password')
-            ->add('lastLogin')
-            ->add('confirmationToken')
-            ->add('passwordRequestedAt')
-            ->add('roles')
+            #->add('lastLogin')
+            #->add('confirmationToken')
+            #->add('passwordRequestedAt')
+            #->add('roles')
+            ->add('groups')
             //->add('id')
             ;
     }

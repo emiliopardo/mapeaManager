@@ -13,6 +13,11 @@ use Symfony\Component\Serializer\Annotation\Groups;
  */
 class Group extends BaseGroup
 {
+    public function __construct()
+    {
+        $this->roles = array();
+    }
+
     /**
      * @var \Ramsey\Uuid\UuidInterface The user identifier
      * 
@@ -22,5 +27,11 @@ class Group extends BaseGroup
      * @ORM\CustomIdGenerator(class="Ramsey\Uuid\Doctrine\UuidGenerator")
      */
     protected $id;
+
+
+    public function __toString()
+    {
+        return $this->name;
+    }
 
 }
