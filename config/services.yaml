@@ -117,3 +117,10 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, group: admin, label: MapeaConfiguredControl }
         public: true
+
+    admin.map_category:
+        class: App\Admin\MapCategoryAdmin
+        arguments: [~, App\Entity\MapCategory, App\Controller\MapCategoryAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_maps_category, label: "Map Category" }
+        public: true

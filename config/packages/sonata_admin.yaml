@@ -31,6 +31,10 @@ sonata_admin:
                 items:
                     - admin.user
                     - admin.group
+            sonata_maps_category:
+                label: "Maps Categories"
+                items:
+                    - admin.map_category        
         
     security:
         handler: sonata.admin.security.handler.role
