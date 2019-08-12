@@ -122,5 +122,12 @@ services:
         class: App\Admin\MapCategoryAdmin
         arguments: [~, App\Entity\MapCategory, App\Controller\MapCategoryAdminController]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: sonata_maps_category, label: "Map Category" }
+            - { name: sonata.admin, manager_type: orm, group: sonata_maps_category, label: "Categories" }
+        public: true
+
+    admin.map_sub_category:
+        class: App\Admin\MapSubCategoryAdmin
+        arguments: [~, App\Entity\MapSubCategory, App\Controller\MapSubCategoryAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: sonata_maps_category, label: Subcategories }
         public: true

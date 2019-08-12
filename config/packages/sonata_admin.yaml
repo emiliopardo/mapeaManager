@@ -32,9 +32,10 @@ sonata_admin:
                     - admin.user
                     - admin.group
             sonata_maps_category:
-                label: "Maps Categories"
+                label: "Maps Classification"
                 items:
-                    - admin.map_category        
+                    - admin.map_category  
+                    - admin.map_sub_category      
         
     security:
         handler: sonata.admin.security.handler.role

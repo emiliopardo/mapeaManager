@@ -36,7 +36,7 @@ class MapSubCategory
      */
     private $category;
 
-    public function getId():
+    public function getId()
     {
         return $this->id;
     }
