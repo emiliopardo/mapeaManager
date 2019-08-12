@@ -16,7 +16,7 @@ final class MapCategoryAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper): void
     {
         $datagridMapper
-            ->add('id')
+            //->add('id')
             ->add('name')
             ->add('description')
             ;
@@ -25,7 +25,7 @@ final class MapCategoryAdmin extends AbstractAdmin
     protected function configureListFields(ListMapper $listMapper): void
     {
         $listMapper
-            ->add('id')
+            //->add('id')
             ->add('name')
             ->add('description')
             ->add('_action', null, [
@@ -40,7 +40,7 @@ final class MapCategoryAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper): void
     {
         $formMapper
-            ->add('id')
+            //->add('id')
             ->add('name')
             ->add('description')
             ;
@@ -49,7 +49,7 @@ final class MapCategoryAdmin extends AbstractAdmin
     protected function configureShowFields(ShowMapper $showMapper): void
     {
         $showMapper
-            ->add('id')
+            //->add('id')
             ->add('name')
             ->add('description')
             ;
