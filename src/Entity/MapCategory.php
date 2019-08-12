@@ -30,7 +30,7 @@ class MapCategory
      */
     private $description;
 
-    public function getId(): ?int
+    public function getId()
     {
         return $this->id;
     }
@@ -57,5 +57,10 @@ class MapCategory
         $this->description = $description;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->name;
     }
 }
