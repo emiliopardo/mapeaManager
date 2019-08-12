@@ -6,9 +6,9 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\CategoriasRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\MapCategoryRepository")
  */
-class Categorias
+class MapCategory
 {
     /**
      * @var \Ramsey\Uuid\UuidInterface The user identifier
