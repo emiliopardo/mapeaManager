@@ -3,6 +3,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
@@ -32,9 +34,46 @@ class User extends BaseUser
      */
     protected $groups;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\MapSubCategory", inversedBy="users")
+     */
+    private $subcategory;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->subcategory = new ArrayCollection();
+    }
+
     public function setPassword($password)
     {
         $this->password = password_hash($password, PASSWORD_BCRYPT);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|MapSubCategory[]
+     */
+    public function getSubcategory(): Collection
+    {
+        return $this->subcategory;
+    }
+
+    public function addSubcategory(MapSubCategory $subcategory): self
+    {
+        if (!$this->subcategory->contains($subcategory)) {
+            $this->subcategory[] = $subcategory;
+        }
+
+        return $this;
+    }
+
+    public function removeSubcategory(MapSubCategory $subcategory): self
+    {
+        if ($this->subcategory->contains($subcategory)) {
+            $this->subcategory->removeElement($subcategory);
+        }
 
         return $this;
     }

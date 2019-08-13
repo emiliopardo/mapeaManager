@@ -46,6 +46,7 @@ final class UserAdmin extends AbstractAdmin
             #->add('passwordRequestedAt')
             #->add('roles')
             ->add('groups','array')
+            ->add('subcategory')
             //->add('id')
             ->add('_action', null, [
                 'actions' => [
@@ -71,6 +72,7 @@ final class UserAdmin extends AbstractAdmin
             #->add('passwordRequestedAt')
             #->add('roles')
             ->add('groups')
+            ->add('subcategory')
             //->add('id')
             ;
     }

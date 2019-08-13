@@ -29,6 +29,7 @@ final class MapSubCategoryAdmin extends AbstractAdmin
             ->add('name')
             ->add('description')
             ->add('category', 'text')
+            ->add('users', 'array')
             ->add('_action', null, [
                 'actions' => [
                     'show' => [],
@@ -43,7 +44,8 @@ final class MapSubCategoryAdmin extends AbstractAdmin
         $formMapper
             //->add('id')
             ->add('name')
-            ->add('category', 'text')
+            ->add('category')
+            ->add('users')
             ->add('description')
             ;
     }
@@ -54,6 +56,7 @@ final class MapSubCategoryAdmin extends AbstractAdmin
             //->add('id')
             ->add('name')
             ->add('category', 'text')
+            ->add('users', 'array')
             ->add('description')
             ;
     }
