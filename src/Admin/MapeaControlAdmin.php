@@ -22,6 +22,7 @@ final class MapeaControlAdmin extends AbstractAdmin
             //->add('id')
             ->add('name')
             ->add('description')
+            ->add('configurable')            
             ->add('code')
             ;
     }
@@ -32,6 +33,7 @@ final class MapeaControlAdmin extends AbstractAdmin
             //->add('id')
             ->add('name')
             ->add('description')
+            ->add('configurable')            
             ->add('code')
             ->add('mapeaCore','text')
             ->add('_action', null, [
@@ -49,6 +51,7 @@ final class MapeaControlAdmin extends AbstractAdmin
             //->add('id')
             ->add('name')
             ->add('description')
+            ->add('configurable')            
             ->add('code')
             ->add('mapeaCore', EntityType::class,  [
                 'class' => MapeaCore::class,
@@ -65,8 +68,38 @@ final class MapeaControlAdmin extends AbstractAdmin
             //->add('id')
             ->add('name')
             ->add('description')
+            ->add('configurable')            
             ->add('code')
             ->add('mapeaCore','text')
             ;
     }
+
+    public function postPersist($MapeaControl)
+    {
+        echo $this->MapeaControl->getId();
+    }
+
+    public function postUpdated($MapeaControl)
+    {
+        if($configurable){
+            $this-defaultControlConfig();
+            //$this-defaultConfiguredControl();
+        }
+        
+    }
+
+    protected function defaultControlConfig()
+    {
+        $mapeaControlConfig = new MapeaControlConfig();
+        $mapeaControlConfig->setDescription('este control no es parametrizable');
+        $mapeaControlConfig->setConfiguration('');
+        $mapeaControlConfig->setMapeaControl($id);
+    }
+
+    protected function defaultConfiguredControl()
+    {
+        
+    }
+
+
 }

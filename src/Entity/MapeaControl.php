@@ -2,6 +2,10 @@
 
 namespace App\Entity;
 
+use App\Entity\MapeaControlConfig;
+use Doctrine\ORM\EntityManagerInterface;
+
+
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -42,6 +46,21 @@ class MapeaControl
      * @ORM\JoinColumn(nullable=false)
      */
     private $mapeaCore;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $configurable;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\MapeaControlConfig", mappedBy="mapeaControl", cascade={"persist"})
+     */
+    private $mapeaControlConfig;
+
+    public function __construct()
+    {
+        $this->mapeaControlConfig = new ArrayCollection();
+    }
 
     public function getId()
     {
@@ -100,4 +119,57 @@ class MapeaControl
     {
         return $this->getName()."_".$this->getMapeaCore();
     }
+
+    public function getConfigurable(): ?bool
+    {
+        return $this->configurable;
+    }
+
+    public function setConfigurable(bool $configurable): self
+    {
+        $this->configurable = $configurable;
+
+        if (!$configurable) {
+            $defaultControlConfig = new MapeaControlConfig();
+            $defaultControlConfig->setMapeaControl($this);
+            $defaultControlConfig->setDescription('este control no tiene parametros');
+            $defaultControlConfig->setConfiguration('');
+
+            $this->addMapeaControlConfig($defaultControlConfig);
+
+        }
+        return $this;
+    }
+
+    /**
+     * @return Collection|MapeaControlConfig[]
+     */
+    public function getMapeaControlConfig(): Collection
+    {
+        return $this->mapeaControlConfig;
+    }
+
+    public function addMapeaControlConfig(MapeaControlConfig $mapeaControlConfig): self
+    {
+        if (!$this->mapeaControlConfig->contains($mapeaControlConfig)) {
+            $this->mapeaControlConfig[] = $mapeaControlConfig;
+            $mapeaControlConfig->setMapeaControl($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMapeaControlConfig(MapeaControlConfig $mapeaControlConfig): self
+    {
+        if ($this->mapeaControlConfig->contains($mapeaControlConfig)) {
+            $this->mapeaControlConfig->removeElement($mapeaControlConfig);
+            // set the owning side to null (unless already changed)
+            if ($mapeaControlConfig->getMapeaControl() === $this) {
+                $mapeaControlConfig->setMapeaControl(null);
+            }
+        }
+
+        return $this;
+    }
+
 }

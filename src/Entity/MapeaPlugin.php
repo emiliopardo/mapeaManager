@@ -51,6 +51,11 @@ class MapeaPlugin
      */
     private $code;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $configurable;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -130,6 +135,18 @@ class MapeaPlugin
     public function setCode(?string $code): self
     {
         $this->code = $code;
+
+        return $this;
+    }
+
+    public function getConfigurable(): ?bool
+    {
+        return $this->configurable;
+    }
+
+    public function setConfigurable(bool $configurable): self
+    {
+        $this->configurable = $configurable;
 
         return $this;
     }

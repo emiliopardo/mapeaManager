@@ -31,7 +31,7 @@ class MapeaControlConfig
     private $configuration;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\MapeaControl")
+     * @ORM\ManyToOne(targetEntity="App\Entity\MapeaControl", inversedBy="mapeaControlConfig",cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $mapeaControl;
