@@ -70,7 +70,7 @@ final class UserAdmin extends AbstractAdmin
             #->add('confirmationToken')
             #->add('passwordRequestedAt')
             #->add('roles')
-            ->add('groups','array')
+            ->add('groups')
             //->add('id')
             ;
     }
