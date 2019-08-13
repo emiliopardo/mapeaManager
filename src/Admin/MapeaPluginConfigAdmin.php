@@ -28,7 +28,7 @@ final class MapeaPluginConfigAdmin extends AbstractAdmin
             //->add('id')
             ->add('description')
             ->add('configuration')
-            ->add('mapeaPlugin')
+            ->add('mapeaPlugin', 'text')
             ->add('_action', null, [
                 'actions' => [
                     'show' => [],
@@ -44,7 +44,7 @@ final class MapeaPluginConfigAdmin extends AbstractAdmin
             //->add('id')
             ->add('description')
             ->add('configuration')
-            ->add('mapeaPlugin')
+            ->add('mapeaPlugin', 'text')
             ;
     }
 
@@ -54,7 +54,7 @@ final class MapeaPluginConfigAdmin extends AbstractAdmin
             //->add('id')
             ->add('description')
             ->add('configuration')
-            ->add('mapeaPlugin')
+            ->add('mapeaPlugin', 'text')
             ;
     }
 }

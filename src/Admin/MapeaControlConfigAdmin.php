@@ -28,7 +28,7 @@ final class MapeaControlConfigAdmin extends AbstractAdmin
             //->add('id')
             ->add('description')
             ->add('configuration')
-            ->add('mapeaControl')
+            ->add('mapeaControl', 'text')
             ->add('_action', null, [
                 'actions' => [
                     'show' => [],
@@ -44,7 +44,7 @@ final class MapeaControlConfigAdmin extends AbstractAdmin
             //->add('id')
             ->add('description')
             ->add('configuration')
-            ->add('mapeaControl')
+            ->add('mapeaControl', 'text')
             ;
     }
 
@@ -54,7 +54,7 @@ final class MapeaControlConfigAdmin extends AbstractAdmin
             //->add('id')
             ->add('description')
             ->add('configuration')
-            ->add('mapeaControl')
+            ->add('mapeaControl', 'text')
             ;
     }
 }

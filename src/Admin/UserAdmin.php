@@ -45,7 +45,7 @@ final class UserAdmin extends AbstractAdmin
             #->add('confirmationToken')
             #->add('passwordRequestedAt')
             #->add('roles')
-            ->add('groups')
+            ->add('groups','array')
             //->add('id')
             ->add('_action', null, [
                 'actions' => [
@@ -70,7 +70,7 @@ final class UserAdmin extends AbstractAdmin
             #->add('confirmationToken')
             #->add('passwordRequestedAt')
             #->add('roles')
-            ->add('groups')
+            ->add('groups','array')
             //->add('id')
             ;
     }
