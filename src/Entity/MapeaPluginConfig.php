@@ -31,7 +31,7 @@ class MapeaPluginConfig
     private $configuration;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\MapeaPlugin")
+     * @ORM\ManyToOne(targetEntity="App\Entity\MapeaPlugin", inversedBy="mapeaPluginConfig",cascade={"persist"}))
      * @ORM\JoinColumn(nullable=false)
      */
     private $mapeaPlugin;
