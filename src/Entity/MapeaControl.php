@@ -131,7 +131,7 @@ class MapeaControl
             $defaultControlConfig = new MapeaControlConfig();
             $defaultControlConfig->setMapeaControl($this);
             $defaultControlConfig->setDescription('este control no tiene parametros');
-            $defaultControlConfig->setConfiguration('');
+            $defaultControlConfig->setConfiguration('default');
 
             $this->addMapeaControlConfig($defaultControlConfig);
 
