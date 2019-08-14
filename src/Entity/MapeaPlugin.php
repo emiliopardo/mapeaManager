@@ -2,6 +2,10 @@
 
 namespace App\Entity;
 
+use App\Entity\MapeaPluginConfig;
+
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
@@ -56,7 +60,18 @@ class MapeaPlugin
      */
     private $configurable;
 
-    public function getId(): ?int
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\MapeaPluginConfig", mappedBy="mapeaPlugin", cascade={"persist"})
+     */
+    private $mapeaPluginConfig;
+
+    public function __construct()
+    
+    {
+        $this->mapeaPluginConfig = new ArrayCollection();
+    }
+
+    public function getId()
     {
         return $this->id;
     }
@@ -147,6 +162,47 @@ class MapeaPlugin
     public function setConfigurable(bool $configurable): self
     {
         $this->configurable = $configurable;
+
+        if (!$configurable) {
+            $defaultPluginConfig = new MapeaPluginConfig();
+            $defaultPluginConfig->setMapeaPlugin($this);
+            $defaultPluginConfig->setDescription('este plugin no tiene parametros');
+            $defaultPluginConfig->setConfiguration('default');
+
+            $this->addMapeaPluginConfig($defaultPluginConfig);
+
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|MapeaPluginConfig[]
+     */
+    public function getMapeaPluginConfig(): Collection
+    {
+        return $this->MapeaPluginConfig;
+    }
+
+    public function addMapeaPluginConfig(MapeaPluginConfig $mapeaPluginConfig): self
+    {
+        if (!$this->mapeaPluginConfig->contains($mapeaPluginConfig)) {
+            $this->mapeaPluginConfig[] = $mapeaPluginConfig;
+            $mapeaPluginConfig->setMapeaPlugin($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMapeaPluginConfig(MapeaPluginConfig $MapeaPluginConfig): self
+    {
+        if ($this->mapeaPluginConfig->contains($mapeaPluginConfig)) {
+            $this->mapeaPluginConfig->removeElement($mapeaPluginConfig);
+            // set the owning side to null (unless already changed)
+            if ($mapeaPluginConfig->getMapeaPlugin() === $this) {
+                $mapeaPluginConfig->setMapeaPlugin(null);
+            }
+        }
 
         return $this;
     }

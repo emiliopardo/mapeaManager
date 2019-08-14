@@ -3,8 +3,6 @@
 namespace App\Entity;
 
 use App\Entity\MapeaControlConfig;
-use Doctrine\ORM\EntityManagerInterface;
-
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
