@@ -7,6 +7,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MapeaControlConfigRepository")
+ * @ORM\EntityListeners({"App\EventListener\MapeaControlConfigEventListener"}) 
  */
 class MapeaControlConfig
 {

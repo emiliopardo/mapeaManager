@@ -131,3 +131,13 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, group: sonata_maps_category, label: Subcategories }
         public: true
+
+    lazy_mapeaControlConfig_listener:
+        class: App\EventListener\MapeaControlConfigEventListener
+        tags:
+            - { name: doctrine.orm.entity_listener, lazy: true }
+           
+    lazy_mapeaPluginConfig_listener:
+        class: App\EventListener\MapeaPluginConfigEventListener
+        tags:
+            - { name: doctrine.orm.entity_listener, lazy: true }                
