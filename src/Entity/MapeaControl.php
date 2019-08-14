@@ -130,7 +130,7 @@ class MapeaControl
         if (!$configurable) {
             $defaultControlConfig = new MapeaControlConfig();
             $defaultControlConfig->setMapeaControl($this);
-            $defaultControlConfig->setDescription('Este control no es parametrizable');
+            $defaultControlConfig->setDescription('No parametrizable');
             $defaultControlConfig->setConfiguration('default');
 
             $this->addMapeaControlConfig($defaultControlConfig);

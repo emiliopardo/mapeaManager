@@ -18,7 +18,7 @@ final class MapeaControlConfigAdmin extends AbstractAdmin
         $datagridMapper
             ->add('id')
             ->add('description')
-            ->add('configuration')
+            //->add('configuration')
             ;
     }
 
@@ -27,7 +27,7 @@ final class MapeaControlConfigAdmin extends AbstractAdmin
         $listMapper
             //->add('id')
             ->add('description')
-            ->add('configuration')
+            //->add('configuration')
             ->add('mapeaControl', 'text')
             ->add('_action', null, [
                 'actions' => [

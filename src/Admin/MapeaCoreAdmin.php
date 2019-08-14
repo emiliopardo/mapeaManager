@@ -18,9 +18,10 @@ final class MapeaCoreAdmin extends AbstractAdmin
         $datagridMapper
             //->add('id')
             ->add('version')
-            ->add('configuration')
-            ->add('javascript')
-            ->add('style')
+            ->add('description')
+            //->add('configuration')
+            //->add('javascript')
+            //->add('style')
             ;
     }
 
@@ -29,9 +30,10 @@ final class MapeaCoreAdmin extends AbstractAdmin
         $listMapper
             //->add('id')
             ->add('version')
-            ->add('configuration')
-            ->add('javascript')
-            ->add('style')
+            ->add('description')
+            //->add('configuration')
+            //->add('javascript')
+            //->add('style')
             ->add('_action', null, [
                 'actions' => [
                     'show' => [],
@@ -46,6 +48,7 @@ final class MapeaCoreAdmin extends AbstractAdmin
         $formMapper
             //->add('id')
             ->add('version')
+            ->add('description')
             ->add('configuration')
             ->add('javascript')
             ->add('style')
@@ -57,6 +60,7 @@ final class MapeaCoreAdmin extends AbstractAdmin
         $showMapper
             //->add('id')
             ->add('version')
+            ->add('description')
             ->add('configuration')
             ->add('javascript')
             ->add('style')

@@ -40,6 +40,11 @@ class MapeaCore
      */
     private $style;
 
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $description;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -96,5 +101,17 @@ class MapeaCore
     public function __toString():string
     {
         return $this->getVersion();
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
     }
 }

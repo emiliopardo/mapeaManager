@@ -166,7 +166,7 @@ class MapeaPlugin
         if (!$configurable) {
             $defaultPluginConfig = new MapeaPluginConfig();
             $defaultPluginConfig->setMapeaPlugin($this);
-            $defaultPluginConfig->setDescription('Este plugin no es parametrizable');
+            $defaultPluginConfig->setDescription('No parametrizable');
             $defaultPluginConfig->setConfiguration('default');
 
             $this->addMapeaPluginConfig($defaultPluginConfig);
