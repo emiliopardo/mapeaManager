@@ -126,4 +126,9 @@ class MapeaLayerWMS
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return $this->layerName;
+    }
 }
