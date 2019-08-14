@@ -36,9 +36,9 @@ final class MapeaPluginAdmin extends AbstractAdmin
             ->add('name')
             ->add('description')
             ->add('configurable')            
-            ->add('javascript')
-            ->add('style')
-            ->add('code')
+            //->add('javascript')
+            //->add('style')
+            //->add('code')
             ->add('mapeaCore','text')
             ->add('_action', null, [
                 'actions' => [

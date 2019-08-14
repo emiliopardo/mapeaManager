@@ -34,7 +34,7 @@ final class MapeaControlAdmin extends AbstractAdmin
             ->add('name')
             ->add('description')
             ->add('configurable')            
-            ->add('code')
+            //->add('code')
             ->add('mapeaCore','text')
             ->add('_action', null, [
                 'actions' => [
@@ -92,7 +92,7 @@ final class MapeaControlAdmin extends AbstractAdmin
     {
         $mapeaControlConfig = new MapeaControlConfig();
         $mapeaControlConfig->setDescription('este control no es parametrizable');
-        $mapeaControlConfig->setConfiguration('');
+        $mapeaControlConfig->setConfiguration('default');
         $mapeaControlConfig->setMapeaControl($id);
     }
 
