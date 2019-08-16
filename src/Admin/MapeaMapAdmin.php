@@ -59,56 +59,69 @@ final class MapeaMapAdmin extends AbstractAdmin
         $formMapper
             //->add('id')
             //->add('zoom')
-            ->with('Description')
-                ->add('name')
-                ->add('description')
+            ->tab('General')
+                ->with('Core', array('class'=>'col-md-6'))
+                    ->add('mapeaCore')
+                ->end()         
+                ->with('Category', array('class'=>'col-md-6'))
+                    ->add('category')
+                    ->add('subcategory')
+                ->end()   
+                ->with('Description')
+                    ->add('name')
+                    ->add('description')
+                ->end()
             ->end()
-            ->with('Core')
-                ->add('mapeaCore')
+            ->tab('Options')
+                ->with('Options')
+                    ->add('zoom', ChoiceType::class, [
+                        'placeholder' => 'Choose an option',
+                        'required' => false,
+                        'multiple' => false,
+                        'choices' => [
+                            '0' => '0',
+                            '1' => '1',
+                            '2' => '2',
+                            '3' => '3',
+                            '4' => '4',
+                            '5' => '5',
+                            '6' => '6',
+                            '7' => '7',
+                            '8' => '8',
+                            '9' => '9',
+                            '10' => '10',
+                            '11' => '11',
+                            '12' => '12',
+                            '13' => '13',
+                            '14' => '14',
+                            '15' => '15',                     
+                        ]
+                    ])
+                    ->add('bbox')
+                    ->add('maxExtent')
+                    ->add('projection')
+                    ->add('center')
+                    ->add('label')
+                    ->add('resolutions')
+                ->end()
             ->end()
-            ->with('SubCategory')
-                ->add('subcategory')
+            ->tab('Controls')
+                ->with('Controls')
+                    ->add('mapeaControls')
+                ->end()
             ->end()
-            ->with('Options')
-                ->add('zoom', ChoiceType::class, [
-                    'placeholder' => 'Choose an option',
-                    'required' => false,
-                    'multiple' => false,
-                    'choices' => [
-                        '0' => '0',
-                        '1' => '1',
-                        '2' => '2',
-                        '3' => '3',
-                        '4' => '4',
-                        '5' => '5',
-                        '6' => '6',
-                        '7' => '7',
-                        '8' => '8',
-                        '9' => '9',
-                        '10' => '10',
-                        '11' => '11',
-                        '12' => '12',
-                        '13' => '13',
-                        '14' => '14',
-                        '15' => '15',                     
-                    ]
-                ])
-                ->add('bbox')
-                ->add('maxExtent')
-                ->add('projection')
-                ->add('center')
-                ->add('label')
-                ->add('resolutions')
+            ->tab('Plugins')
+                ->with('Plugins')
+                    ->add('mapeaPlugins')
+                ->end()
             ->end()
-            ->with('Controls')
-                ->add('mapeaControls')
-            ->end()
-            ->with('Plugins')
-                ->add('mapeaPlugins')
-            ->end()
-            ->with('Layers')
-                ->add('mapeaWMC')
-                ->add('mapeaLayerWMS')
+            ->tab('layers')
+                ->with('Layers WMS')
+                    ->add('mapeaLayerWMS')
+                ->end()
+                ->with('Web Map Context')
+                    ->add('mapeaWMC')
+                ->end()
             ->end()
             ;
     }

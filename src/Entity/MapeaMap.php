@@ -105,6 +105,12 @@ class MapeaMap
      */
     private $mapeaLayerWMS;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\MapCategory", inversedBy="mapeaMaps")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $category;
+
     public function __construct()
     {
         $this->mapeaControls = new ArrayCollection();
@@ -367,6 +373,18 @@ class MapeaMap
         if ($this->mapeaLayerWMS->contains($mapeaLayerWMS)) {
             $this->mapeaLayerWMS->removeElement($mapeaLayerWMS);
         }
+
+        return $this;
+    }
+
+    public function getCategory(): ?MapCategory
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?MapCategory $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }
