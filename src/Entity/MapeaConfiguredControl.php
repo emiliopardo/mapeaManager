@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
@@ -36,6 +38,16 @@ class MapeaConfiguredControl
      * @ORM\JoinColumn(nullable=false)
      */
     private $controlConfig;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\MapSubCategory", inversedBy="mapeaConfiguredControls")
+     */
+    private $subcategory;
+
+    public function __construct()
+    {
+        $this->subcategory = new ArrayCollection();
+    }
 
     public function getId()
     {
@@ -81,5 +93,31 @@ class MapeaConfiguredControl
     public function __toString()
     {
         return $this->name;
+    }
+
+    /**
+     * @return Collection|MapSubCategory[]
+     */
+    public function getSubcategory(): Collection
+    {
+        return $this->subcategory;
+    }
+
+    public function addSubcategory(MapSubCategory $subcategory): self
+    {
+        if (!$this->subcategory->contains($subcategory)) {
+            $this->subcategory[] = $subcategory;
+        }
+
+        return $this;
+    }
+
+    public function removeSubcategory(MapSubCategory $subcategory): self
+    {
+        if ($this->subcategory->contains($subcategory)) {
+            $this->subcategory->removeElement($subcategory);
+        }
+
+        return $this;
     }
 }
