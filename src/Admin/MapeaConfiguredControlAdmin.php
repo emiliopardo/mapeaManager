@@ -33,6 +33,7 @@ final class MapeaConfiguredControlAdmin extends AbstractAdmin
             ->add('name')
             ->add('control','text')
             ->add('controlConfig', 'text', array('admin_code' => 'admin.mapea_control_config'))
+            ->add('subcategory')
             ->add('_action', null, [
                 'actions' => [
                     'show' => [],
@@ -64,6 +65,7 @@ final class MapeaConfiguredControlAdmin extends AbstractAdmin
                 'placeholder' => 'Select Mapea Control Configuration',
             ],array('admin_code' => 'admin.mapea_control_config')
             )
+            ->add('subcategory')
             ;
     }
 
@@ -74,6 +76,7 @@ final class MapeaConfiguredControlAdmin extends AbstractAdmin
             ->add('name')
             ->add('control','text')
             ->add('controlConfig', 'text',array('admin_code' => 'admin.mapea_control_config'))
+            ->add('subcategory')
             ;
     }
 

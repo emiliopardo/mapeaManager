@@ -33,6 +33,7 @@ final class MapeaConfiguredPluginAdmin extends AbstractAdmin
             ->add('name')
             ->add('plugin','text')
             ->add('pluginConfig','text', array('admin_code' => 'admin.mapea_plugin_config'))
+            ->add('subcategory')
             ->add('_action', null, [
                 'actions' => [
                     'show' => [],
@@ -63,6 +64,7 @@ final class MapeaConfiguredPluginAdmin extends AbstractAdmin
                 },
                 'placeholder' => 'Select Mapea Plugin Configuration',
             ],array('admin_code' => 'admin.mapea_plugin_config'))
+            ->add('subcategory')
             ;
     }
 
@@ -73,6 +75,7 @@ final class MapeaConfiguredPluginAdmin extends AbstractAdmin
             ->add('name')
             ->add('plugin','text')
             ->add('pluginConfig','text', array('admin_code' => 'admin.mapea_plugin_config'))
+            ->add('subcategory')
             ;
     }
 
