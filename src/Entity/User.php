@@ -39,10 +39,16 @@ class User extends BaseUser
      */
     private $subcategory;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\MapeaMap", mappedBy="owner")
+     */
+    private $mapeaMaps;
+
     public function __construct()
     {
         parent::__construct();
         $this->subcategory = new ArrayCollection();
+        $this->mapeaMaps = new ArrayCollection();
     }
 
     public function setPassword($password)
@@ -73,6 +79,37 @@ class User extends BaseUser
     {
         if ($this->subcategory->contains($subcategory)) {
             $this->subcategory->removeElement($subcategory);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|MapeaMap[]
+     */
+    public function getMapeaMaps(): Collection
+    {
+        return $this->mapeaMaps;
+    }
+
+    public function addMapeaMap(MapeaMap $mapeaMap): self
+    {
+        if (!$this->mapeaMaps->contains($mapeaMap)) {
+            $this->mapeaMaps[] = $mapeaMap;
+            $mapeaMap->setOwner($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMapeaMap(MapeaMap $mapeaMap): self
+    {
+        if ($this->mapeaMaps->contains($mapeaMap)) {
+            $this->mapeaMaps->removeElement($mapeaMap);
+            // set the owning side to null (unless already changed)
+            if ($mapeaMap->getOwner() === $this) {
+                $mapeaMap->setOwner(null);
+            }
         }
 
         return $this;

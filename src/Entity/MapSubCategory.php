@@ -43,9 +43,27 @@ class MapSubCategory
      */
     private $users;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\MapeaConfiguredControl", mappedBy="subcategory")
+     */
+    private $mapeaConfiguredControls;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\MapeaConfiguredPlugin", mappedBy="subcategory")
+     */
+    private $mapeaConfiguredPlugins;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\MapeaMap", mappedBy="subcategory")
+     */
+    private $mapeaMaps;
+
     public function __construct()
     {
         $this->users = new ArrayCollection();
+        $this->mapeaConfiguredControls = new ArrayCollection();
+        $this->mapeaConfiguredPlugins = new ArrayCollection();
+        $this->mapeaMaps = new ArrayCollection();
     }
 
     public function getId()
@@ -117,6 +135,93 @@ class MapSubCategory
         if ($this->users->contains($user)) {
             $this->users->removeElement($user);
             $user->removeSubcategory($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|MapeaConfiguredControl[]
+     */
+    public function getMapeaConfiguredControls(): Collection
+    {
+        return $this->mapeaConfiguredControls;
+    }
+
+    public function addMapeaConfiguredControl(MapeaConfiguredControl $mapeaConfiguredControl): self
+    {
+        if (!$this->mapeaConfiguredControls->contains($mapeaConfiguredControl)) {
+            $this->mapeaConfiguredControls[] = $mapeaConfiguredControl;
+            $mapeaConfiguredControl->addSubcategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMapeaConfiguredControl(MapeaConfiguredControl $mapeaConfiguredControl): self
+    {
+        if ($this->mapeaConfiguredControls->contains($mapeaConfiguredControl)) {
+            $this->mapeaConfiguredControls->removeElement($mapeaConfiguredControl);
+            $mapeaConfiguredControl->removeSubcategory($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|MapeaConfiguredPlugin[]
+     */
+    public function getMapeaConfiguredPlugins(): Collection
+    {
+        return $this->mapeaConfiguredPlugins;
+    }
+
+    public function addMapeaConfiguredPlugin(MapeaConfiguredPlugin $mapeaConfiguredPlugin): self
+    {
+        if (!$this->mapeaConfiguredPlugins->contains($mapeaConfiguredPlugin)) {
+            $this->mapeaConfiguredPlugins[] = $mapeaConfiguredPlugin;
+            $mapeaConfiguredPlugin->addSubcategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMapeaConfiguredPlugin(MapeaConfiguredPlugin $mapeaConfiguredPlugin): self
+    {
+        if ($this->mapeaConfiguredPlugins->contains($mapeaConfiguredPlugin)) {
+            $this->mapeaConfiguredPlugins->removeElement($mapeaConfiguredPlugin);
+            $mapeaConfiguredPlugin->removeSubcategory($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|MapeaMap[]
+     */
+    public function getMapeaMaps(): Collection
+    {
+        return $this->mapeaMaps;
+    }
+
+    public function addMapeaMap(MapeaMap $mapeaMap): self
+    {
+        if (!$this->mapeaMaps->contains($mapeaMap)) {
+            $this->mapeaMaps[] = $mapeaMap;
+            $mapeaMap->setSubcategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMapeaMap(MapeaMap $mapeaMap): self
+    {
+        if ($this->mapeaMaps->contains($mapeaMap)) {
+            $this->mapeaMaps->removeElement($mapeaMap);
+            // set the owning side to null (unless already changed)
+            if ($mapeaMap->getSubcategory() === $this) {
+                $mapeaMap->setSubcategory(null);
+            }
         }
 
         return $this;
