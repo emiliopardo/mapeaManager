@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
@@ -49,6 +51,16 @@ class MapeaLayerWMS
      * @ORM\Column(type="string", length=255, nullable=true, options={"default": "default"})
      */
     private $layerLegend;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\MapeaMap", mappedBy="mapeaLayerWMS")
+     */
+    private $mapeaMaps;
+
+    public function __construct()
+    {
+        $this->mapeaMaps = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -130,5 +142,33 @@ class MapeaLayerWMS
     public function __toString()
     {
         return $this->layerName;
+    }
+
+    /**
+     * @return Collection|MapeaMap[]
+     */
+    public function getMapeaMaps(): Collection
+    {
+        return $this->mapeaMaps;
+    }
+
+    public function addMapeaMap(MapeaMap $mapeaMap): self
+    {
+        if (!$this->mapeaMaps->contains($mapeaMap)) {
+            $this->mapeaMaps[] = $mapeaMap;
+            $mapeaMap->addMapeaLayer($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMapeaMap(MapeaMap $mapeaMap): self
+    {
+        if ($this->mapeaMaps->contains($mapeaMap)) {
+            $this->mapeaMaps->removeElement($mapeaMap);
+            $mapeaMap->removeMapeaLayer($this);
+        }
+
+        return $this;
     }
 }

@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
@@ -73,7 +75,45 @@ class MapeaMap
      */
     private $mapeaCore;
 
-    public function getId(): ?int
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $name;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $description;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\MapeaConfiguredControl", inversedBy="mapeaMaps")
+     */
+    private $mapeaControls;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\MapeaConfiguredPlugin", inversedBy="mapeaMaps")
+     */
+    private $mapeaPlugins;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\MapeaWMC", inversedBy="mapeaMaps")
+     */
+    private $mapeaWMC;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\MapeaLayerWMS", inversedBy="mapeaMaps")
+     */
+    private $mapeaLayerWMS;
+
+    public function __construct()
+    {
+        $this->mapeaControls = new ArrayCollection();
+        $this->mapeaPlugins = new ArrayCollection();
+        $this->mapeaWMC = new ArrayCollection();
+        $this->mapeaLayerWMS = new ArrayCollection();
+    }
+
+    public function getId()
     {
         return $this->id;
     }
@@ -194,6 +234,139 @@ class MapeaMap
     public function setMapeaCore(?MapeaCore $mapeaCore): self
     {
         $this->mapeaCore = $mapeaCore;
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return Collection|MapeaConfiguredControl[]
+     */
+    public function getMapeaControls(): Collection
+    {
+        return $this->mapeaControls;
+    }
+
+    public function addMapeaControl(MapeaConfiguredControl $mapeaControl): self
+    {
+        if (!$this->mapeaControls->contains($mapeaControl)) {
+            $this->mapeaControls[] = $mapeaControl;
+        }
+
+        return $this;
+    }
+
+    public function removeMapeaControl(MapeaConfiguredControl $mapeaControl): self
+    {
+        if ($this->mapeaControls->contains($mapeaControl)) {
+            $this->mapeaControls->removeElement($mapeaControl);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|MapeaConfiguredPlugin[]
+     */
+    public function getMapeaPlugins(): Collection
+    {
+        return $this->mapeaPlugins;
+    }
+
+    public function addMapeaPlugin(MapeaConfiguredPlugin $mapeaPlugin): self
+    {
+        if (!$this->mapeaPlugins->contains($mapeaPlugin)) {
+            $this->mapeaPlugins[] = $mapeaPlugin;
+        }
+
+        return $this;
+    }
+
+    public function removeMapeaPlugin(MapeaConfiguredPlugin $mapeaPlugin): self
+    {
+        if ($this->mapeaPlugins->contains($mapeaPlugin)) {
+            $this->mapeaPlugins->removeElement($mapeaPlugin);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|MapeaWMC[]
+     */
+    public function getMapeaWMC(): Collection
+    {
+        return $this->mapeaWMC;
+    }
+
+    public function addMapeaWMC(MapeaWMC $mapeaWMC): self
+    {
+        if (!$this->mapeaWMC->contains($mapeaWMC)) {
+            $this->mapeaWMC[] = $mapeaWMC;
+        }
+
+        return $this;
+    }
+
+    public function removeMapeaWMC(MapeaWMC $mapeaWMC): self
+    {
+        if ($this->mapeaWMC->contains($mapeaWMC)) {
+            $this->mapeaWMC->removeElement($mapeaWMC);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|MapeaLayerWMS[]
+     */
+    public function getMapeaLayerWMS(): Collection
+    {
+        return $this->mapeaLayerWMS;
+    }
+
+    public function addMapeaLayerWMS(MapeaLayerWMS $mapeaLayerWMS): self
+    {
+        if (!$this->mapeaLayerWMS->contains($mapeaLayerWMS)) {
+            $this->mapeaLayerWMS[] = $mapeaLayerWMS;
+        }
+
+        return $this;
+    }
+
+    public function removeMapeaLayerWMS(MapeaLayerWMS $mapeaLayerWMS): self
+    {
+        if ($this->mapeaLayerWMS->contains($mapeaLayerWMS)) {
+            $this->mapeaLayerWMS->removeElement($mapeaLayerWMS);
+        }
 
         return $this;
     }

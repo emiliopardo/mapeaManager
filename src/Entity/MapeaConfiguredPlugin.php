@@ -44,9 +44,15 @@ class MapeaConfiguredPlugin
      */
     private $subcategory;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\MapeaMap", mappedBy="mapeaPlugins")
+     */
+    private $mapeaMaps;
+
     public function __construct()
     {
         $this->subcategory = new ArrayCollection();
+        $this->mapeaMaps = new ArrayCollection();
     }
 
     public function getId()
@@ -116,6 +122,34 @@ class MapeaConfiguredPlugin
     {
         if ($this->subcategory->contains($subcategory)) {
             $this->subcategory->removeElement($subcategory);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|MapeaMap[]
+     */
+    public function getMapeaMaps(): Collection
+    {
+        return $this->mapeaMaps;
+    }
+
+    public function addMapeaMap(MapeaMap $mapeaMap): self
+    {
+        if (!$this->mapeaMaps->contains($mapeaMap)) {
+            $this->mapeaMaps[] = $mapeaMap;
+            $mapeaMap->addMapeaPlugin($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMapeaMap(MapeaMap $mapeaMap): self
+    {
+        if ($this->mapeaMaps->contains($mapeaMap)) {
+            $this->mapeaMaps->removeElement($mapeaMap);
+            $mapeaMap->removeMapeaPlugin($this);
         }
 
         return $this;

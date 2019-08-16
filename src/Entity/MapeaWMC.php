@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use App\Kernel;
 use Symfony\Component\Serializer\Annotation\Groups;
@@ -89,6 +91,17 @@ class MapeaWMC extends Kernel
      * @WMCAssert\ValidWMCFile(message="Get creative and think of a title!")
      */
     private $file;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\MapeaMap", mappedBy="mapeaWMC")
+     */
+    private $mapeaMaps;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->mapeaMaps = new ArrayCollection();
+    }
 
     /**
      * @param UploadedFile $file
@@ -240,6 +253,34 @@ class MapeaWMC extends Kernel
     public function __toString()
     {
         return $this->getOriginalFileName();
+    }
+
+    /**
+     * @return Collection|MapeaMap[]
+     */
+    public function getMapeaMaps(): Collection
+    {
+        return $this->mapeaMaps;
+    }
+
+    public function addMapeaMap(MapeaMap $mapeaMap): self
+    {
+        if (!$this->mapeaMaps->contains($mapeaMap)) {
+            $this->mapeaMaps[] = $mapeaMap;
+            $mapeaMap->addMapeaWMC($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMapeaMap(MapeaMap $mapeaMap): self
+    {
+        if ($this->mapeaMaps->contains($mapeaMap)) {
+            $this->mapeaMaps->removeElement($mapeaMap);
+            $mapeaMap->removeMapeaWMC($this);
+        }
+
+        return $this;
     }
 
 }

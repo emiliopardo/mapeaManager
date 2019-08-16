@@ -51,7 +51,7 @@ final class MapeaControlConfigAdmin extends AbstractAdmin
     protected function configureShowFields(ShowMapper $showMapper): void
     {
         $showMapper
-            //->add('id')
+            ->add('id')
             ->add('description')
             ->add('configuration')
             ->add('mapeaControl', 'text')
