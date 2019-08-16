@@ -67,6 +67,12 @@ class MapeaMap
      */
     private $subcategory;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\MapeaCore", inversedBy="mapeaMaps")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $mapeaCore;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -176,6 +182,18 @@ class MapeaMap
     public function setSubcategory(?MapSubCategory $subcategory): self
     {
         $this->subcategory = $subcategory;
+
+        return $this;
+    }
+
+    public function getMapeaCore(): ?MapeaCore
+    {
+        return $this->mapeaCore;
+    }
+
+    public function setMapeaCore(?MapeaCore $mapeaCore): self
+    {
+        $this->mapeaCore = $mapeaCore;
 
         return $this;
     }

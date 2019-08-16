@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 
@@ -44,6 +46,16 @@ class MapeaCore
      * @ORM\Column(type="text")
      */
     private $description;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\MapeaMap", mappedBy="mapeaCore")
+     */
+    private $mapeaMaps;
+
+    public function __construct()
+    {
+        $this->mapeaMaps = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -111,6 +123,37 @@ class MapeaCore
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|MapeaMap[]
+     */
+    public function getMapeaMaps(): Collection
+    {
+        return $this->mapeaMaps;
+    }
+
+    public function addMapeaMap(MapeaMap $mapeaMap): self
+    {
+        if (!$this->mapeaMaps->contains($mapeaMap)) {
+            $this->mapeaMaps[] = $mapeaMap;
+            $mapeaMap->setMapeaCore($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMapeaMap(MapeaMap $mapeaMap): self
+    {
+        if ($this->mapeaMaps->contains($mapeaMap)) {
+            $this->mapeaMaps->removeElement($mapeaMap);
+            // set the owning side to null (unless already changed)
+            if ($mapeaMap->getMapeaCore() === $this) {
+                $mapeaMap->setMapeaCore(null);
+            }
+        }
 
         return $this;
     }
