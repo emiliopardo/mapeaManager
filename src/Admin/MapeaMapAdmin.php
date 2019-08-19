@@ -10,6 +10,18 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 
+
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+
+use App\Entity\MapSubCategory;
+use App\Entity\MapCategory;
+use App\Entity\MapeaConfiguredControl;
+use App\Entity\MapeaConfiguredPlugin;
+use App\Entity\MapeaCore;
+use App\Entity\MapeaLayerWMS;
+use App\Entity\MapeaWMC;
+use App\Entity\User;
+
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 final class MapeaMapAdmin extends AbstractAdmin
@@ -35,7 +47,7 @@ final class MapeaMapAdmin extends AbstractAdmin
             //->add('id')
             ->add('name')
             ->add('description')
-            ->add('owner')
+            ->add('owner','text')
             //->add('zoom')
             //->add('bbox')
             //->add('maxExtent')
@@ -43,9 +55,9 @@ final class MapeaMapAdmin extends AbstractAdmin
             //->add('center')
             //->add('label')
             //->add('resolutions')
-            ->add('mapeaCore')
-            ->add('category')
-            ->add('subcategory')
+            ->add('mapeaCore','text')
+            ->add('category', 'text', array('admin_code' => 'admin.map_sub_category'))
+            ->add('subcategory', 'text', array('admin_code' => 'admin.map_sub_category'))
             ->add('_action', null, [
                 'actions' => [
                     'show' => [],
@@ -62,11 +74,35 @@ final class MapeaMapAdmin extends AbstractAdmin
             //->add('zoom')
             ->tab('General')
                 ->with('Owner', array('class'=>'col-md-6'))
-                    ->add('owner')
+                    ->add('owner', EntityType::class,  [
+                        'class' => User::class,
+                        'choice_label' => function ($user) {
+                            return $user->__toString();
+                        },
+                        'placeholder' => 'Select Owner',
+                    ])
                 ->end()
                 ->with('Category', array('class'=>'col-md-6'))
-                    ->add('category')
-                    ->add('subcategory')
+                    //->add('category')
+                    //->add('subcategory', 'text', array('admin_code' => 'admin.map_sub_category'))
+
+                    ->add('category', EntityType::class,  [
+                        'class' => MapCategory::class,
+                        'choice_label' => function ($mapCategory) {
+                            return $mapCategory->__toString();
+                        },
+                        'placeholder' => 'Select Category',
+                    ])
+
+                    ->add('subcategory', EntityType::class,  [
+                        'class' => MapSubCategory::class,
+                        'choice_label' => function ($mapSubCategory) {
+                            return $mapSubCategory->getname();
+                        },
+                        'placeholder' => 'Select Subcategory',
+                        ],array('admin_code' => 'admin.map_sub_category')
+                    )
+
                 ->end()          
                 ->with('Description')
                     ->add('name')
@@ -75,11 +111,18 @@ final class MapeaMapAdmin extends AbstractAdmin
             ->end()
             ->tab('Options')
                 ->with('Core')
-                    ->add('mapeaCore')
+                    //->add('mapeaCore')
+                    ->add('mapeaCore', EntityType::class,  [
+                        'class' => Mapeacore::class,
+                        'choice_label' => function ($mapeaCore) {
+                            return $mapeaCore->__toString();
+                        },
+                        'placeholder' => 'Select Mapea Version',
+                    ])
                 ->end()  
                 ->with('Options')
                     ->add('zoom', ChoiceType::class, [
-                        'placeholder' => 'Choose an option',
+                        'placeholder' => 'Choose zoom level',
                         'required' => false,
                         'multiple' => false,
                         'choices' => [
@@ -103,7 +146,7 @@ final class MapeaMapAdmin extends AbstractAdmin
                     ])
                     ->add('bbox')
                     ->add('maxExtent')
-                    ->add('projection')
+                    ->add('projection', null, ['data' => 'EPSG:25830*m' ])
                     ->add('center')
                     ->add('label')
                     ->add('resolutions')
@@ -111,20 +154,36 @@ final class MapeaMapAdmin extends AbstractAdmin
             ->end()
             ->tab('Controls')
                 ->with('Controls')
-                    ->add('mapeaControls')
+                    ->add('mapeaControls', EntityType::class, [
+                        'class' => MapeaConfiguredControl::class,
+                        'multiple' => true,
+                        'expanded' => true,
+                    ])
                 ->end()
             ->end()
             ->tab('Plugins')
                 ->with('Plugins')
-                    ->add('mapeaPlugins')
+                    ->add('mapeaPlugins', EntityType::class, [
+                        'class' => MapeaConfiguredPlugin::class,
+                        'multiple' => true,
+                        'expanded' => true,
+                    ])
                 ->end()
             ->end()
             ->tab('layers')
                 ->with('Layers WMS')
-                    ->add('mapeaLayerWMS')
+                    ->add('mapeaLayerWMS', EntityType::class, [
+                        'class' => MapeaLayerWMS::class,
+                        'multiple' => true,
+                        'expanded' => true,
+                    ])
                 ->end()
                 ->with('Web Map Context')
-                    ->add('mapeaWMC')
+                    ->add('mapeaWMC', EntityType::class, [
+                        'class' => MapeaWMC::class,
+                        'multiple' => true,
+                        'expanded' => true,
+                    ])
                 ->end()
             ->end()
             ;
@@ -136,7 +195,7 @@ final class MapeaMapAdmin extends AbstractAdmin
             ->add('id')
             ->add('name')
             ->add('description')
-            ->add('owner')
+            ->add('owner','text')
             ->add('zoom')
             ->add('bbox')
             ->add('maxExtent')
@@ -144,9 +203,9 @@ final class MapeaMapAdmin extends AbstractAdmin
             ->add('center')
             ->add('label')
             ->add('resolutions')
-            ->add('mapeaCore')
-            ->add('category')
-            ->add('subcategory')
+            ->add('mapeaCore','text')
+            ->add('category','text')
+            ->add('subcategory', 'text', array('admin_code' => 'admin.map_sub_category'))
             ->add('mapeaControls')
             ->add('mapeaPlugins')
             ;
@@ -163,5 +222,17 @@ final class MapeaMapAdmin extends AbstractAdmin
     {
         $user = $this->getConfigurationPool()->getContainer()->get('security.token_storage')->getToken()->getUser();
         $object->setOwner($user);
+    }
+
+    public function getTemplate($name)
+    {
+        switch ($name) {
+            case 'edit':
+                return 'Admin/mapSubCategory.admin.html.twig';
+                break;
+            default:
+                return parent::getTemplate($name);
+                break;
+        }
     }
 }
