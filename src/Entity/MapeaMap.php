@@ -38,7 +38,7 @@ class MapeaMap
     private $maxExtent;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255, options={"default":"EPSG:25830*m"})
      */
     private $projection;
 
