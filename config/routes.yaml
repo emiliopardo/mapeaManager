@@ -12,5 +12,10 @@ mapea-plugin-config-by-IdPlugin:
     controller: App\Controller\MapeaPluginConfigByIdAdminController::getMapeaPluginConfigAction
     options:
         expose: true        
+map-subcategory-by-IdCategory:
+    path: subcategory-by-idcategory
+    controller: App\Controller\MapeaSubCategoryConfigByIdCategoryAdminController::getMapSubCategoryAction
+    options:
+        expose: true
 
 

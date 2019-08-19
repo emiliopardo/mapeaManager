@@ -90,6 +90,13 @@ services:
             - { name: sonata.admin, manager_type: orm, group: admin, label: MapeaPluginConfig }
         public: true
 
+    admin.map_subcategory_by_category:
+        class: App\Admin\MapeaSubCategoryConfigByIdCategoryAdmin
+        arguments: [~, App\Entity\MapSubCategory, App\Controller\MapeaSubCategoryConfigByIdCategoryAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: Sub Category }
+        public: true
+
     admin.mapea_control_config:
         class: App\Admin\MapeaControlConfigAdmin
         arguments: [~, App\Entity\MapeaControlConfig, App\Controller\MapeaControlConfigAdminController]
