@@ -14,6 +14,9 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 use App\Entity\MapeaControl;
 use App\Entity\MapeaControlConfig;
+use App\Entity\MapSubCategory;
+
+use Sonata\Form\Type\CollectionType;
 
 final class MapeaConfiguredControlAdmin extends AbstractAdmin
 {
@@ -31,9 +34,9 @@ final class MapeaConfiguredControlAdmin extends AbstractAdmin
         $listMapper
             //->add('id')
             ->add('name')
-            ->add('control','text')
+            ->add('control', 'text')
             ->add('controlConfig', 'text', array('admin_code' => 'admin.mapea_control_config'))
-            ->add('subcategory')
+            //->add('subcategory', array('admin_code' => 'admin.map_sub_category'))
             ->add('_action', null, [
                 'actions' => [
                     'show' => [],
@@ -65,7 +68,6 @@ final class MapeaConfiguredControlAdmin extends AbstractAdmin
                 'placeholder' => 'Select Mapea Control Configuration',
             ],array('admin_code' => 'admin.mapea_control_config')
             )
-            ->add('subcategory')
             ;
     }
 
@@ -74,9 +76,9 @@ final class MapeaConfiguredControlAdmin extends AbstractAdmin
         $showMapper
             //->add('id')
             ->add('name')
-            ->add('control','text')
-            ->add('controlConfig', 'text',array('admin_code' => 'admin.mapea_control_config'))
-            ->add('subcategory')
+            ->add('control', 'text')
+            ->add('controlConfig', 'text', array('admin_code' => 'admin.mapea_control_config'))
+            ->add('subcategory', null, array('admin_code' => 'admin.map_sub_category'))
             ;
     }
 

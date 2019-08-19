@@ -14,6 +14,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 use App\Entity\MapeaPlugin;
 use App\Entity\MapeaPluginConfig;
+use App\Entity\MapSubCategory;
 
 final class MapeaConfiguredPluginAdmin extends AbstractAdmin
 {
@@ -31,9 +32,9 @@ final class MapeaConfiguredPluginAdmin extends AbstractAdmin
         $listMapper
             //->add('id')
             ->add('name')
-            ->add('plugin','text')
-            ->add('pluginConfig','text', array('admin_code' => 'admin.mapea_plugin_config'))
-            ->add('subcategory')
+            ->add('plugin', 'text')
+            ->add('pluginConfig', 'text', array('admin_code' => 'admin.mapea_plugin_config'))
+            ///->add('subcategory', array('admin_code' => 'admin.map_sub_category'))
             ->add('_action', null, [
                 'actions' => [
                     'show' => [],
@@ -64,7 +65,6 @@ final class MapeaConfiguredPluginAdmin extends AbstractAdmin
                 },
                 'placeholder' => 'Select Mapea Plugin Configuration',
             ],array('admin_code' => 'admin.mapea_plugin_config'))
-            ->add('subcategory')
             ;
     }
 
@@ -73,9 +73,9 @@ final class MapeaConfiguredPluginAdmin extends AbstractAdmin
         $showMapper
             //->add('id')
             ->add('name')
-            ->add('plugin','text')
-            ->add('pluginConfig','text', array('admin_code' => 'admin.mapea_plugin_config'))
-            ->add('subcategory')
+            ->add('plugin', 'text')
+            ->add('pluginConfig', 'text', array('admin_code' => 'admin.mapea_plugin_config'))
+            ->add('subcategory', null, array('admin_code' => 'admin.map_sub_category'))
             ;
     }
 
