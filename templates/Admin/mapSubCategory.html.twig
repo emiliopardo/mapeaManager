@@ -1,0 +1,15 @@
+
+{% if mapSubCategory is empty %}
+    <option value="empty" selected="selected">This control hasn't config paramaters</option>
+{% else %}
+    {% for configuration in mapSubCategory %}    
+        {% if loop.first %}
+            <option value="{{ configuration.id }}" selected="selected">{{ configuration.name }}</option>
+        {% else %}
+            <option value="{{ configuration.id }}">{{ configuration.name }}</option>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+
+

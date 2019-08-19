@@ -1,0 +1,32 @@
+{% extends 'SonataAdminBundle:CRUD:edit.html.twig' %}
+{% block form %}
+    {{ parent() }}
+<script src="{{ asset('bundles/fosjsrouting/js/router.min.js') }}"></script>
+<script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
+<script type="text/javascript">
+    $(document).ready(function () {    
+         $('#{{ admin.uniqid }}_category').change(function () {
+            $.ajax({
+                url: Routing.generate('map-subcategory-by-IdCategory',{'_sonata_admin':'admin.map_subcategory_by_category' }),
+                data: {
+                    'id': $(this).val(),
+                    'uniquid': '{{ admin.uniqid }}'
+                },
+                method: 'POST',
+                success: function (html) {
+                    $('#{{ admin.uniqid }}_subcategory').empty().append(html);
+                    if($('#{{ admin.uniqid }}_subcategory').val()=="empty"){
+                        $('#{{ admin.uniqid }}_subcategory').prop("disabled", true);
+                    }else{
+                        $('#{{ admin.uniqid }}_subcategory').prop("disabled", false);
+                    }                 
+                },
+                error: function (data) {
+                    // more code
+                }
+            });
+        });
+    });
+
+</script>
+{% endblock %} 
