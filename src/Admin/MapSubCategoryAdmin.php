@@ -30,6 +30,8 @@ final class MapSubCategoryAdmin extends AbstractAdmin
             ->add('description')
             ->add('category', 'text')
             ->add('users', 'array')
+            ->add('mapeaConfiguredControls', 'array')
+            ->add('mapeaConfiguredPlugins', 'array')
             ->add('_action', null, [
                 'actions' => [
                     'show' => [],
@@ -46,6 +48,8 @@ final class MapSubCategoryAdmin extends AbstractAdmin
             ->add('name')
             ->add('category')
             ->add('users')
+            ->add('mapeaConfiguredControls')
+            ->add('mapeaConfiguredPlugins')
             ->add('description')
             ;
     }
@@ -57,6 +61,8 @@ final class MapSubCategoryAdmin extends AbstractAdmin
             ->add('name')
             ->add('category', 'text')
             ->add('users', 'array')
+            ->add('mapeaConfiguredControls', 'array')
+            ->add('mapeaConfiguredPlugins', 'array')            
             ->add('description')
             ;
     }
