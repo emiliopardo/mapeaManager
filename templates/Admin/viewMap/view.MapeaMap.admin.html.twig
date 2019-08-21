@@ -1,0 +1,91 @@
+{#
+{% extends '@SonataAdmin/standard_layout.html.twig' %}
+
+{% block sonata_admin_content %}
+    Your content here
+{% endblock %}
+#}
+{#}
+{% extends 'base.html.twig' %}
+{% block  body %} 
+<h1>HOLA</h1>
+{{(mapeaMap|raw)}};
+{% endblock %}
+#}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}{{mapeaMap.name}}{% endblock %}</title>
+        {% block stylesheets %}
+        <!-- Styles-->
+        <!-- Style Core Mapea -->
+        {{mapeaMap.mapeaCore.style|raw}} 
+        <!-- Style Plugins Mapea -->  
+            {% for mapeaPlugin in mapeaMap.mapeaPlugins %}
+                <link href="{{mapeaPlugin.plugin.style|raw}}" rel="stylesheet" /> 
+            {% endfor %}   
+        {% endblock %}
+
+        {% block javascripts %}
+        <!-- javascripts-->
+        <!-- scripts Core Mapea -->
+            {{mapeaMap.mapeaCore.javascript|raw}}
+            {{mapeaMap.mapeaCore.configuration|raw}}
+        <!-- scripts plugins Mapea -->
+            {% for mapeaPlugin in mapeaMap.mapeaPlugins %}
+                <script type="text/javascript" src="{{mapeaPlugin.plugin.javascript|raw}}"></script>
+            {% endfor %}
+        {% endblock %}
+        <style>
+            html,body,#map {
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        {% block body %} 
+            <div id="map"></div>
+        {% endblock %}
+        
+        {% block body_javascripts %}
+        <!-- script -->
+        <script>
+
+            mapajs = M.map({
+            container:"map"
+            });
+
+             //plugins configuration
+            {% for mapeaPlugin in mapeaMap.mapeaPlugins %}
+                {% if mapeaPlugin.pluginConfig.configuration == "default" %}  
+                //non parametrizable plugins
+                    {{mapeaPlugin.plugin.code~';'|raw}} 
+                {% else %}
+               //parametrizable plugins
+                    {{mapeaPlugin.plugin.code|replace({'()': '(' ~ mapeaPlugin.pluginConfig.configuration ~')'})|raw}};
+                {% endif %}
+            {% endfor %}
+            //controls configuration
+            {% for mapeaControl in mapeaMap.mapeaControls %}
+                {% if mapeaControl.controlConfig.configuration == "default" %}  
+                //non parametrizable control
+                    {{mapeaControl.control.code~';'|raw}}             
+                {% else %}
+                //parametrizable control
+                    {{mapeaControl.control.code|replace({'()': '(' ~ mapeaControl.controlConfig.configuration ~'));'})|raw}}
+                {% endif %}
+            {% endfor %}
+
+        {% endblock %}
+        </script>
+        <!-- End script>  -->
+    </body>
+</html>
+
+
+
