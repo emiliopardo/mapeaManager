@@ -77,7 +77,7 @@
                     {{mapeaControl.control.code~';'|raw}}             
                 {% else %}
                 //parametrizable control
-                    {{mapeaControl.control.code|replace({'()': '(' ~ mapeaControl.controlConfig.configuration ~'));'})|raw}}
+                    {{mapeaControl.control.code|replace({'()': '(' ~ mapeaControl.controlConfig.configuration ~')'})|raw}};
                 {% endif %}
             {% endfor %}
 
