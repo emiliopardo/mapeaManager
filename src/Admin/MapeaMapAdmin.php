@@ -12,6 +12,7 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 use App\Entity\MapSubCategory;
 use App\Entity\MapCategory;
@@ -22,7 +23,10 @@ use App\Entity\MapeaLayerWMS;
 use App\Entity\MapeaWMC;
 use App\Entity\User;
 
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+
+
+use Sonata\AdminBundle\Route\RouteCollection;
+
 
 final class MapeaMapAdmin extends AbstractAdmin
 {
@@ -60,6 +64,7 @@ final class MapeaMapAdmin extends AbstractAdmin
             ->add('subcategory', 'text', array('admin_code' => 'admin.map_sub_category'))
             ->add('_action', null, [
                 'actions' => [
+                    'view' => ['template' => 'Admin/list/list_action_view.html.twig',],
                     'show' => [],
                     'edit' => [],
                     'delete' => [],
@@ -234,5 +239,10 @@ final class MapeaMapAdmin extends AbstractAdmin
                 return parent::getTemplate($name);
                 break;
         }
+    }
+
+    protected function configureRoutes(RouteCollection $collection)
+    {
+        $collection ->add('view', $this->getRouterIdParameter().'/view');
     }
 }
