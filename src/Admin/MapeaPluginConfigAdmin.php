@@ -44,7 +44,7 @@ final class MapeaPluginConfigAdmin extends AbstractAdmin
             //->add('id')
             ->add('description')
             ->add('configuration')
-            ->add('mapeaPlugin', 'text')
+            ->add('mapeaPlugin')
             ;
     }
 

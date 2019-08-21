@@ -10,6 +10,10 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+
+use App\Entity\MapSubCategory;
+
 final class UserAdmin extends AbstractAdmin
 {
 
@@ -46,7 +50,7 @@ final class UserAdmin extends AbstractAdmin
             #->add('passwordRequestedAt')
             #->add('roles')
             ->add('groups','array')
-            ->add('subcategory')
+            ->add('subcategory', 'array', array('admin_code' => 'admin.map_sub_category'))
             //->add('id')
             ->add('_action', null, [
                 'actions' => [
@@ -72,7 +76,14 @@ final class UserAdmin extends AbstractAdmin
             #->add('passwordRequestedAt')
             #->add('roles')
             ->add('groups')
-            ->add('subcategory')
+            ->add('subcategory', EntityType::class,  [
+                'class' => MapSubCategory::class,
+                'choice_label' => function ($mapSubCategory) {
+                    return $mapSubCategory->getName();
+                },
+                'placeholder' => 'Select Sub Category',
+            ],array('admin_code' => 'admin.map_sub_category')
+            )
             //->add('id')
             ;
     }
