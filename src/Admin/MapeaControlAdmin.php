@@ -23,7 +23,7 @@ final class MapeaControlAdmin extends AbstractAdmin
             ->add('name')
             ->add('description')
             ->add('configurable')            
-            ->add('code')
+            ->add('mapeaCore')
             ;
     }
 
@@ -35,7 +35,7 @@ final class MapeaControlAdmin extends AbstractAdmin
             ->add('description')
             ->add('configurable')            
             //->add('code')
-            ->add('mapeaCore','text')
+            ->add('mapeaCore')
             ->add('_action', null, [
                 'actions' => [
                     'show' => [],
@@ -81,10 +81,12 @@ final class MapeaControlAdmin extends AbstractAdmin
             ;
     }
 
+    /*
     public function postPersist($MapeaControl)
     {
-        echo $this->MapeaControl->getId();
+        $this->MapeaControl->getId();
     }
+    */
 
     public function postUpdated($MapeaControl)
     {
