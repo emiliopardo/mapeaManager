@@ -81,6 +81,31 @@
                 {% endif %}
             {% endfor %}
 
+            //maps options 
+            {% if mapeaMap.zoom is not null and mapeaMap.zoom is not empty %}
+                mapajs.setZoom({{mapeaMap.zoom}});
+            {% endif %}
+            {% if mapeaMap.bbox is not null and mapeaMap.bbox is not empty %}
+                mapajs.setBbox({{mapeaMap.bbox}});
+            {% endif %}
+            {% if mapeaMap.maxExtent is not null and mapeaMap.maxExtent is not empty %}
+                mapajs.setMaxExtent ({{mapeaMap.maxExtent}});
+            {% endif %}
+            {% if mapeaMap.projection is not null and mapeaMap.projection is not empty %}
+                mapajs.setProjection ("{{mapeaMap.projection}}");
+            {% endif %}            
+            {% if mapeaMap.center is not null and mapeaMap.center is not empty %}
+                mapajs.setCenter({x:211000, y:4040000, draw: false});
+            {% endif %}
+            {% if mapeaMap.label is not null and mapeaMap.label is not empty %}
+                mapajs.addLabel("{{mapeaMap.label|raw}}"); 
+            {% endif %}
+            {% if mapeaMap.resolutions is not null and mapeaMap.resolutions is not empty %}
+                mapajs.setResolutions({{mapeaMap.resolutions}}); 
+            {% endif %}
+
+
+
         {% endblock %}
         </script>
         <!-- End script>  -->
