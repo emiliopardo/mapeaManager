@@ -5,14 +5,6 @@
     Your content here
 {% endblock %}
 #}
-{#}
-{% extends 'base.html.twig' %}
-{% block  body %} 
-<h1>HOLA</h1>
-{{(mapeaMap|raw)}};
-{% endblock %}
-#}
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,7 +13,7 @@
         {% block stylesheets %}
         <!-- Styles-->
         <!-- Style Core Mapea -->
-        {{mapeaMap.mapeaCore.style|raw}} 
+        <link href="{{mapeaMap.mapeaCore.style|raw}}" rel="stylesheet" /> 
         <!-- Style Plugins Mapea -->  
             {% for mapeaPlugin in mapeaMap.mapeaPlugins %}
                 <link href="{{mapeaPlugin.plugin.style|raw}}" rel="stylesheet" /> 
@@ -31,8 +23,8 @@
         {% block javascripts %}
         <!-- javascripts-->
         <!-- scripts Core Mapea -->
-            {{mapeaMap.mapeaCore.javascript|raw}}
-            {{mapeaMap.mapeaCore.configuration|raw}}
+            <script type="text/javascript" src="{{mapeaMap.mapeaCore.javascript|raw}}"></script>
+            <script type="text/javascript" src="{{mapeaMap.mapeaCore.configuration|raw}}"></script>
         <!-- scripts plugins Mapea -->
             {% for mapeaPlugin in mapeaMap.mapeaPlugins %}
                 <script type="text/javascript" src="{{mapeaPlugin.plugin.javascript|raw}}"></script>
@@ -95,7 +87,7 @@
                 mapajs.setProjection ("{{mapeaMap.projection}}");
             {% endif %}            
             {% if mapeaMap.center is not null and mapeaMap.center is not empty %}
-                mapajs.setCenter({x:211000, y:4040000, draw: false});
+                mapajs.setCenter({{mapeaMap.center}});
             {% endif %}
             {% if mapeaMap.label is not null and mapeaMap.label is not empty %}
                 mapajs.addLabel("{{mapeaMap.label|raw}}"); 
@@ -103,8 +95,6 @@
             {% if mapeaMap.resolutions is not null and mapeaMap.resolutions is not empty %}
                 mapajs.setResolutions({{mapeaMap.resolutions}}); 
             {% endif %}
-
-
 
         {% endblock %}
         </script>
