@@ -49,7 +49,15 @@
         <script>
 
             mapajs = M.map({
-            container:"map"
+            container:"map",
+            {% if mapeaMap.mapeaWMC is not null and mapeaMap.mapeaWMC is not empty %}
+                wmcfiles: [
+                {% for mapeaWMC in mapeaMap.mapeaWMC %}
+                
+               '{{ app.request.getSchemeAndHttpHost()}}{{ asset('uploads/wmc/')}}{{mapeaWMC.urlPath}}*{{mapeaWMC.title}}',
+                {% endfor %}
+                ]
+            {% endif %}
             });
 
              //plugins configuration
@@ -94,6 +102,23 @@
             {% endif %}
             {% if mapeaMap.resolutions is not null and mapeaMap.resolutions is not empty %}
                 mapajs.setResolutions({{mapeaMap.resolutions}}); 
+            {% endif %}
+            {% if mapeaMap.mapeaLayerWMS is not null and mapeaMap.mapeaLayerWMS is not empty %}
+                {% for mapeaLayerWMS in mapeaMap.mapeaLayerWMS %}
+                    var {{mapeaLayerWMS.layerName}} = new M.layer.WMS({
+                        url: '{{mapeaLayerWMS.layerWMSUrl}}',
+                        name: '{{mapeaLayerWMS.layerName}}',
+                        legend: '{{mapeaLayerWMS.layerTitle}}',
+                        transparent: true,
+                        tiled: true
+                    },{
+                        params: {
+                            style:"{{mapeaLayerWMS.layerStyle}}",
+                            layers: "{{mapeaLayerWMS.layerName}}"
+                        }
+                    });
+                mapajs.addWMS([ {{mapeaLayerWMS.layerName}}])
+                {% endfor %} 
             {% endif %}
 
         {% endblock %}
