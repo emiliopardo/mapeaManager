@@ -65,6 +65,15 @@ final class MapeaPluginAdmin extends AbstractAdmin
                     return $mapeaCore->__toString();
                 }
             ])
+            ->setHelps([
+                'name' => 'Write control name.',
+                'description' => 'Write a brief description.',
+                'configurable' => 'Is this control configurable?.',
+                'javascript' => 'Write the url of the javascript mapea file (absolute url).',
+                'style' => 'Write the url of the css mapea file (absolute url).',
+                'code' => 'Write javascript code to load this plugin. (mapajs.addPlugin(new M.plugin.XXXX()))',
+                'mapeaCore' => 'Choice mapea version.',
+            ])
             ;
     }
 

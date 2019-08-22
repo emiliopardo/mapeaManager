@@ -20,6 +20,7 @@ final class UserAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper): void
     {
         $datagridMapper
+            //->add('id')
             ->add('username')
             ->add('usernameCanonical')
             ->add('email')
@@ -31,13 +32,13 @@ final class UserAdmin extends AbstractAdmin
             ->add('confirmationToken')
             ->add('passwordRequestedAt')
             ->add('roles')
-            //->add('id')
             ;
     }
 
     protected function configureListFields(ListMapper $listMapper): void
     {
         $listMapper
+            //->add('id')
             ->add('username')
             #->add('usernameCanonical')
             ->add('email')
@@ -51,7 +52,6 @@ final class UserAdmin extends AbstractAdmin
             #->add('roles')
             ->add('groups','array')
             ->add('subcategory', 'array', array('admin_code' => 'admin.map_sub_category'))
-            //->add('id')
             ->add('_action', null, [
                 'actions' => [
                     'show' => [],
@@ -64,6 +64,7 @@ final class UserAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper): void
     {
         $formMapper
+            //->add('id')
             ->add('username')
             #->add('usernameCanonical')
             ->add('email')
@@ -83,14 +84,22 @@ final class UserAdmin extends AbstractAdmin
                 },
                 'placeholder' => 'Select Sub Category',
             ],array('admin_code' => 'admin.map_sub_category')
-            )
-            //->add('id')
+            )        
+            ->setHelps([
+                'username' => 'Write username.',
+                'email' => 'Write valid email.',
+                'enabled' => 'Is the user enabled?.',
+                'password' => 'Write password.',
+                'groups' => 'Select group for user .',
+                'subcategory' => 'Select categories for user.',
+            ])
             ;
     }
 
     protected function configureShowFields(ShowMapper $showMapper): void
     {
         $showMapper
+            //->add('id')
             ->add('username')
             ->add('usernameCanonical')
             ->add('email')
@@ -102,7 +111,7 @@ final class UserAdmin extends AbstractAdmin
             ->add('confirmationToken')
             ->add('passwordRequestedAt')
             ->add('roles')
-            //->add('id')
+            
             ;
     }
 }

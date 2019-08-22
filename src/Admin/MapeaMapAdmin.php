@@ -76,8 +76,7 @@ final class MapeaMapAdmin extends AbstractAdmin
     {
         $formMapper
             //->add('id')
-            //->add('zoom')
-            ->tab('General')
+            ->tab('General', ['description' => 'This section contains general settings for maps'])
                 ->with('Owner', array('class'=>'col-md-6'))
                     ->add('owner', EntityType::class,  [
                         'class' => User::class,
@@ -88,9 +87,6 @@ final class MapeaMapAdmin extends AbstractAdmin
                     ])
                 ->end()
                 ->with('Category', array('class'=>'col-md-6'))
-                    //->add('category')
-                    //->add('subcategory', 'text', array('admin_code' => 'admin.map_sub_category'))
-
                     ->add('category', EntityType::class,  [
                         'class' => MapCategory::class,
                         'choice_label' => function ($mapCategory) {
@@ -107,16 +103,14 @@ final class MapeaMapAdmin extends AbstractAdmin
                         'placeholder' => 'Select Subcategory',
                         ],array('admin_code' => 'admin.map_sub_category')
                     )
-
                 ->end()          
                 ->with('Description')
                     ->add('name')
                     ->add('description')
                 ->end()
             ->end()
-            ->tab('Options')
+            ->tab('Options', ['description' => 'This section contains configurations options for maps'])
                 ->with('Core')
-                    //->add('mapeaCore')
                     ->add('mapeaCore', EntityType::class,  [
                         'class' => Mapeacore::class,
                         'choice_label' => function ($mapeaCore) {
@@ -157,7 +151,7 @@ final class MapeaMapAdmin extends AbstractAdmin
                     ->add('resolutions')
                 ->end()
             ->end()
-            ->tab('Controls')
+            ->tab('Controls', ['description' => 'This section contains controls for configure maps'])
                 ->with('Controls')
                     ->add('mapeaControls', EntityType::class, [
                         'class' => MapeaConfiguredControl::class,
@@ -166,7 +160,7 @@ final class MapeaMapAdmin extends AbstractAdmin
                     ])
                 ->end()
             ->end()
-            ->tab('Plugins')
+            ->tab('Plugins', ['description' => 'This section contains plugins for configure maps'])
                 ->with('Plugins')
                     ->add('mapeaPlugins', EntityType::class, [
                         'class' => MapeaConfiguredPlugin::class,
@@ -175,7 +169,7 @@ final class MapeaMapAdmin extends AbstractAdmin
                     ])
                 ->end()
             ->end()
-            ->tab('layers')
+            ->tab('layers', ['description' => 'This section contains layers and WMC the can be used for configure maps'])
                 ->with('Layers WMS')
                     ->add('mapeaLayerWMS', EntityType::class, [
                         'class' => MapeaLayerWMS::class,
@@ -191,6 +185,26 @@ final class MapeaMapAdmin extends AbstractAdmin
                     ])
                 ->end()
             ->end()
+
+            ->setHelps([
+                'owner' => 'Select Owner for this map.',
+                'category' => 'Select category for this map.',
+                'subcategory' => 'Select subcategory for this map.',
+                'name' => 'Write a descriptive name.',
+                'description' => 'Write a brief description.',
+                'mapeaCore' => 'Select mapea core version.',
+                'zoom' => 'Select Zoom level.',
+                'bbox' => 'Define a bbox for this maps. Example [323020,4126873,374759,4152013]',
+                'maxExtent' => 'Define max extent for this map. Example [323020,4126873,374759,4152013]',
+                'projection' => 'define projection. Default value is  EPSG:25830*m.',
+                'center' => 'Define x,y center for this map. Example {x:211000,y:4040000,draw: true}',
+                'label' => 'Write text for label. This label will be shown by default in map center, and can have html tags',
+                'resolutions' => 'Define customs resolutions. Example [490.4640841686878, 296.4735539465016, 179.21101876124024]',
+                'mapeaControls' => 'Select controls for this map',
+                'mapeaPlugins' => 'Select plugins for this map.',
+                'mapeaLayerWMS' => 'Select WMS layers for this map.',
+                'mapeaWMC' => 'Select WMC files for this map.',
+            ])
             ;
     }
 

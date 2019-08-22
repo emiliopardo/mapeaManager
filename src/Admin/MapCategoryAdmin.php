@@ -43,6 +43,10 @@ final class MapCategoryAdmin extends AbstractAdmin
             //->add('id')
             ->add('name')
             ->add('description')
+            ->setHelps([
+                'name' => 'Write a descriptive name.',
+                'description' => 'Write a brief description.',
+            ])
             ;
     }
 

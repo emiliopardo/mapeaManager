@@ -55,6 +55,14 @@ final class MapeaLayerWMSAdmin extends AbstractAdmin
             ->add('LayerDescription')
             ->add('layerStyle')
             ->add('layerLegend')
+            ->setHelps([
+                'layerWMSUrl' => 'Write WMS service url.',
+                'layerName' => 'Write Layer name, the same of the capabilities name.',
+                'layerTitle' => 'Write Layer title.',
+                'LayerDescription' => 'Write a brief description.',
+                'layerStyle' => 'Select style representation.If this field is not filled in, the default value will be used.',
+                'layerLegend' => 'Select leyend image. If this field is not filled in, the default value will be used.',
+            ])
             ;
     }
 

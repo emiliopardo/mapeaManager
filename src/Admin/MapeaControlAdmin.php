@@ -59,6 +59,13 @@ final class MapeaControlAdmin extends AbstractAdmin
                     return $mapeaCore->__toString();
                 }
             ])
+            ->setHelps([
+                'name' => 'Write control name.',
+                'description' => 'Write a brief description.',
+                'configurable' => 'Is this control configurable?.',
+                'code' => 'Write javascript code to load this control. (mapajs.addControls(new M.control.XXXXX)',
+                'mapeaCore' => 'Choice mapea version.',
+            ])
             ;
     }
 

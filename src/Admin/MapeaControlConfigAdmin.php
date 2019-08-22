@@ -45,6 +45,11 @@ final class MapeaControlConfigAdmin extends AbstractAdmin
             ->add('description')
             ->add('configuration')
             ->add('mapeaControl')
+            ->setHelps([
+                'description' => 'Write a brief description.',
+                'configuration' => 'Write configuration parameters.',
+                'mapeaControl' => 'Choice mapea control.',
+            ])
             ;
     }
 

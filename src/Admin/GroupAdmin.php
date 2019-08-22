@@ -47,7 +47,10 @@ final class GroupAdmin extends AbstractAdmin
                 'allow_add' => true,
                 'allow_delete' => true,
             ))
-
+            ->setHelps([
+                'name' => 'Write name.',
+                'roles' => 'Select roles for this group.',
+            ])
             ;
     }
 

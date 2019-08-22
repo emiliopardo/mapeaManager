@@ -51,6 +51,14 @@ final class MapSubCategoryAdmin extends AbstractAdmin
             ->add('mapeaConfiguredControls')
             ->add('mapeaConfiguredPlugins')
             ->add('description')
+            ->setHelps([
+                'name' => 'Write a descriptive name.',
+                'category' => 'Select parent category.',
+                'users' => 'Assign users to this subcategory.',
+                'mapeaConfiguredControls' => 'Assign configured controls to this subcategory.',
+                'mapeaConfiguredPlugins' => 'Assign configured plugins to this subcategory.',
+                'description' => 'Write a brief description.',
+            ])
             ;
     }
 

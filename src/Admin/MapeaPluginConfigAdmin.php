@@ -45,6 +45,11 @@ final class MapeaPluginConfigAdmin extends AbstractAdmin
             ->add('description')
             ->add('configuration')
             ->add('mapeaPlugin')
+            ->setHelps([
+                'description' => 'Write a brief description.',
+                'configuration' => 'Write configuration parameters.',
+                'mapeaPlugin' => 'Choice mapea plugin.',
+            ])
             ;
     }
 

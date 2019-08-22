@@ -52,6 +52,13 @@ final class MapeaCoreAdmin extends AbstractAdmin
             ->add('configuration')
             ->add('javascript')
             ->add('style')
+            ->setHelps([
+                'version' => 'Write mapea version numbers (vx.x.x).',
+                'description' => 'Write a brief description.',
+                'configuration' => 'Write the url of the configuration mapea file (absolute url).',
+                'javascript' => 'Write the url of the javascript mapea file (absolute url).',
+                'style' => 'Write the url of the css mapea file (absolute url).',
+            ])
             ;
     }
 

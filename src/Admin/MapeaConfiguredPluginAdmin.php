@@ -49,8 +49,6 @@ final class MapeaConfiguredPluginAdmin extends AbstractAdmin
         $formMapper
             //->add('id')
             ->add('name')
-            //->add('plugin')
-            //->add('pluginConfig')
             ->add('plugin', EntityType::class,  [
                 'class' => MapeaPlugin::class,
                 'choice_label' => function ($mapeaPlugin) {
@@ -65,6 +63,11 @@ final class MapeaConfiguredPluginAdmin extends AbstractAdmin
                 },
                 'placeholder' => 'Select Mapea Plugin Configuration',
             ],array('admin_code' => 'admin.mapea_plugin_config'))
+            ->setHelps([
+                'name' => 'Write a descriptive name.',
+                'control' => 'Choice plugin.',
+                'controlConfig' => 'Choice plugin configuration.',
+            ])
             ;
     }
 

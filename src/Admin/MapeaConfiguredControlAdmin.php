@@ -51,8 +51,6 @@ final class MapeaConfiguredControlAdmin extends AbstractAdmin
         $formMapper
             //->add('id')
             ->add('name')
-            //->add('control')
-            //->add('controlConfig')
             ->add('control', EntityType::class,  [
                 'class' => MapeaControl::class,
                 'choice_label' => function ($mapeaControl) {
@@ -68,6 +66,11 @@ final class MapeaConfiguredControlAdmin extends AbstractAdmin
                 'placeholder' => 'Select Mapea Control Configuration',
             ],array('admin_code' => 'admin.mapea_control_config')
             )
+            ->setHelps([
+                'name' => 'Write a descriptive name.',
+                'control' => 'Choice control.',
+                'controlConfig' => 'Choice control configuration.',
+            ])
             ;
     }
 

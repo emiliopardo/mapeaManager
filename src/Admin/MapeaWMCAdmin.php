@@ -29,10 +29,6 @@ final class MapeaWMCAdmin extends AbstractAdmin
             ->add('title')
             ->add('description')
             ->add('updated')
-            //->add('systemFileName','string', ['template' => 'Admin/list/list_linkname.html.twig'])
-            //->add('originalFileName')
-            //->add('urlPath','string', ['template' => 'Admin/list/list_urlpath.html.twig'])
-            //->add('localPath')
             ->add('_action', null, [
                 'actions' => [
                     'show' => [],
@@ -46,15 +42,15 @@ final class MapeaWMCAdmin extends AbstractAdmin
     {
         $formMapper
             //->add('id')
-            //->add('systemFileName')
-            //->add('originalFileName')
             ->add('title')
             ->add('description')
-            //->add('updated')
-            //->add('urlPath')
-            //->add('localPath')
             ->add('file', FileType::class, [
                 'required' => false
+            ])
+            ->setHelps([
+                'tile' => 'Write a descriptive title.',
+                'description' => 'Write a brief description.',
+                'file' => 'Select WMC file to upload.',
             ])
             ;
     }
