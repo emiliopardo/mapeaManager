@@ -77,20 +77,20 @@ final class MapeaControlAdmin extends AbstractAdmin
             ->add('description')
             ->add('configurable')            
             ->add('code')
-            ->add('mapeaCore','text')
+            ->add('mapeaCore', 'text')
             ;
     }
 
-    /*
     public function postPersist($MapeaControl)
     {
-        $this->MapeaControl->getId();
+        if (isset($configurable)) {
+            $this-defaultControlConfig();
+        }
     }
-    */
 
     public function postUpdated($MapeaControl)
     {
-        if($configurable){
+        if ($configurable) {
             $this-defaultControlConfig();
             //$this-defaultConfiguredControl();
         }

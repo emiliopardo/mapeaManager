@@ -90,4 +90,33 @@ final class MapeaPluginAdmin extends AbstractAdmin
             ->add('mapeaCore', 'text')
             ;
     }
+
+    public function postPersist($MapeaPlugin)
+    {
+        if (isset($configurable)) {
+            $this-defaultPluginConfig();
+        }
+    }
+
+    public function postUpdated($MapeaPlugin)
+    {
+        if ($configurable) {
+            $this-defaultPluginConfig();
+            //$this-defaultConfiguredControl();
+        }
+        
+    }
+
+    protected function defaultPluginConfig()
+    {
+        $mapeaPluginConfig = new MapeaPluginConfig();
+        $mapeaPluginConfig->setDescription('este plugin no es parametrizable');
+        $mapeaPluginConfig->setConfiguration('default');
+        $mapeaPluginConfig->setMapeaPlugin($id);
+    }
+
+    protected function defaultConfiguredPlugin()
+    {
+        
+    }
 }
