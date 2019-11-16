@@ -13,6 +13,7 @@ use Sonata\AdminBundle\Show\ShowMapper;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 use App\Entity\MapSubCategory;
+use App\Entity\Group;
 
 final class UserAdmin extends AbstractAdmin
 {
@@ -22,16 +23,15 @@ final class UserAdmin extends AbstractAdmin
         $datagridMapper
             //->add('id')
             ->add('username')
-            ->add('usernameCanonical')
+            #->add('usernameCanonical')
             ->add('email')
-            ->add('emailCanonical')
+            #->add('emailCanonical')
             ->add('enabled')
-            ->add('salt')
-            ->add('password')
+            #->add('salt')
+            #->add('password')
             ->add('lastLogin')
-            ->add('confirmationToken')
+            #->add('confirmationToken')
             ->add('passwordRequestedAt')
-            ->add('roles')
             ;
     }
 
@@ -75,8 +75,14 @@ final class UserAdmin extends AbstractAdmin
             #->add('lastLogin')
             #->add('confirmationToken')
             #->add('passwordRequestedAt')
-            #->add('roles')
-            ->add('groups')
+            ->add('groups', EntityType::class,  [
+                'class' => Group::class,
+                'choice_label' => function ($group) {
+                    return $group->getName();
+                },
+                'placeholder' => 'Select group',
+            ])
+            /*
             ->add('subcategory', EntityType::class,  [
                 'class' => MapSubCategory::class,
                 'choice_label' => function ($mapSubCategory) {
@@ -84,14 +90,15 @@ final class UserAdmin extends AbstractAdmin
                 },
                 'placeholder' => 'Select Sub Category',
             ],array('admin_code' => 'admin.map_sub_category')
-            )        
+            )
+            */        
             ->setHelps([
                 'username' => 'Write username.',
                 'email' => 'Write valid email.',
                 'enabled' => 'Is the user enabled?.',
                 'password' => 'Write password.',
                 'groups' => 'Select group for user .',
-                'subcategory' => 'Select categories for user.',
+                //'subcategory' => 'Select categories for user.',
             ])
             ;
     }
@@ -101,17 +108,18 @@ final class UserAdmin extends AbstractAdmin
         $showMapper
             //->add('id')
             ->add('username')
-            ->add('usernameCanonical')
+            //->add('usernameCanonical')
             ->add('email')
-            ->add('emailCanonical')
+            //->add('emailCanonical')
             ->add('enabled')
-            ->add('salt')
-            ->add('password')
+            //->add('salt')
+            //->add('password')
             ->add('lastLogin')
-            ->add('confirmationToken')
-            ->add('passwordRequestedAt')
-            ->add('roles')
-            
+            //->add('confirmationToken')
+            //->add('passwordRequestedAt')
+            ->add('groups')
+            //->add('subcategory', null, array('admin_code' => 'admin.map_sub_category'))
+            ->add('subcategory', 'text', array('admin_code' => 'admin.map_sub_category'))
             ;
     }
 }
