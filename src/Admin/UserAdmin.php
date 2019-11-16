@@ -118,8 +118,7 @@ final class UserAdmin extends AbstractAdmin
             //->add('confirmationToken')
             //->add('passwordRequestedAt')
             ->add('groups')
-            //->add('subcategory', null, array('admin_code' => 'admin.map_sub_category'))
-            ->add('subcategory', 'text', array('admin_code' => 'admin.map_sub_category'))
-            ;
+            ->add('subcategory', null, array('admin_code' => 'admin.map_sub_category')
+            );
     }
 }
