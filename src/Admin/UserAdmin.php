@@ -10,6 +10,9 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 
+use Sonata\AdminBundle\Form\Type\ModelType;
+
+
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 use App\Entity\MapSubCategory;
@@ -75,30 +78,27 @@ final class UserAdmin extends AbstractAdmin
             #->add('lastLogin')
             #->add('confirmationToken')
             #->add('passwordRequestedAt')
-            ->add('groups', EntityType::class,  [
+            -> add('groups', ModelType::class,[
                 'class' => Group::class,
-                'choice_label' => function ($group) {
-                    return $group->getName();
-                },
-                'placeholder' => 'Select group',
+                'multiple' => true,
+                'btn_add' => false,
             ])
-            /*
-            ->add('subcategory', EntityType::class,  [
+
+            
+            ->add('subcategory', ModelType::class,  [
                 'class' => MapSubCategory::class,
-                'choice_label' => function ($mapSubCategory) {
-                    return $mapSubCategory->getName();
-                },
-                'placeholder' => 'Select Sub Category',
+                'multiple' => true,
+                'btn_add' => false,
             ],array('admin_code' => 'admin.map_sub_category')
             )
-            */        
+                  
             ->setHelps([
                 'username' => 'Write username.',
                 'email' => 'Write valid email.',
                 'enabled' => 'Is the user enabled?.',
                 'password' => 'Write password.',
                 'groups' => 'Select group for user .',
-                //'subcategory' => 'Select categories for user.',
+                'subcategory' => 'Select categories for user.',
             ])
             ;
     }

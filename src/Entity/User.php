@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\Group;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
@@ -49,6 +50,7 @@ class User extends BaseUser
         parent::__construct();
         $this->subcategory = new ArrayCollection();
         $this->mapeaMaps = new ArrayCollection();
+        $this->groups = new ArrayCollection();
     }
 
     public function setPassword($password)
