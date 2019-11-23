@@ -15,7 +15,7 @@ security:
                 login_path:     /admin
                 use_forward:    false
                 check_path:     /login_check
-                failure_path:   null
+                failure_path:   /failure
                 default_target_path: /admin/dashboard
             logout:       true
             anonymous:    true        
