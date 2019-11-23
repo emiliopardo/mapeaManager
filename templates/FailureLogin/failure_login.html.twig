@@ -1,0 +1,34 @@
+{% extends "base.html.twig" %}
+{% block body %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-12">            
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <!-- form card login -->
+                    <div class="card rounded-0">
+                        <div class="card-header">
+                            <h3 class="mb-2 text-center">Mapea Manager</h3>
+                            <img src="./build/static/sigCorporativo150x150.png" alt="Logo Sigcorporativo" title="Logo Sigcorporativo" class="rounded mx-auto d-block rounded">
+                        </div>
+                        <div class="card-body">
+                            <div class="alert alert-danger" role="alert">
+                                <p class="text-center font-weight-bold">
+                                    El usuario y/o la contraseña son incorrectos
+                                </p>
+                            </div>
+                        </div>
+                        <!--/card-block-->
+                    </div>
+                    <!-- /form card login -->
+                </div>
+            </div>
+            <!--/row-->
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+</div>
+<!--/container-->
+{% endblock %}
+
