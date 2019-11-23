@@ -17,5 +17,8 @@ map-subcategory-by-IdCategory:
     controller: App\Controller\MapeaSubCategoryConfigByIdCategoryAdminController::getMapSubCategoryAction
     options:
         expose: true
+failure-login:
+    path: failure
+    controller:  App\Controller\FailureLoginController::index
 
 
