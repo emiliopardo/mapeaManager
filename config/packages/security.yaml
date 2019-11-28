@@ -59,6 +59,8 @@ security:
             - ROLE_ADMIN_GROUP_LIST
             - ROLE_ADMIN_GROUP_VIEW
 
+            - ROLE_ADMIN_MAP_CATEGORY_ALL
+            - ROLE_ADMIN_MAP_SUB_CATEGORY_ALL
             
             - ROLE_ADMIN_MAPEA_MAP_ALL
             
@@ -71,6 +73,9 @@ security:
 
             - ROLE_ADMIN_MAPEA_CONFIGURED_PLUGIN_LIST
             - ROLE_ADMIN_MAPEA_CONFIGURED_PLUGIN_VIEW
+
+            - ROLE_ADMIN_MAP_CATEGORY_ALL
+            - ROLE_ADMIN_MAP_SUB_CATEGORY_ALL
 
             - ROLE_ADMIN_MAPEA_WMC_ALL
 
@@ -87,6 +92,12 @@ security:
 
             - ROLE_ADMIN_MAPEA_CONFIGURED_PLUGIN_LIST
             - ROLE_ADMIN_MAPEA_CONFIGURED_PLUGIN_VIEW
+
+            - ROLE_ADMIN_MAP_CATEGORY_LIST
+            - ROLE_ADMIN_MAP_CATEGORY_VIEW
+
+            - ROLE_ADMIN_MAP_SUB_CATEGORY_LIST
+            - ROLE_ADMIN_MAP_SUB_CATEGORY_VIEW
 
             - ROLE_ADMIN_MAPEA_WMC_LIST
             - ROLE_ADMIN_MAPEA_WMC_VIEW
