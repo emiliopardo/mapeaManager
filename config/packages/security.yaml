@@ -70,11 +70,9 @@ security:
             - ROLE_ADMIN_MAPEA_CONFIGURED_PLUGIN_LIST
             - ROLE_ADMIN_MAPEA_CONFIGURED_PLUGIN_VIEW
 
-            - ROLE_ADMIN_MAPEA_WMC_LIST
-            - ROLE_ADMIN_MAPEA_WMC_VIEW
+            - ROLE_ADMIN_MAPEA_WMC_ALL
 
-            - ROLE_ADMIN_MAPEA_LAYER_WMS_LIST            
-            - ROLE_ADMIN_MAPEA_LAYER_WMS_VIEW   
+            - ROLE_ADMIN_MAPEA_LAYER_WMS_ALL              
             
             - ROLE_ADMIN_MAPEA_MAP_ALL
             
