@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg height="1069" version="1.1" width="1591" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#ffffff" height="377" stroke="#ffffff" stroke-width="1" width="203" x="942" y="350"/>
+<rect fill="none" height="377" stroke="#000000" stroke-width="1" width="203" x="942" y="350"/>
+<text font-family="Dialog" font-size="12" x="988" y="363">
+Entity::MapeaMap</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="203" x="942" y="373"/>
+<text font-family="Dialog" font-size="12" x="946" y="387">
+id : \Ramsey\Uuid\UuidInterface</text>
+<text font-family="Dialog" font-size="12" x="946" y="403">
+zoom</text>
+<text font-family="Dialog" font-size="12" x="946" y="419">
+bbox</text>
+<text font-family="Dialog" font-size="12" x="946" y="435">
+maxExtent</text>
+<text font-family="Dialog" font-size="12" x="946" y="451">
+projection</text>
+<text font-family="Dialog" font-size="12" x="946" y="467">
+center</text>
+<text font-family="Dialog" font-size="12" x="946" y="483">
+label</text>
+<text font-family="Dialog" font-size="12" x="946" y="499">
+resolutions</text>
+<text font-family="Dialog" font-size="12" x="946" y="515">
+owner</text>
+<text font-family="Dialog" font-size="12" x="946" y="531">
+subcategory</text>
+<text font-family="Dialog" font-size="12" x="946" y="547">
+mapeaCore</text>
+<text font-family="Dialog" font-size="12" x="946" y="563">
+name</text>
+<text font-family="Dialog" font-size="12" x="946" y="579">
+description</text>
+<text font-family="Dialog" font-size="12" x="946" y="595">
+mapeaControls</text>
+<text font-family="Dialog" font-size="12" x="946" y="611">
+mapeaPlugins</text>
+<text font-family="Dialog" font-size="12" x="946" y="627">
+mapeaWMC</text>
+<text font-family="Dialog" font-size="12" x="946" y="643">
+mapeaLayerWMS</text>
+<text font-family="Dialog" font-size="12" x="946" y="659">
+category</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="203" x="942" y="669"/>
+<text font-family="Dialog" font-size="12" x="946" y="683">
+__construct()</text>
+<text font-family="Dialog" font-size="12" x="946" y="699">
+getId()</text>
+<text font-family="Dialog" font-size="12" x="946" y="715">
+getZoom() : ?</text>
+<rect fill="#ffffff" height="185" stroke="#ffffff" stroke-width="1" width="203" x="1246" y="558"/>
+<rect fill="none" height="185" stroke="#000000" stroke-width="1" width="203" x="1246" y="558"/>
+<text font-family="Dialog" font-size="12" x="1252" y="571">
+Entity::MapeaConfiguredPlugin</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="203" x="1246" y="581"/>
+<text font-family="Dialog" font-size="12" x="1250" y="595">
+id : \Ramsey\Uuid\UuidInterface</text>
+<text font-family="Dialog" font-size="12" x="1250" y="611">
+name</text>
+<text font-family="Dialog" font-size="12" x="1250" y="627">
+plugin</text>
+<text font-family="Dialog" font-size="12" x="1250" y="643">
+pluginConfig</text>
+<text font-family="Dialog" font-size="12" x="1250" y="659">
+subcategory</text>
+<text font-family="Dialog" font-size="12" x="1250" y="675">
+mapeaMaps</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="203" x="1246" y="685"/>
+<text font-family="Dialog" font-size="12" x="1250" y="699">
+__construct()</text>
+<text font-family="Dialog" font-size="12" x="1250" y="715">
+getId()</text>
+<text font-family="Dialog" font-size="12" x="1250" y="731">
+getName() : ?</text>
+<rect fill="#ffffff" height="185" stroke="#ffffff" stroke-width="1" width="208" x="502" y="526"/>
+<rect fill="none" height="185" stroke="#000000" stroke-width="1" width="208" x="502" y="526"/>
+<text font-family="Dialog" font-size="12" x="507" y="539">
+Entity::MapeaConfiguredControl</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="208" x="502" y="549"/>
+<text font-family="Dialog" font-size="12" x="506" y="563">
+id : \Ramsey\Uuid\UuidInterface</text>
+<text font-family="Dialog" font-size="12" x="506" y="579">
+name</text>
+<text font-family="Dialog" font-size="12" x="506" y="595">
+control</text>
+<text font-family="Dialog" font-size="12" x="506" y="611">
+controlConfig</text>
+<text font-family="Dialog" font-size="12" x="506" y="627">
+subcategory</text>
+<text font-family="Dialog" font-size="12" x="506" y="643">
+mapeaMaps</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="208" x="502" y="653"/>
+<text font-family="Dialog" font-size="12" x="506" y="667">
+__construct()</text>
+<text font-family="Dialog" font-size="12" x="506" y="683">
+getId()</text>
+<text font-family="Dialog" font-size="12" x="506" y="699">
+getName() : ?</text>
+<rect fill="#ffffff" height="201" stroke="#ffffff" stroke-width="1" width="203" x="662" y="782"/>
+<rect fill="none" height="201" stroke="#000000" stroke-width="1" width="203" x="662" y="782"/>
+<text font-family="Dialog" font-size="12" x="698" y="795">
+Entity::MapeaControl</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="203" x="662" y="805"/>
+<text font-family="Dialog" font-size="12" x="666" y="819">
+id : \Ramsey\Uuid\UuidInterface</text>
+<text font-family="Dialog" font-size="12" x="666" y="835">
+name</text>
+<text font-family="Dialog" font-size="12" x="666" y="851">
+description</text>
+<text font-family="Dialog" font-size="12" x="666" y="867">
+code</text>
+<text font-family="Dialog" font-size="12" x="666" y="883">
+mapeaCore</text>
+<text font-family="Dialog" font-size="12" x="666" y="899">
+configurable</text>
+<text font-family="Dialog" font-size="12" x="666" y="915">
+mapeaControlConfig</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="203" x="662" y="925"/>
+<text font-family="Dialog" font-size="12" x="666" y="939">
+__construct()</text>
+<text font-family="Dialog" font-size="12" x="666" y="955">
+getId()</text>
+<text font-family="Dialog" font-size="12" x="666" y="971">
+getName() : ?</text>
+<rect fill="#ffffff" height="137" stroke="#ffffff" stroke-width="1" width="203" x="390" y="790"/>
+<rect fill="none" height="137" stroke="#000000" stroke-width="1" width="203" x="390" y="790"/>
+<text font-family="Dialog" font-size="12" x="407" y="803">
+Entity::MapeaControlConfig</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="203" x="390" y="813"/>
+<text font-family="Dialog" font-size="12" x="394" y="827">
+id : \Ramsey\Uuid\UuidInterface</text>
+<text font-family="Dialog" font-size="12" x="394" y="843">
+description</text>
+<text font-family="Dialog" font-size="12" x="394" y="859">
+configuration</text>
+<text font-family="Dialog" font-size="12" x="394" y="875">
+mapeaControl</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="203" x="390" y="885"/>
+<text font-family="Dialog" font-size="12" x="394" y="899">
+getId()</text>
+<text font-family="Dialog" font-size="12" x="394" y="915">
+getDescription() : ?</text>
+<rect fill="#ffffff" height="233" stroke="#ffffff" stroke-width="1" width="203" x="1078" y="822"/>
+<rect fill="none" height="233" stroke="#000000" stroke-width="1" width="203" x="1078" y="822"/>
+<text font-family="Dialog" font-size="12" x="1118" y="835">
+Entity::MapeaPlugin</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="203" x="1078" y="845"/>
+<text font-family="Dialog" font-size="12" x="1082" y="859">
+id : \Ramsey\Uuid\UuidInterface</text>
+<text font-family="Dialog" font-size="12" x="1082" y="875">
+name</text>
+<text font-family="Dialog" font-size="12" x="1082" y="891">
+javascript</text>
+<text font-family="Dialog" font-size="12" x="1082" y="907">
+style</text>
+<text font-family="Dialog" font-size="12" x="1082" y="923">
+mapeaCore</text>
+<text font-family="Dialog" font-size="12" x="1082" y="939">
+description</text>
+<text font-family="Dialog" font-size="12" x="1082" y="955">
+code</text>
+<text font-family="Dialog" font-size="12" x="1082" y="971">
+configurable</text>
+<text font-family="Dialog" font-size="12" x="1082" y="987">
+mapeaPluginConfig</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="203" x="1078" y="997"/>
+<text font-family="Dialog" font-size="12" x="1082" y="1011">
+__construct()</text>
+<text font-family="Dialog" font-size="12" x="1082" y="1027">
+getId()</text>
+<text font-family="Dialog" font-size="12" x="1082" y="1043">
+getName() : ?</text>
+<rect fill="#ffffff" height="136" stroke="#ffffff" stroke-width="1" width="211" x="1366" y="830"/>
+<rect fill="none" height="136" stroke="#000000" stroke-width="1" width="211" x="1366" y="830"/>
+<text font-family="Dialog" font-size="12" x="1390" y="843">
+Entity::MapeaPluginConfig</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="211" x="1366" y="853"/>
+<text font-family="Dialog" font-size="12" x="1370" y="867">
+id : \Ramsey\Uuid\UuidInterface</text>
+<text font-family="Dialog" font-size="12" x="1370" y="883">
+description</text>
+<text font-family="Dialog" font-size="12" x="1370" y="899">
+configuration</text>
+<text font-family="Dialog" font-size="12" x="1370" y="915">
+mapeaPlugin : MapeaPlugin</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="211" x="1366" y="925"/>
+<text font-family="Dialog" font-size="12" x="1370" y="939">
+getId()</text>
+<text font-family="Dialog" font-size="12" x="1370" y="955">
+getDescription() : ?</text>
+<rect fill="#ffffff" height="201" stroke="#ffffff" stroke-width="1" width="203" x="502" y="302"/>
+<rect fill="none" height="201" stroke="#000000" stroke-width="1" width="203" x="502" y="302"/>
+<text font-family="Dialog" font-size="12" x="530" y="315">
+Entity::MapeaLayerWMS</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="203" x="502" y="325"/>
+<text font-family="Dialog" font-size="12" x="506" y="339">
+id : \Ramsey\Uuid\UuidInterface</text>
+<text font-family="Dialog" font-size="12" x="506" y="355">
+layerWMSUrl</text>
+<text font-family="Dialog" font-size="12" x="506" y="371">
+layerName</text>
+<text font-family="Dialog" font-size="12" x="506" y="387">
+layerTitle</text>
+<text font-family="Dialog" font-size="12" x="506" y="403">
+LayerDescription</text>
+<text font-family="Dialog" font-size="12" x="506" y="419">
+layerStyle</text>
+<text font-family="Dialog" font-size="12" x="506" y="435">
+layerLegend</text>
+<text font-family="Dialog" font-size="12" x="506" y="451">
+mapeaMaps</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="203" x="502" y="461"/>
+<text font-family="Dialog" font-size="12" x="506" y="475">
+__construct()</text>
+<text font-family="Dialog" font-size="12" x="506" y="491">
+getId() : ?</text>
+<rect fill="#ffffff" height="393" stroke="#ffffff" stroke-width="1" width="224" x="1246" y="142"/>
+<rect fill="none" height="393" stroke="#000000" stroke-width="1" width="224" x="1246" y="142"/>
+<text font-family="Dialog" font-size="12" x="1301" y="155">
+Entity::MapeaWMC</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="224" x="1246" y="165"/>
+<text font-family="Dialog" font-size="12" x="1250" y="179">
+SERVER_PATH_TO_UPLOAD_FOLDER</text>
+<text font-family="Dialog" font-size="12" x="1250" y="195">
+id : \Ramsey\Uuid\UuidInterface</text>
+<text font-family="Dialog" font-size="12" x="1250" y="211">
+originalFileName</text>
+<text font-family="Dialog" font-size="12" x="1250" y="227">
+systemFileName</text>
+<text font-family="Dialog" font-size="12" x="1250" y="243">
+title</text>
+<text font-family="Dialog" font-size="12" x="1250" y="259">
+description</text>
+<text font-family="Dialog" font-size="12" x="1250" y="275">
+updated</text>
+<text font-family="Dialog" font-size="12" x="1250" y="291">
+urlPath</text>
+<text font-family="Dialog" font-size="12" x="1250" y="307">
+localPath</text>
+<text font-family="Dialog" font-size="12" x="1250" y="323">
+file</text>
+<text font-family="Dialog" font-size="12" x="1250" y="339">
+mapeaMaps</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="224" x="1246" y="349"/>
+<text font-family="Dialog" font-size="12" x="1250" y="363">
+getDescription()</text>
+<text font-family="Dialog" font-size="12" x="1250" y="379">
+setDescription(description)</text>
+<text font-family="Dialog" font-size="12" x="1250" y="395">
+__construct()</text>
+<text font-family="Dialog" font-size="12" x="1250" y="411">
+setFile(file : UploadedFile)</text>
+<text font-family="Dialog" font-size="12" x="1250" y="427">
+getFile() : UploadedFile</text>
+<text font-family="Dialog" font-size="12" x="1250" y="443">
+upload()</text>
+<text font-family="Dialog" font-size="12" x="1250" y="459">
+lifecycleFileUpload()</text>
+<text font-family="Dialog" font-size="12" x="1250" y="475">
+removeUpload()</text>
+<text font-family="Dialog" font-size="12" x="1250" y="491">
+refreshUpdated()</text>
+<text font-family="Dialog" font-size="12" x="1250" y="507">
+getId()</text>
+<text font-family="Dialog" font-size="12" x="1250" y="523">
+getOriginalFileName() : ?</text>
+<rect fill="#ffffff" height="185" stroke="#ffffff" stroke-width="1" width="203" x="950" y="38"/>
+<rect fill="none" height="185" stroke="#000000" stroke-width="1" width="203" x="950" y="38"/>
+<text font-family="Dialog" font-size="12" x="994" y="51">
+Entity::MapeaCore</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="203" x="950" y="61"/>
+<text font-family="Dialog" font-size="12" x="954" y="75">
+id : \Ramsey\Uuid\UuidInterface</text>
+<text font-family="Dialog" font-size="12" x="954" y="91">
+version</text>
+<text font-family="Dialog" font-size="12" x="954" y="107">
+configuration</text>
+<text font-family="Dialog" font-size="12" x="954" y="123">
+javascript</text>
+<text font-family="Dialog" font-size="12" x="954" y="139">
+style</text>
+<text font-family="Dialog" font-size="12" x="954" y="155">
+description</text>
+<text font-family="Dialog" font-size="12" x="954" y="171">
+mapeaMaps</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="203" x="950" y="181"/>
+<text font-family="Dialog" font-size="12" x="954" y="195">
+__construct()</text>
+<text font-family="Dialog" font-size="12" x="954" y="211">
+getId() : ?</text>
+<rect fill="#ffffff" height="233" stroke="#ffffff" stroke-width="1" width="373" x="334" y="14"/>
+<rect fill="none" height="233" stroke="#000000" stroke-width="1" width="373" x="334" y="14"/>
+<text font-family="Dialog" font-size="12" x="484" y="27">
+Entity::User</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="373" x="334" y="37"/>
+<text font-family="Dialog" font-size="12" x="338" y="51">
+id : \Ramsey\Uuid\UuidInterface</text>
+<text font-family="Dialog" font-size="12" x="338" y="67">
+groups</text>
+<text font-family="Dialog" font-size="12" x="338" y="83">
+subcategory</text>
+<text font-family="Dialog" font-size="12" x="338" y="99">
+mapeaMaps</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="373" x="334" y="109"/>
+<text font-family="Dialog" font-size="12" x="338" y="123">
+__construct()</text>
+<text font-family="Dialog" font-size="12" x="338" y="139">
+setPassword(password)</text>
+<text font-family="Dialog" font-size="12" x="338" y="155">
+getSubcategory() : Collection|MapSubCategory[]</text>
+<text font-family="Dialog" font-size="12" x="338" y="171">
+addSubcategory(subcategory : MapSubCategory) : self</text>
+<text font-family="Dialog" font-size="12" x="338" y="187">
+removeSubcategory(subcategory : MapSubCategory) : self</text>
+<text font-family="Dialog" font-size="12" x="338" y="203">
+getMapeaMaps() : Collection|MapeaMap[]</text>
+<text font-family="Dialog" font-size="12" x="338" y="219">
+addMapeaMap(mapeaMap : MapeaMap) : self</text>
+<text font-family="Dialog" font-size="12" x="338" y="235">
+removeMapeaMap(mapeaMap : MapeaMap) : self</text>
+<rect fill="#ffffff" height="89" stroke="#ffffff" stroke-width="1" width="203" x="14" y="78"/>
+<rect fill="none" height="89" stroke="#000000" stroke-width="1" width="203" x="14" y="78"/>
+<text font-family="Dialog" font-size="12" x="75" y="91">
+Entity::Group</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="203" x="14" y="101"/>
+<text font-family="Dialog" font-size="12" x="18" y="115">
+id : \Ramsey\Uuid\UuidInterface</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="203" x="14" y="125"/>
+<text font-family="Dialog" font-size="12" x="18" y="139">
+__construct()</text>
+<text font-family="Dialog" font-size="12" x="18" y="155">
+__toString()</text>
+<rect fill="#ffffff" height="153" stroke="#ffffff" stroke-width="1" width="203" x="22" y="182"/>
+<rect fill="none" height="153" stroke="#000000" stroke-width="1" width="203" x="22" y="182"/>
+<text font-family="Dialog" font-size="12" x="61" y="195">
+Entity::MapCategory</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="203" x="22" y="205"/>
+<text font-family="Dialog" font-size="12" x="26" y="219">
+id : \Ramsey\Uuid\UuidInterface</text>
+<text font-family="Dialog" font-size="12" x="26" y="235">
+name</text>
+<text font-family="Dialog" font-size="12" x="26" y="251">
+description</text>
+<text font-family="Dialog" font-size="12" x="26" y="267">
+mapeaMaps</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="203" x="22" y="277"/>
+<text font-family="Dialog" font-size="12" x="26" y="291">
+__construct()</text>
+<text font-family="Dialog" font-size="12" x="26" y="307">
+getId()</text>
+<text font-family="Dialog" font-size="12" x="26" y="323">
+getName() : ?</text>
+<rect fill="#ffffff" height="217" stroke="#ffffff" stroke-width="1" width="203" x="214" y="422"/>
+<rect fill="none" height="217" stroke="#000000" stroke-width="1" width="203" x="214" y="422"/>
+<text font-family="Dialog" font-size="12" x="241" y="435">
+Entity::MapSubCategory</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="203" x="214" y="445"/>
+<text font-family="Dialog" font-size="12" x="218" y="459">
+id : \Ramsey\Uuid\UuidInterface</text>
+<text font-family="Dialog" font-size="12" x="218" y="475">
+name</text>
+<text font-family="Dialog" font-size="12" x="218" y="491">
+description</text>
+<text font-family="Dialog" font-size="12" x="218" y="507">
+category</text>
+<text font-family="Dialog" font-size="12" x="218" y="523">
+users</text>
+<text font-family="Dialog" font-size="12" x="218" y="539">
+mapeaConfiguredControls</text>
+<text font-family="Dialog" font-size="12" x="218" y="555">
+mapeaConfiguredPlugins</text>
+<text font-family="Dialog" font-size="12" x="218" y="571">
+mapeaMaps</text>
+<rect fill="#000000" height="1" stroke="#000000" stroke-width="1" width="203" x="214" y="581"/>
+<text font-family="Dialog" font-size="12" x="218" y="595">
+__construct()</text>
+<text font-family="Dialog" font-size="12" x="218" y="611">
+getId()</text>
+<text font-family="Dialog" font-size="12" x="218" y="627">
+getName() : ?</text>
+<polyline fill="none" points="334,142 216,142" stroke="#000000" stroke-width="1"/>
+<polygon fill="#ffffff" points="334,142 324,147 314,142 324,137" stroke="#ffffff" stroke-width="1"/>
+<polygon fill="none" points="334,142 324,147 314,142 324,137" stroke="#000000" stroke-width="1"/>
+<polyline fill="none" points="374,246 374,422" stroke="#000000" stroke-width="1"/>
+<polygon fill="#ffffff" points="374,246 379,256 374,266 369,256" stroke="#ffffff" stroke-width="1"/>
+<polygon fill="none" points="374,246 379,256 374,266 369,256" stroke="#000000" stroke-width="1"/>
+<polyline fill="none" points="224,422 224,334" stroke="#000000" stroke-width="1"/>
+<polygon fill="#000000" points="224,422 219,412 224,402 229,412" stroke="#000000" stroke-width="1"/>
+<polygon fill="none" points="224,422 219,412 224,402 229,412" stroke="#000000" stroke-width="1"/>
+<polyline fill="none" points="942,350 706,246" stroke="#000000" stroke-width="1"/>
+<polygon fill="#ffffff" points="942,350 930,350 924,342 934,341" stroke="#ffffff" stroke-width="1"/>
+<polygon fill="none" points="942,350 930,350 924,342 934,341" stroke="#000000" stroke-width="1"/>
+<polyline fill="none" points="942,438 704,438" stroke="#000000" stroke-width="1"/>
+<polygon fill="#ffffff" points="942,438 932,443 922,438 932,433" stroke="#ffffff" stroke-width="1"/>
+<polygon fill="none" points="942,438 932,443 922,438 932,433" stroke="#000000" stroke-width="1"/>
+<polyline fill="none" points="942,510 416,510" stroke="#000000" stroke-width="1"/>
+<polygon fill="#ffffff" points="942,510 932,515 922,510 932,505" stroke="#ffffff" stroke-width="1"/>
+<polygon fill="none" points="942,510 932,515 922,510 932,505" stroke="#000000" stroke-width="1"/>
+<polyline fill="none" points="942,630 709,630" stroke="#000000" stroke-width="1"/>
+<polygon fill="#ffffff" points="942,630 932,635 922,630 932,625" stroke="#ffffff" stroke-width="1"/>
+<polygon fill="none" points="942,630 932,635 922,630 932,625" stroke="#000000" stroke-width="1"/>
+<polyline fill="none" points="1038,350 1038,222" stroke="#000000" stroke-width="1"/>
+<polygon fill="#ffffff" points="1038,350 1033,340 1038,330 1043,340" stroke="#ffffff" stroke-width="1"/>
+<polygon fill="none" points="1038,350 1033,340 1038,330 1043,340" stroke="#000000" stroke-width="1"/>
+<polyline fill="none" points="1144,398 1246,398" stroke="#000000" stroke-width="1"/>
+<polygon fill="#ffffff" points="1144,398 1154,393 1164,398 1154,403" stroke="#ffffff" stroke-width="1"/>
+<polygon fill="none" points="1144,398 1154,393 1164,398 1154,403" stroke="#000000" stroke-width="1"/>
+<polyline fill="none" points="1144,622 1246,622" stroke="#000000" stroke-width="1"/>
+<polygon fill="#ffffff" points="1144,622 1154,617 1164,622 1154,627" stroke="#ffffff" stroke-width="1"/>
+<polygon fill="none" points="1144,622 1154,617 1164,622 1154,627" stroke="#000000" stroke-width="1"/>
+<polyline fill="none" points="558,710 558,790" stroke="#000000" stroke-width="1"/>
+<polygon fill="#000000" points="558,710 563,720 558,730 553,720" stroke="#000000" stroke-width="1"/>
+<polygon fill="none" points="558,710 563,720 558,730 553,720" stroke="#000000" stroke-width="1"/>
+<polyline fill="none" points="670,710 670,782" stroke="#000000" stroke-width="1"/>
+<polygon fill="#000000" points="670,710 675,720 670,730 665,720" stroke="#000000" stroke-width="1"/>
+<polygon fill="none" points="670,710 675,720 670,730 665,720" stroke="#000000" stroke-width="1"/>
+<polyline fill="none" points="1254,742 1254,822" stroke="#000000" stroke-width="1"/>
+<polygon fill="#000000" points="1254,742 1259,752 1254,762 1249,752" stroke="#000000" stroke-width="1"/>
+<polygon fill="none" points="1254,742 1259,752 1254,762 1249,752" stroke="#000000" stroke-width="1"/>
+<polyline fill="none" points="1382,742 1382,830" stroke="#000000" stroke-width="1"/>
+<polygon fill="#000000" points="1382,742 1387,752 1382,762 1377,752" stroke="#000000" stroke-width="1"/>
+<polygon fill="none" points="1382,742 1387,752 1382,762 1377,752" stroke="#000000" stroke-width="1"/>
+</svg>
