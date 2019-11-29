@@ -74,42 +74,75 @@ final class MapeaMapAdmin extends AbstractAdmin
 
     protected function configureFormFields(FormMapper $formMapper): void
     {
-        $formMapper
+        $subject = $this->getSubject();
+        //$formMapper
             //->add('id')
-            ->tab('General', ['description' => 'This section contains general settings for maps'])
-                ->with('Owner', array('class'=>'col-md-6'))
-                    ->add('owner', EntityType::class,  [
-                        'class' => User::class,
-                        'choice_label' => function ($user) {
-                            return $user->__toString();
-                        },
-                        'placeholder' => 'Select Owner',
-                    ])
-                ->end()
-                ->with('Category', array('class'=>'col-md-6'))
-                    ->add('category', EntityType::class,  [
-                        'class' => MapCategory::class,
-                        'choice_label' => function ($mapCategory) {
-                            return $mapCategory->__toString();
-                        },
-                        'placeholder' => 'Select Category',
-                    ])
+            
+            
 
-                    ->add('subcategory', EntityType::class,  [
-                        'class' => MapSubCategory::class,
-                        'choice_label' => function ($mapSubCategory) {
-                            return $mapSubCategory->getname();
-                        },
-                        'placeholder' => 'Select Subcategory',
-                        ],array('admin_code' => 'admin.map_sub_category')
-                    )
-                ->end()          
-                ->with('Description')
-                    ->add('name')
-                    ->add('description')
-                ->end()
-            ->end()
-            ->tab('Options', ['description' => 'This section contains configurations options for maps'])
+            if($this->isCurrentRoute('create')){
+                $formMapper->tab('General', ['description' => 'This section contains general settings for maps'])
+                    ->with('Category')
+                        ->add('category', EntityType::class,  [
+                            'class' => MapCategory::class,
+                            'choice_label' => function ($mapCategory) {
+                                return $mapCategory->__toString();
+                            },
+                            'placeholder' => 'Select Category',
+                        ])
+
+                        ->add('subcategory', EntityType::class,  [
+                            'class' => MapSubCategory::class,
+                            'choice_label' => function ($mapSubCategory) {
+                                return $mapSubCategory->getname();
+                            },
+                            'placeholder' => 'Select Subcategory',
+                            ],array('admin_code' => 'admin.map_sub_category')
+                        )
+                    ->end()          
+                    ->with('Description')
+                        ->add('name')
+                        ->add('description')
+                    ->end()
+                ->end();
+            }
+
+            if($this->isCurrentRoute('edit')){
+                $formMapper->tab('General', ['description' => 'This section contains general settings for maps'])
+                    ->with('Owner', array('class'=>'col-md-6'))
+                        ->add('owner', EntityType::class,  [
+                            'class' => User::class,
+                            'choice_label' => function ($user) {
+                                return $user->__toString();
+                            },
+                            'placeholder' => 'Select Owner',
+                        ])
+                    ->end()
+                    ->with('Category', array('class'=>'col-md-6'))
+                        ->add('category', EntityType::class,  [
+                            'class' => MapCategory::class,
+                            'choice_label' => function ($mapCategory) {
+                                return $mapCategory->__toString();
+                            },
+                            'placeholder' => 'Select Category',
+                        ])
+
+                        ->add('subcategory', EntityType::class,  [
+                            'class' => MapSubCategory::class,
+                            'choice_label' => function ($mapSubCategory) {
+                                return $mapSubCategory->getname();
+                            },
+                            'placeholder' => 'Select Subcategory',
+                            ],array('admin_code' => 'admin.map_sub_category')
+                        )
+                    ->end()          
+                    ->with('Description')
+                        ->add('name')
+                        ->add('description')
+                    ->end()
+                ->end();
+            }                                   
+            $formMapper->tab('Options', ['description' => 'This section contains configurations options for maps'])
                 ->with('Core')
                     ->add('mapeaCore', EntityType::class,  [
                         'class' => Mapeacore::class,
@@ -232,16 +265,19 @@ final class MapeaMapAdmin extends AbstractAdmin
 
     public function prePersist($object)
     {
- 
-        $user = $this->getConfigurationPool()->getContainer()->get('security.token_storage')->getToken()->getUser();
-        $object->setOwner($user);
+        if($this->isCurrentRoute('create')){
+            $user = $this->getConfigurationPool()->getContainer()->get('security.token_storage')->getToken()->getUser();
+            $object->setOwner($user);
+        }
     }
 
+    /*
     public function preUpdate($object)
     {
         $user = $this->getConfigurationPool()->getContainer()->get('security.token_storage')->getToken()->getUser();
         $object->setOwner($user);
     }
+    */
 
     public function getTemplate($name)
     {
