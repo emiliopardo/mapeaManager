@@ -155,3 +155,10 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, group: sonata_maps, label: Maps }
         public: true
+
+    admin.mapea_layer_wms_map_configured:
+        class: App\Admin\MapeaLayerWMSMapConfiguredAdmin
+        arguments: [~, App\Entity\MapeaLayerWMSMapConfigured, App\Controller\MapeaLayerWMSMapConfiguredAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: MapeaLayerWMSMapConfigured }
+        public: true

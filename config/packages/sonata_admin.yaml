@@ -39,7 +39,8 @@ sonata_admin:
             sonata_maps:
                 label: Maps
                 items:
-                    - admin.mapea_map    
+                    - admin.mapea_map
+                    - admin.mapea_layer_wms_map_configured    
         
     security:
         handler: sonata.admin.security.handler.role
