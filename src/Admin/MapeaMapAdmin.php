@@ -13,6 +13,7 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Sonata\AdminBundle\Form\Type\ModelType;
 
 use App\Entity\MapSubCategory;
 use App\Entity\MapCategory;
@@ -186,11 +187,16 @@ final class MapeaMapAdmin extends AbstractAdmin
             ->end()
             ->tab('Controls', ['description' => 'This section contains controls for configure maps'])
                 ->with('Controls')
+                    /*
                     ->add('mapeaControls', EntityType::class, [
                         'class' => MapeaConfiguredControl::class,
                         'multiple' => true,
                         'expanded' => true,
                     ])
+                    */
+                    ->add('mapeaControls', ModelType::class, array(
+                        'multiple' => true,
+                    ))
                 ->end()
             ->end()
             ->tab('Plugins', ['description' => 'This section contains plugins for configure maps'])
