@@ -20,7 +20,7 @@ use App\Entity\MapCategory;
 use App\Entity\MapeaConfiguredControl;
 use App\Entity\MapeaConfiguredPlugin;
 use App\Entity\MapeaCore;
-use App\Entity\MapeaLayerWMS;
+use App\Entity\MapeaLayerWMSMapConfigured;
 use App\Entity\MapeaWMC;
 use App\Entity\User;
 
@@ -49,17 +49,9 @@ final class MapeaMapAdmin extends AbstractAdmin
     protected function configureListFields(ListMapper $listMapper): void
     {
         $listMapper
-            //->add('id')
             ->add('name')
             ->add('description')
             ->add('owner','text')
-            //->add('zoom')
-            //->add('bbox')
-            //->add('maxExtent')
-            //->add('projection')
-            //->add('center')
-            //->add('label')
-            //->add('resolutions')
             ->add('mapeaCore','text')
             ->add('category', 'text', array('admin_code' => 'admin.map_sub_category'))
             ->add('subcategory', 'text', array('admin_code' => 'admin.map_sub_category'))
@@ -76,12 +68,7 @@ final class MapeaMapAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper): void
     {
         $subject = $this->getSubject();
-        //$formMapper
-            //->add('id')
-            
-            
-
-            if($this->isCurrentRoute('create')){
+        if($this->isCurrentRoute('create')){
                 $formMapper->tab('General', ['description' => 'This section contains general settings for maps'])
                     ->with('Category')
                         ->add('category', EntityType::class,  [
@@ -201,20 +188,30 @@ final class MapeaMapAdmin extends AbstractAdmin
             ->end()
             ->tab('Plugins', ['description' => 'This section contains plugins for configure maps'])
                 ->with('Plugins')
+                    ->add('mapeaPlugins', ModelType::class, array(
+                        'multiple' => true,
+                    ))
+                    /*
                     ->add('mapeaPlugins', EntityType::class, [
                         'class' => MapeaConfiguredPlugin::class,
                         'multiple' => true,
                         'expanded' => true,
                     ])
+                    */
                 ->end()
             ->end()
             ->tab('layers', ['description' => 'This section contains layers and WMC the can be used for configure maps'])
                 ->with('Layers WMS')
-                    ->add('mapeaLayerWMS', EntityType::class, [
+                    ->add('mapeaLayersWMS', ModelType::class, array(
+                        'multiple' => true,
+                    ))
+                    /*
+                    ->add('mapeaLayersWMS', EntityType::class, [
                         'class' => MapeaLayerWMS::class,
                         'multiple' => true,
                         'expanded' => true,
                     ])
+                    */
                 ->end()
                 ->with('Web Map Context')
                     ->add('mapeaWMC', EntityType::class, [
@@ -250,7 +247,6 @@ final class MapeaMapAdmin extends AbstractAdmin
     protected function configureShowFields(ShowMapper $showMapper): void
     {
         $showMapper
-            ->add('id')
             ->add('name')
             ->add('description')
             ->add('owner','text')
@@ -266,6 +262,8 @@ final class MapeaMapAdmin extends AbstractAdmin
             ->add('subcategory', 'text', array('admin_code' => 'admin.map_sub_category'))
             ->add('mapeaControls')
             ->add('mapeaPlugins')
+            ->add('mapeaLayersWMS')
+            ->add('mapeaWMC')
             ;
     }
 
@@ -276,14 +274,6 @@ final class MapeaMapAdmin extends AbstractAdmin
             $object->setOwner($user);
         }
     }
-
-    /*
-    public function preUpdate($object)
-    {
-        $user = $this->getConfigurationPool()->getContainer()->get('security.token_storage')->getToken()->getUser();
-        $object->setOwner($user);
-    }
-    */
 
     public function getTemplate($name)
     {
