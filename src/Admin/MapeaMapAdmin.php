@@ -57,7 +57,7 @@ final class MapeaMapAdmin extends AbstractAdmin
             ->add('subcategory', 'text', array('admin_code' => 'admin.map_sub_category'))
             ->add('_action', null, [
                 'actions' => [
-                    'view' => ['template' => 'Admin/list/list_action_view.html.twig',],
+                    'view' => ['template' => 'Admin/MapeaMapAdmin/list/list_action_view.html.twig',],
                     'show' => [],
                     'edit' => [],
                     'delete' => [],
