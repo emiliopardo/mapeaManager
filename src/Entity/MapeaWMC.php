@@ -99,7 +99,6 @@ class MapeaWMC extends Kernel
 
     public function __construct()
     {
-        parent::__construct();
         $this->mapeaMaps = new ArrayCollection();
     }
 
