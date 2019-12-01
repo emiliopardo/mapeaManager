@@ -103,13 +103,17 @@
             {% if mapeaMap.resolutions is not null and mapeaMap.resolutions is not empty %}
                 mapajs.setResolutions({{mapeaMap.resolutions}}); 
             {% endif %}
-            {% if mapeaMap.mapeaLayerWMS is not null and mapeaMap.mapeaLayerWMS is not empty %}
-                {% for mapeaLayerWMS in mapeaMap.mapeaLayerWMS %}
+            {% if mapeaMap.mapeaLayersWMS is not null and mapeaMap.mapeaLayersWMS is not empty %}
+                {% for mapeaLayerWMS in mapeaMap.mapeaLayersWMS %}
                     var {{mapeaLayerWMS.layerName}} = new M.layer.WMS({
                         url: '{{mapeaLayerWMS.layerWMSUrl}}',
                         name: '{{mapeaLayerWMS.layerName}}',
                         legend: '{{mapeaLayerWMS.layerTitle}}',
-                        transparent: true,
+                        {% if mapeaLayerWMS.baseLayer %}
+                            transparent: false,
+                         {% else %}
+                            transparent: true,
+                        {% endif %}
                         tiled: true
                     },{
                         params: {
@@ -117,7 +121,7 @@
                             layers: "{{mapeaLayerWMS.layerName}}"
                         }
                     });
-                mapajs.addWMS([ {{mapeaLayerWMS.layerName}}])
+                mapajs.addWMS([{{mapeaLayerWMS.layerName}}])
                 {% endfor %} 
             {% endif %}
 
