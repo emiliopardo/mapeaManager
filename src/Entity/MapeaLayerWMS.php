@@ -52,17 +52,12 @@ class MapeaLayerWMS
      */
     private $layerLegend;
 
-    /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\MapeaMap", mappedBy="mapeaLayerWMS")
-     */
-    private $mapeaMaps;
-
     public function __construct()
     {
-        $this->mapeaMaps = new ArrayCollection();
+       
     }
 
-    public function getId(): ?int
+    public function getId()
     {
         return $this->id;
     }
@@ -144,31 +139,4 @@ class MapeaLayerWMS
         return $this->layerName;
     }
 
-    /**
-     * @return Collection|MapeaMap[]
-     */
-    public function getMapeaMaps(): Collection
-    {
-        return $this->mapeaMaps;
-    }
-
-    public function addMapeaMap(MapeaMap $mapeaMap): self
-    {
-        if (!$this->mapeaMaps->contains($mapeaMap)) {
-            $this->mapeaMaps[] = $mapeaMap;
-            $mapeaMap->addMapeaLayer($this);
-        }
-
-        return $this;
-    }
-
-    public function removeMapeaMap(MapeaMap $mapeaMap): self
-    {
-        if ($this->mapeaMaps->contains($mapeaMap)) {
-            $this->mapeaMaps->removeElement($mapeaMap);
-            $mapeaMap->removeMapeaLayer($this);
-        }
-
-        return $this;
-    }
 }
