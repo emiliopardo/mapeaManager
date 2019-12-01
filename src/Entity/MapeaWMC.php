@@ -251,7 +251,7 @@ class MapeaWMC extends Kernel
 
     public function __toString()
     {
-        return $this->getOriginalFileName();
+        return $this->getTitle();
     }
 
     /**
