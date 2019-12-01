@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MapeaLayerWMSMapConfiguredRepository")
@@ -10,9 +11,12 @@ use Doctrine\ORM\Mapping as ORM;
 class MapeaLayerWMSMapConfigured
 {
     /**
+     * @var \Ramsey\Uuid\UuidInterface The user identifier
+     * 
      * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="uuid",unique=true)
+     * @ORM\GeneratedValue(strategy="CUSTOM")
+     * @ORM\CustomIdGenerator(class="Ramsey\Uuid\Doctrine\UuidGenerator")
      */
     private $id;
 
@@ -29,11 +33,11 @@ class MapeaLayerWMSMapConfigured
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\MapeaMap", inversedBy="mapeaLayersWMS")
-     * @ORM\JoinColumn(nullable=false)
      */
     private $mapeaMap;
 
-    public function getId(): ?int
+
+    public function getId()
     {
         return $this->id;
     }
@@ -72,5 +76,13 @@ class MapeaLayerWMSMapConfigured
         $this->mapeaMap = $mapeaMap;
 
         return $this;
+    }
+
+    public function __toString(){
+        $string = '';
+        if ($this->getBaseLayer()){
+            $string=' (Capa Base)';
+        }
+        return $this->getMapeaLayerWMS()->getLayerName().$string;
     }
 }
