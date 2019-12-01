@@ -89,11 +89,9 @@ class MapeaLayerWMSLegendImage extends Kernel
      */
     private $file;
 
-
-
     public function __construct()
     {
-       
+        $this->mapeaLayerWMS = new ArrayCollection();
     }
 
     /**
@@ -249,7 +247,5 @@ class MapeaLayerWMSLegendImage extends Kernel
     {
         return $this->getTitle();
     }
-
-    
 
 }

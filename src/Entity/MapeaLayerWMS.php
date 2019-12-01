@@ -47,11 +47,6 @@ class MapeaLayerWMS
      */
     private $layerStyle;
 
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true, options={"default": "default"})
-     */
-    private $layerLegend;
-
     public function __construct()
     {
        
@@ -122,21 +117,8 @@ class MapeaLayerWMS
         return $this;
     }
 
-    public function getLayerLegend(): ?string
-    {
-        return $this->layerLegend;
-    }
-
-    public function setLayerLegend(string $layerLegend): self
-    {
-        $this->layerLegend = $layerLegend;
-
-        return $this;
-    }
-
     public function __toString()
     {
         return $this->layerTitle;
     }
-
 }

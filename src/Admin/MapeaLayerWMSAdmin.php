@@ -9,6 +9,7 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
+use Sonata\AdminBundle\Form\Type\AdminType;
 
 final class MapeaLayerWMSAdmin extends AbstractAdmin
 {
@@ -22,7 +23,7 @@ final class MapeaLayerWMSAdmin extends AbstractAdmin
             ->add('layerTitle')
             ->add('LayerDescription')
             ->add('layerStyle')
-            ->add('layerLegend')
+            //->add('legendImage')
             ;
     }
 
@@ -35,7 +36,7 @@ final class MapeaLayerWMSAdmin extends AbstractAdmin
             ->add('layerTitle')
             ->add('LayerDescription')
             ->add('layerStyle')
-            ->add('layerLegend')
+            //->add('legendImage')
             ->add('_action', null, [
                 'actions' => [
                     'show' => [],
@@ -54,14 +55,14 @@ final class MapeaLayerWMSAdmin extends AbstractAdmin
             ->add('layerTitle')
             ->add('LayerDescription')
             ->add('layerStyle')
-            ->add('layerLegend')
+            //->add('legendImage', AdminType::class)
             ->setHelps([
                 'layerWMSUrl' => 'Write WMS service url.',
                 'layerName' => 'Write Layer name, the same of the capabilities name.',
                 'layerTitle' => 'Write Layer title.',
                 'LayerDescription' => 'Write a brief description.',
                 'layerStyle' => 'Select style representation.If this field is not filled in, the default value will be used.',
-                'layerLegend' => 'Select leyend image. If this field is not filled in, the default value will be used.',
+                //'legendImage' => 'Select leyend image. If this field is not filled in, the default value will be used.',
             ])
             ;
     }
@@ -75,7 +76,7 @@ final class MapeaLayerWMSAdmin extends AbstractAdmin
             ->add('layerTitle')
             ->add('LayerDescription')
             ->add('layerStyle')
-            ->add('layerLegend')
+            //->add('legendImage')
             ;
     }
 }

@@ -70,8 +70,8 @@ final class MapeaLayerWMSLegendImageAdmin extends AbstractAdmin
     }
 
     public function prePersist($file)
-    {
-        $this->manageFileUpload($file);
+    {   
+        $this->manageFileUpload($file);  
     }
 
     public function preUpdate($file)
