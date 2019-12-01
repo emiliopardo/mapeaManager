@@ -31,8 +31,9 @@ class MapeaLayerWMSMapConfigured
      */
     private $mapeaLayerWMS;
 
+
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\MapeaMap", inversedBy="mapeaLayersWMS")
+     * @ORM\ManyToMany(targetEntity="App\Entity\MapeaMap", mappedBy="mapeaLayersWMS")
      */
     private $mapeaMap;
 
@@ -76,6 +77,26 @@ class MapeaLayerWMSMapConfigured
         $this->mapeaMap = $mapeaMap;
 
         return $this;
+    }
+
+    public function getlayerName(){
+        return $this->getMapeaLayerWMS()->getLayerName();
+    }
+
+    public function getLayerWMSUrl(){
+        return $this->getMapeaLayerWMS()->getLayerWMSUrl();
+    }
+
+    public function getLayerTitle(){
+        return $this->getMapeaLayerWMS()->getLayerTitle();
+    }
+
+    public function getLayerStyle(){
+        return $this->getMapeaLayerWMS()->getLayerStyle();
+    }
+
+    public function getLayerLegend(){
+        return $this->getMapeaLayerWMS()->getLayerLegend();
     }
 
     public function __toString(){
