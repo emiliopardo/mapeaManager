@@ -31,7 +31,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `fos_user` WRITE;
 /*!40000 ALTER TABLE `fos_user` DISABLE KEYS */;
-INSERT INTO `fos_user` VALUES ('03d9a9ff-aed8-4160-8fb0-d05a5ff05f22','publicador','publicador','publicador@publicador.es','publicador@publicador.es',1,NULL,'$2y$10$kfoY2TA9xFpkph6VqlU8MOEuTb10sMJKdOLDt7PTrUj9bsJKDp/jq','2019-11-19 10:51:17',NULL,NULL,'a:0:{}'),('3d9e1792-5dc8-42c5-bc37-8b5285f49248','superadmin','superadmin','superadmin@superadmin.es','superadmin@superadmin.es',1,NULL,'$2y$10$CiSjBeARMcathVs0xCSXW.bV/4C/TrWw5feuguVuu2Tp2muLSyRuS','2019-11-29 12:12:46',NULL,NULL,'a:0:{}'),('7f823767-22f3-4f31-a74d-f8d69021a11d','admin','admin','admin@admin.es','admin@admin.es',1,NULL,'$2y$10$njggTcqozdKxhQMpYwWz7eN0IIYzvSE.5OkvQ9IYIndBFQSUfmAdm','2019-11-19 10:51:39',NULL,NULL,'a:0:{}'),('a40b7eac-b55e-489a-9ac3-3a3329b55600','user','user','user@user.es','user@user.es',1,NULL,'$2y$10$N5VDq3vCGGhwvzPPDOqIAuSwalA.Pwp66/nLwn.9JsRX5JTY3Nube','2019-11-19 10:50:20',NULL,NULL,'a:0:{}'),('d4307506-b0aa-4aa6-bfaf-0258863c4184','editor','editor','editor@editor.es','editor@editor.es',1,NULL,'$2y$10$eOo8QtCg/yby2rZz4wdH6eeHpR8dK3QGAOj51u4.Cl0mzsF3VYmsK','2019-11-19 10:50:33',NULL,NULL,'a:0:{}');
+INSERT INTO `fos_user` VALUES ('03d9a9ff-aed8-4160-8fb0-d05a5ff05f22','publicador','publicador','publicador@publicador.es','publicador@publicador.es',1,NULL,'$2y$10$kfoY2TA9xFpkph6VqlU8MOEuTb10sMJKdOLDt7PTrUj9bsJKDp/jq','2019-11-19 10:51:17',NULL,NULL,'a:0:{}'),('3d9e1792-5dc8-42c5-bc37-8b5285f49248','superadmin','superadmin','superadmin@superadmin.es','superadmin@superadmin.es',1,NULL,'$2y$10$CiSjBeARMcathVs0xCSXW.bV/4C/TrWw5feuguVuu2Tp2muLSyRuS','2019-12-01 08:31:51',NULL,NULL,'a:0:{}'),('7f823767-22f3-4f31-a74d-f8d69021a11d','admin','admin','admin@admin.es','admin@admin.es',1,NULL,'$2y$10$njggTcqozdKxhQMpYwWz7eN0IIYzvSE.5OkvQ9IYIndBFQSUfmAdm','2019-11-19 10:51:39',NULL,NULL,'a:0:{}'),('a40b7eac-b55e-489a-9ac3-3a3329b55600','user','user','user@user.es','user@user.es',1,NULL,'$2y$10$N5VDq3vCGGhwvzPPDOqIAuSwalA.Pwp66/nLwn.9JsRX5JTY3Nube','2019-11-19 10:50:20',NULL,NULL,'a:0:{}'),('d4307506-b0aa-4aa6-bfaf-0258863c4184','editor','editor','editor@editor.es','editor@editor.es',1,NULL,'$2y$10$eOo8QtCg/yby2rZz4wdH6eeHpR8dK3QGAOj51u4.Cl0mzsF3VYmsK','2019-11-19 10:50:33',NULL,NULL,'a:0:{}');
 /*!40000 ALTER TABLE `fos_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -121,7 +121,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `mapea_control_config` WRITE;
 /*!40000 ALTER TABLE `mapea_control_config` DISABLE KEYS */;
-INSERT INTO `mapea_control_config` VALUES ('19d5e54e-b39e-402b-b08f-65ad8f5c6c5a','2ca6747b-35ac-4aa6-9c79-5803fdd59d14','No parametrizable','default'),('24f92eb0-d492-4f91-8585-fcfdbe77f341','a5400517-ce7e-4037-8131-2cdc51826d15','No parametrizable','default'),('42482a1d-9a84-4afa-bfbd-f3ee9d69a0d4','592b11fc-0c29-49ff-821f-0fe0a4d7d896','GetFeatureInfo en formato HTML y con un buffer de 1000 pixeles','\'html\', {buffer: 1000}'),('4413e904-fee2-4b1e-aa84-34bc7c50fee7','cb5adf6d-cc92-40e6-b81c-8ade19b9be88','GetFeatureInfo en formato HTML y con un buffer de 1000 pixeles','\'html\',  {buffer: 1000}'),('4541ed5f-4b84-42bf-a0da-88e653f24cb7','081ff3bd-6a84-475f-851b-faae120721c8','No parametrizable','default'),('471ae2bf-b647-415a-9a0d-328533f89d95','ecaa4b6b-52a2-4248-9399-69d4d2311960','No parametrizable','default'),('53aef65f-2c9b-48c7-8fa5-6242c6304a3b','e304bd2c-9043-42dc-a7e1-3641bd19100d','No parametrizable','default'),('592cd1bf-0e01-4ade-bc18-e95c3c010e52','bd26de54-f154-4819-882f-fbee9d66daf2','Configuración traking false, highAccuracy false','false,false'),('5d2eb401-5b66-47a3-8ac6-ce043da6db18','cb5adf6d-cc92-40e6-b81c-8ade19b9be88','GetFeatureInfo en formato GML y con un buffer de 1000 metros','\'gml\',  {buffer: 1000}'),('66c571a6-03aa-4b4a-be09-1f40c0da0391','ce8fc09a-508b-43e8-baf7-1cbbdb6d39e9','No parametrizable','default'),('7a7102b6-2865-4225-9e72-b4705362d27a','3d27c18e-80e7-4f95-8624-f1ec77509253','Configuración traking false, highAccuracy false','false,false'),('8d569a5e-afbd-4a32-a308-fdf4a80ae9e2','97b3e243-7d3d-443d-8ea6-5009a15f70e2','No parametrizable','default'),('8ea99068-a02c-451c-aef3-2af9c6160448','d5b0759e-ae72-402f-8ab3-7711c537ed7d','No parametrizable','default'),('98b35269-2844-436f-bc73-d2334c2cac92','953e0227-733e-467f-9add-7c58105aa252','No parametrizable','default'),('a4d4b526-4066-47d5-9c4b-c0ef7e9d41ac','592b11fc-0c29-49ff-821f-0fe0a4d7d896','GetFeatureInfo en formato GML y con un buffer de 1000 metros','\'gml\', {buffer: 1000}'),('d2d9df18-6c1c-4fa1-85e6-79fa85aab99b','3d27c18e-80e7-4f95-8624-f1ec77509253','Configuración traking true highAccuracy true','true,true'),('d8010080-a442-4aa6-ab73-48441e749557','bd26de54-f154-4819-882f-fbee9d66daf2','Configuración traking true highAccuracy true','true,true'),('d9fdb5f4-3b7c-4000-bd8f-f1cfed122f98','196baac8-48db-4828-8c18-633e6571643a','No parametrizable','default'),('e5a22890-93f5-4f0c-aa29-30e963df0fd8','3d27c18e-80e7-4f95-8624-f1ec77509253','Configuración traking true highAccuracy false','true,false'),('e9cb4d60-34de-4db1-a422-ec196d2d74db','13c09ca3-a503-40e4-802b-1ebe8db70639','No parametrizable','default'),('f2a78194-fa9b-465b-9912-0e95737522e6','bd26de54-f154-4819-882f-fbee9d66daf2','Configuración traking true highAccuracy false','true,false'),('f9535d69-67d6-46ed-94f1-a82b0a68f49e','3fe3b863-eb87-481a-acaf-d8f7a8b35eff','No parametrizable','default');
+INSERT INTO `mapea_control_config` VALUES ('19d5e54e-b39e-402b-b08f-65ad8f5c6c5a','2ca6747b-35ac-4aa6-9c79-5803fdd59d14','No parametrizable','default'),('24f92eb0-d492-4f91-8585-fcfdbe77f341','a5400517-ce7e-4037-8131-2cdc51826d15','No parametrizable','default'),('42482a1d-9a84-4afa-bfbd-f3ee9d69a0d4','592b11fc-0c29-49ff-821f-0fe0a4d7d896','GetFeatureInfo en formato HTML y con un buffer de 1000 pixeles','\'html\', {buffer: 1000}'),('4413e904-fee2-4b1e-aa84-34bc7c50fee7','cb5adf6d-cc92-40e6-b81c-8ade19b9be88','GetFeatureInfo en formato HTML y con un buffer de 1000 pixeles','\'html\',  {buffer: 1000}'),('4541ed5f-4b84-42bf-a0da-88e653f24cb7','081ff3bd-6a84-475f-851b-faae120721c8','No parametrizable','default'),('471ae2bf-b647-415a-9a0d-328533f89d95','ecaa4b6b-52a2-4248-9399-69d4d2311960','No parametrizable','default'),('53aef65f-2c9b-48c7-8fa5-6242c6304a3b','e304bd2c-9043-42dc-a7e1-3641bd19100d','No parametrizable','default'),('592cd1bf-0e01-4ade-bc18-e95c3c010e52','bd26de54-f154-4819-882f-fbee9d66daf2','Configuración traking false, highAccuracy false','false,false'),('5d2eb401-5b66-47a3-8ac6-ce043da6db18','cb5adf6d-cc92-40e6-b81c-8ade19b9be88','GetFeatureInfo en formato GML y con un buffer de 1000 metros','\'gml\',  {buffer: 1000}'),('66c571a6-03aa-4b4a-be09-1f40c0da0391','ce8fc09a-508b-43e8-baf7-1cbbdb6d39e9','No parametrizable','default'),('7a7102b6-2865-4225-9e72-b4705362d27a','3d27c18e-80e7-4f95-8624-f1ec77509253','Configuración traking false, highAccuracy false','false,false'),('8d569a5e-afbd-4a32-a308-fdf4a80ae9e2','97b3e243-7d3d-443d-8ea6-5009a15f70e2','No parametrizable','default'),('8ea99068-a02c-451c-aef3-2af9c6160448','d5b0759e-ae72-402f-8ab3-7711c537ed7d','No parametrizable','default'),('98b35269-2844-436f-bc73-d2334c2cac92','953e0227-733e-467f-9add-7c58105aa252','No parametrizable','default'),('d8010080-a442-4aa6-ab73-48441e749557','bd26de54-f154-4819-882f-fbee9d66daf2','Configuración traking true highAccuracy true','true,true'),('d9fdb5f4-3b7c-4000-bd8f-f1cfed122f98','196baac8-48db-4828-8c18-633e6571643a','No parametrizable','default'),('e5a22890-93f5-4f0c-aa29-30e963df0fd8','3d27c18e-80e7-4f95-8624-f1ec77509253','Configuración traking true highAccuracy false','true,false'),('e9cb4d60-34de-4db1-a422-ec196d2d74db','13c09ca3-a503-40e4-802b-1ebe8db70639','No parametrizable','default'),('f2a78194-fa9b-465b-9912-0e95737522e6','bd26de54-f154-4819-882f-fbee9d66daf2','Configuración traking true highAccuracy false','true,false'),('f9535d69-67d6-46ed-94f1-a82b0a68f49e','3fe3b863-eb87-481a-acaf-d8f7a8b35eff','No parametrizable','default');
 /*!40000 ALTER TABLE `mapea_control_config` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -146,12 +146,22 @@ INSERT INTO `mapea_layer_wms` VALUES ('09b2a2f7-7662-43a9-805a-5134739dcc0f','ht
 UNLOCK TABLES;
 
 --
+-- Dumping data for table `mapea_layer_wmsmap_configured`
+--
+
+LOCK TABLES `mapea_layer_wmsmap_configured` WRITE;
+/*!40000 ALTER TABLE `mapea_layer_wmsmap_configured` DISABLE KEYS */;
+INSERT INTO `mapea_layer_wmsmap_configured` VALUES ('6d52e51d-795e-407a-80ec-e0d7c472a139','336783b0-dafd-41e3-98dd-210f829aab8e',0),('a491f79f-869b-44f0-aa3e-4e5153aa346b','09b2a2f7-7662-43a9-805a-5134739dcc0f',1);
+/*!40000 ALTER TABLE `mapea_layer_wmsmap_configured` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Dumping data for table `mapea_map`
 --
 
 LOCK TABLES `mapea_map` WRITE;
 /*!40000 ALTER TABLE `mapea_map` DISABLE KEYS */;
-INSERT INTO `mapea_map` VALUES ('8fb277ca-e25d-4296-8d42-4b0f965715b9','7f823767-22f3-4f31-a74d-f8d69021a11d','5ccf77a6-0455-4207-87ed-6404ff291251','ee952a77-9a9e-45b2-ae06-f5d7a03f5ad9','1f3df6b5-559e-486d-b744-3bf7b06cbdb4',0,NULL,NULL,'EPSG:25830*m',NULL,NULL,NULL,'Red de comunicaciones','En este mapa se muestra la Ortofotografía digital de Andalucía con el sistema urbano y la red de carreteras'),('f7a0a77e-3762-4e42-9c80-2ca1ad886218','3d9e1792-5dc8-42c5-bc37-8b5285f49248','ebaddb75-99c6-4fb3-ba9e-c297184a6bca','f7ef8e74-7bcf-4f92-a5ab-4e7efcc5d97a','1f3df6b5-559e-486d-b744-3bf7b06cbdb4',0,NULL,NULL,'EPSG:25830*m',NULL,NULL,NULL,'mapawmc','Mapa con WMC');
+INSERT INTO `mapea_map` VALUES ('3f4c3623-7da0-4c5c-ba7e-f892c578e207','a40b7eac-b55e-489a-9ac3-3a3329b55600','d1da790d-271d-4525-ba6d-d3ff4c881b79','f7ef8e74-7bcf-4f92-a5ab-4e7efcc5d97a','1f3df6b5-559e-486d-b744-3bf7b06cbdb4',NULL,NULL,NULL,'EPSG:25830*m',NULL,NULL,NULL,'ortofoto 2016 (Color)','ortofoto 2016 (Color)');
 /*!40000 ALTER TABLE `mapea_map` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -161,7 +171,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `mapea_map_mapea_configured_control` WRITE;
 /*!40000 ALTER TABLE `mapea_map_mapea_configured_control` DISABLE KEYS */;
-INSERT INTO `mapea_map_mapea_configured_control` VALUES ('8fb277ca-e25d-4296-8d42-4b0f965715b9','07c4fbf6-6bc0-46d5-afd8-daeaf68b43a3'),('8fb277ca-e25d-4296-8d42-4b0f965715b9','12a997a1-7e2d-43bc-a3a1-300ed905b2aa'),('8fb277ca-e25d-4296-8d42-4b0f965715b9','1fd0f2e1-1dc9-4d27-84ce-523b11f5d6ed'),('8fb277ca-e25d-4296-8d42-4b0f965715b9','288fc0d4-199b-42b3-989d-3e80dc3aa837'),('f7a0a77e-3762-4e42-9c80-2ca1ad886218','4bf35c69-2149-48f9-8c65-1d497fcbf5d7'),('f7a0a77e-3762-4e42-9c80-2ca1ad886218','5e1a7219-cab5-4b5a-bdf2-2f5ddbe35ba8'),('f7a0a77e-3762-4e42-9c80-2ca1ad886218','79e36499-689f-49a7-a133-b7d85654fcd1'),('f7a0a77e-3762-4e42-9c80-2ca1ad886218','f702a762-8cbb-423f-b29f-003a344a52c2');
+INSERT INTO `mapea_map_mapea_configured_control` VALUES ('3f4c3623-7da0-4c5c-ba7e-f892c578e207','4bf35c69-2149-48f9-8c65-1d497fcbf5d7');
 /*!40000 ALTER TABLE `mapea_map_mapea_configured_control` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -175,13 +185,13 @@ LOCK TABLES `mapea_map_mapea_configured_plugin` WRITE;
 UNLOCK TABLES;
 
 --
--- Dumping data for table `mapea_map_mapea_layer_wms`
+-- Dumping data for table `mapea_map_mapea_layer_wmsmap_configured`
 --
 
-LOCK TABLES `mapea_map_mapea_layer_wms` WRITE;
-/*!40000 ALTER TABLE `mapea_map_mapea_layer_wms` DISABLE KEYS */;
-INSERT INTO `mapea_map_mapea_layer_wms` VALUES ('8fb277ca-e25d-4296-8d42-4b0f965715b9','336783b0-dafd-41e3-98dd-210f829aab8e'),('8fb277ca-e25d-4296-8d42-4b0f965715b9','83c222f9-cc67-4c88-97a5-b251cbd315d6'),('8fb277ca-e25d-4296-8d42-4b0f965715b9','b16660ca-1bb6-4bef-8ad5-de5f814bb53f');
-/*!40000 ALTER TABLE `mapea_map_mapea_layer_wms` ENABLE KEYS */;
+LOCK TABLES `mapea_map_mapea_layer_wmsmap_configured` WRITE;
+/*!40000 ALTER TABLE `mapea_map_mapea_layer_wmsmap_configured` DISABLE KEYS */;
+INSERT INTO `mapea_map_mapea_layer_wmsmap_configured` VALUES ('3f4c3623-7da0-4c5c-ba7e-f892c578e207','6d52e51d-795e-407a-80ec-e0d7c472a139'),('3f4c3623-7da0-4c5c-ba7e-f892c578e207','a491f79f-869b-44f0-aa3e-4e5153aa346b');
+/*!40000 ALTER TABLE `mapea_map_mapea_layer_wmsmap_configured` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -190,7 +200,6 @@ UNLOCK TABLES;
 
 LOCK TABLES `mapea_map_mapea_wmc` WRITE;
 /*!40000 ALTER TABLE `mapea_map_mapea_wmc` DISABLE KEYS */;
-INSERT INTO `mapea_map_mapea_wmc` VALUES ('f7a0a77e-3762-4e42-9c80-2ca1ad886218','127b00f3-a3e2-4815-8b90-1f793452bd49');
 /*!40000 ALTER TABLE `mapea_map_mapea_wmc` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -225,6 +234,16 @@ INSERT INTO `mapea_wmc` VALUES ('127b00f3-a3e2-4815-8b90-1f793452bd49','mapa_bas
 UNLOCK TABLES;
 
 --
+-- Dumping data for table `migration_versions`
+--
+
+LOCK TABLES `migration_versions` WRITE;
+/*!40000 ALTER TABLE `migration_versions` DISABLE KEYS */;
+INSERT INTO `migration_versions` VALUES ('20191130111038','2019-11-30 11:11:16'),('20191201062209','2019-12-01 06:22:30'),('20191201062431','2019-12-01 06:24:36'),('20191201063301','2019-12-01 06:33:24'),('20191201063646','2019-12-01 06:37:05'),('20191201071600','2019-12-01 07:16:06'),('20191201071628','2019-12-01 07:16:34'),('20191201071652','2019-12-01 07:16:57'),('20191201081108','2019-12-01 08:11:14'),('20191201081425','2019-12-01 08:14:32');
+/*!40000 ALTER TABLE `migration_versions` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Dumping data for table `user_map_sub_category`
 --
 
@@ -242,4 +261,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-11-29 12:36:55
+-- Dump completed on 2019-12-01 10:02:04
