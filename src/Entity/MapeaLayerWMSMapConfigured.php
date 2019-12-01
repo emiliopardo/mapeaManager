@@ -104,6 +104,6 @@ class MapeaLayerWMSMapConfigured
         if ($this->getBaseLayer()){
             $string=' (Capa Base)';
         }
-        return $this->getMapeaLayerWMS()->getLayerName().$string;
+        return $this->getMapeaLayerWMS()->getLayerTitle().$string;
     }
 }
