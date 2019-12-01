@@ -14,6 +14,6 @@ final class MapeaSubCategoryConfigByIdCategoryAdminController extends CRUDContro
     public function getMapSubCategoryAction(Request $request)
     {   $mapCategoryId = $request->request->get('id');
         $mapSubCategory = $this->getDoctrine()->getRepository(MapSubCategory::class)->findBy(array("category" => $mapCategoryId));
-        return $this->render("Admin/mapSubCategory.html.twig", array("mapSubCategory" => $mapSubCategory));
+        return $this->render("Admin/MapeaSubCategoryConfigByIdCategoryAdmin/mapSubCategory.html.twig", array("mapSubCategory" => $mapSubCategory));
     }
 }
