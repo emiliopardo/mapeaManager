@@ -64,7 +64,7 @@ final class MapeaWMCAdmin extends AbstractAdmin
             ->add('updated')
             ->add('systemFileName')
             ->add('originalFileName')
-            ->add('urlPath','string', ['template' => 'Admin/show/MapeaWMCAdmin/show_urlpath.html.twig'])
+            ->add('urlPath','string', ['template' => 'Admin/MapeaWMCAdmin/show/show_urlpath.html.twig'])
             ->add('localPath')
             ;
     }
