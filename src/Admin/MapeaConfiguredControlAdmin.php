@@ -89,7 +89,7 @@ final class MapeaConfiguredControlAdmin extends AbstractAdmin
     {
         switch ($name) {
             case 'edit':
-                return 'Admin/mapeaControlConfig.admin.html.twig';
+                return 'Admin/MapeaConfiguredControlAdmin/edit/mapeaControlConfig.admin.html.twig';
                 break;
             default:
                 return parent::getTemplate($name);

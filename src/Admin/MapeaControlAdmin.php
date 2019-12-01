@@ -92,7 +92,6 @@ final class MapeaControlAdmin extends AbstractAdmin
     {
         if ($configurable) {
             $this-defaultControlConfig();
-            //$this-defaultConfiguredControl();
         }
         
     }

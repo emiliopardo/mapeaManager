@@ -14,6 +14,6 @@ final class MapeaControlConfigByIdAdminController extends CRUDController
     public function getMapeaControlConfigAction(Request $request)
     {   $mapeaControlId = $request->request->get('id');
         $mapeaControlConfig = $this->getDoctrine()->getRepository(MapeaControlConfig::class)->findBy(array("mapeaControl" => $mapeaControlId));
-        return $this->render("Admin/mapeaControlConfig.html.twig", array("mapeaControlConfig" => $mapeaControlConfig));
+        return $this->render("Admin/MapeaControlConfigByIdAdmin/mapeaControlConfig.html.twig", array("mapeaControlConfig" => $mapeaControlConfig));
     }
 }

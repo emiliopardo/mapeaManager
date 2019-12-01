@@ -279,7 +279,7 @@ final class MapeaMapAdmin extends AbstractAdmin
     {
         switch ($name) {
             case 'edit':
-                return 'Admin/mapSubCategory.admin.html.twig';
+                return 'Admin/MapeaMapAdmin/edit/mapSubCategory.admin.html.twig';
                 break;
             default:
                 return parent::getTemplate($name);

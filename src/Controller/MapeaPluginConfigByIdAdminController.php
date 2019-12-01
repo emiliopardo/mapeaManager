@@ -13,6 +13,6 @@ final class MapeaPluginConfigByIdAdminController extends CRUDController
     public function getMapeaPluginConfigAction(Request $request)
     {   $mapeaPluginId = $request->request->get('id');
         $mapeaPluginConfig = $this->getDoctrine()->getRepository(MapeaPluginConfig::class)->findBy(array("mapeaPlugin" => $mapeaPluginId));
-        return $this->render("Admin/mapeaPluginConfig.html.twig", array("mapeaPluginConfig" => $mapeaPluginConfig));
+        return $this->render("Admin/MapeaPluginConfigByIdAdmin/mapeaPluginConfig.html.twig", array("mapeaPluginConfig" => $mapeaPluginConfig));
     }
 }
