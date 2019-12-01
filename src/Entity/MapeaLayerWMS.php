@@ -136,7 +136,7 @@ class MapeaLayerWMS
 
     public function __toString()
     {
-        return $this->layerName;
+        return $this->layerTitle;
     }
 
 }
