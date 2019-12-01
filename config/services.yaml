@@ -162,3 +162,10 @@ services:
         tags:
             - { name: sonata.admin, manager_type: orm, group: admin, label: MapeaConfiguredLayerWMS }
         public: true
+
+    admin.mapea_layer_wms_legend_image:
+        class: App\Admin\MapeaLayerWMSLegendImageAdmin
+        arguments: [~, App\Entity\MapeaLayerWMSLegendImage, App\Controller\MapeaLayerWMSLegendImageAdminController]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: admin, label: 'Leyenda' }
+        public: true

@@ -27,6 +27,7 @@ sonata_admin:
                 items:
                     - admin.mapea_wmc
                     - admin.mapea_layer_wms
+                    - admin.mapea_layer_wms_legend_image
             sonata_user:
                 label: User
                 items:

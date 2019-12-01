@@ -8,10 +8,10 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
-use Sonata\AdminBundle\Show\ShowMapper;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Sonata\AdminBundle\Show\ShowMapper;
 
-final class MapeaWMCAdmin extends AbstractAdmin
+final class MapeaLayerWMSLegendImageAdmin extends AbstractAdmin
 {
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper): void
@@ -50,7 +50,7 @@ final class MapeaWMCAdmin extends AbstractAdmin
             ->setHelps([
                 'tile' => 'Write a descriptive title.',
                 'description' => 'Write a brief description.',
-                'file' => 'Select WMC file to upload.',
+                'file' => 'Select Image file to upload.',
             ])
             ;
     }
@@ -64,7 +64,7 @@ final class MapeaWMCAdmin extends AbstractAdmin
             ->add('updated')
             ->add('systemFileName')
             ->add('originalFileName')
-            ->add('urlPath','string', ['template' => 'Admin/show/MapeaWMCAdmin/show_urlpath.html.twig'])
+            ->add('urlPath','string', ['template' => 'Admin/show/MapeaLayerWMSLegendImageAdmin/show_urlpath.html.twig'])
             ->add('localPath')
             ;
     }
