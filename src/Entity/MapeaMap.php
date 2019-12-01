@@ -101,9 +101,9 @@ class MapeaMap
     private $mapeaWMC;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\MapeaLayerWMS", inversedBy="mapeaMaps")
+     * @ORM\ManyToMany(targetEntity="App\Entity\MapeaLayerWMSMapConfigured", inversedBy="mapeaMap")
      */
-    private $mapeaLayerWMS;
+    private $mapeaLayersWMS;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\MapCategory", inversedBy="mapeaMaps")
@@ -111,12 +111,14 @@ class MapeaMap
      */
     private $category;
 
+
+
     public function __construct()
     {
         $this->mapeaControls = new ArrayCollection();
         $this->mapeaPlugins = new ArrayCollection();
         $this->mapeaWMC = new ArrayCollection();
-        $this->mapeaLayerWMS = new ArrayCollection();
+        $this->mapeaLayersWMS = new ArrayCollection();
     }
 
     public function getId()
@@ -351,32 +353,6 @@ class MapeaMap
         return $this;
     }
 
-    /**
-     * @return Collection|MapeaLayerWMS[]
-     */
-    public function getMapeaLayerWMS(): Collection
-    {
-        return $this->mapeaLayerWMS;
-    }
-
-    public function addMapeaLayerWMS(MapeaLayerWMS $mapeaLayerWMS): self
-    {
-        if (!$this->mapeaLayerWMS->contains($mapeaLayerWMS)) {
-            $this->mapeaLayerWMS[] = $mapeaLayerWMS;
-        }
-
-        return $this;
-    }
-
-    public function removeMapeaLayerWMS(MapeaLayerWMS $mapeaLayerWMS): self
-    {
-        if ($this->mapeaLayerWMS->contains($mapeaLayerWMS)) {
-            $this->mapeaLayerWMS->removeElement($mapeaLayerWMS);
-        }
-
-        return $this;
-    }
-
     public function getCategory(): ?MapCategory
     {
         return $this->category;
@@ -388,4 +364,36 @@ class MapeaMap
 
         return $this;
     }
+
+    /**
+     * @return Collection|MapeaLayerWMSMapConfigured[]
+     */
+    public function getMapeaLayersWMS(): Collection
+    {
+        return $this->mapeaLayersWMS;
+    }
+
+    public function addMapeaLayersWM(MapeaLayerWMSMapConfigured $mapeaLayersWM): self
+    {
+        if (!$this->mapeaLayersWMS->contains($mapeaLayersWM)) {
+            $this->mapeaLayersWMS[] = $mapeaLayersWM;
+            $mapeaLayersWM->setMapeaMap($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMapeaLayersWM(MapeaLayerWMSMapConfigured $mapeaLayersWM): self
+    {
+        if ($this->mapeaLayersWMS->contains($mapeaLayersWM)) {
+            $this->mapeaLayersWMS->removeElement($mapeaLayersWM);
+            // set the owning side to null (unless already changed)
+            if ($mapeaLayersWM->getMapeaMap() === $this) {
+                $mapeaLayersWM->setMapeaMap(null);
+            }
+        }
+
+        return $this;
+    }
+
 }
