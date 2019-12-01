@@ -17,7 +17,6 @@ final class MapeaLayerWMSMapConfiguredAdmin extends AbstractAdmin
     {
         $datagridMapper
             //->add('id')
-            ->add('mapeaMap')
             ->add('mapeaLayerWMS')
             ->add('baseLayer')
             ;
@@ -27,10 +26,8 @@ final class MapeaLayerWMSMapConfiguredAdmin extends AbstractAdmin
     {
         $listMapper
             //->add('id')
-            ->add('mapeaMap')
             ->add('mapeaLayerWMS')
             ->add('baseLayer')
-            
             ->add('_action', null, [
                 'actions' => [
                     'show' => [],
@@ -44,17 +41,8 @@ final class MapeaLayerWMSMapConfiguredAdmin extends AbstractAdmin
     {
         $formMapper
             //->add('id')
-            ->with('Mapa', array('class'=>'col-md-4'))
-            ->add('mapeaMap')
-            ->end()
-            ->with('Capa', array('class'=>'col-md-8'))
-            ->add('mapeaLayerWMS', null, [
-                'attr' => ['style' => 'width:70%;']
-            ])
-            ->add('baseLayer', null, [
-                'attr' => ['style' => 'width:30%;']
-            ])
-            ->end()          
+            ->add('mapeaLayerWMS')
+            ->add('baseLayer')          
             ;
     }
 
@@ -62,7 +50,6 @@ final class MapeaLayerWMSMapConfiguredAdmin extends AbstractAdmin
     {
         $showMapper
             //->add('id')
-            ->add('mapeaMap')
             ->add('mapeaLayerWMS')
             ->add('baseLayer')
             ;
