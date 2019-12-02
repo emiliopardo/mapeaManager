@@ -47,6 +47,26 @@
         {% block body_javascripts %}
         <!-- script -->
         <script>
+            {% if mapeaMap.mapeaLayersWMS is not null and mapeaMap.mapeaLayersWMS is not empty %}
+                {% for mapeaLayerWMS in mapeaMap.mapeaLayersWMS %}
+                    let {{mapeaLayerWMS.layerName}} = new M.layer.WMS({
+                        url: '{{mapeaLayerWMS.layerWMSUrl}}',
+                        name: '{{mapeaLayerWMS.layerName}}',
+                        legend: '{{mapeaLayerWMS.layerTitle}}',
+                        {% if mapeaLayerWMS.baseLayer %}
+                            transparent: false,
+                         {% else %}
+                            transparent: true,
+                        {% endif %}
+                        tiled: true
+                    },{
+                        params: {
+                            style:"{{mapeaLayerWMS.layerStyle}}",
+                            layers: "{{mapeaLayerWMS.layerName}}"
+                        }
+                    });
+                {% endfor %} 
+            {% endif %}
 
             mapajs = M.map({
             container:"map",
@@ -56,30 +76,17 @@
                 
                '{{ app.request.getSchemeAndHttpHost()}}{{ asset('uploads/wmc/')}}{{mapeaWMC.urlPath}}*{{mapeaWMC.title}}',
                 {% endfor %}
-                ]
+                ],
             {% endif %}
-            });
+            {% if mapeaMap.mapeaLayersWMS is not null and mapeaMap.mapeaLayersWMS is not empty %}
+                layers: [
+                {% for mapeaLayerWMS in mapeaMap.mapeaLayersWMS %}
+                {{mapeaLayerWMS.layerName}},
+                {% endfor %} 
+                ]
+            {% endif %}                
 
-             //plugins configuration
-            {% for mapeaPlugin in mapeaMap.mapeaPlugins %}
-                {% if mapeaPlugin.pluginConfig.configuration == "default" %}  
-                //non parametrizable plugins
-                    {{mapeaPlugin.plugin.code~';'|raw}} 
-                {% else %}
-               //parametrizable plugins
-                    {{mapeaPlugin.plugin.code|replace({'()': '(' ~ mapeaPlugin.pluginConfig.configuration ~')'})|raw}};
-                {% endif %}
-            {% endfor %}
-            //controls configuration
-            {% for mapeaControl in mapeaMap.mapeaControls %}
-                {% if mapeaControl.controlConfig.configuration == "default" %}  
-                //non parametrizable control
-                    {{mapeaControl.control.code~';'|raw}}             
-                {% else %}
-                //parametrizable control
-                    {{mapeaControl.control.code|replace({'()': '(' ~ mapeaControl.controlConfig.configuration ~')'})|raw}};
-                {% endif %}
-            {% endfor %}
+            });
 
             //maps options 
             {% if mapeaMap.zoom is not null and mapeaMap.zoom is not empty %}
@@ -103,27 +110,27 @@
             {% if mapeaMap.resolutions is not null and mapeaMap.resolutions is not empty %}
                 mapajs.setResolutions({{mapeaMap.resolutions}}); 
             {% endif %}
-            {% if mapeaMap.mapeaLayersWMS is not null and mapeaMap.mapeaLayersWMS is not empty %}
-                {% for mapeaLayerWMS in mapeaMap.mapeaLayersWMS %}
-                    var {{mapeaLayerWMS.layerName}} = new M.layer.WMS({
-                        url: '{{mapeaLayerWMS.layerWMSUrl}}',
-                        name: '{{mapeaLayerWMS.layerName}}',
-                        legend: '{{mapeaLayerWMS.layerTitle}}',
-                        {% if mapeaLayerWMS.baseLayer %}
-                            transparent: false,
-                         {% else %}
-                            transparent: true,
-                        {% endif %}
-                        tiled: true
-                    },{
-                        params: {
-                            style:"{{mapeaLayerWMS.layerStyle}}",
-                            layers: "{{mapeaLayerWMS.layerName}}"
-                        }
-                    });
-                mapajs.addWMS([{{mapeaLayerWMS.layerName}}])
-                {% endfor %} 
-            {% endif %}
+
+            //plugins configuration
+            {% for mapeaPlugin in mapeaMap.mapeaPlugins %}
+                {% if mapeaPlugin.pluginConfig.configuration == "default" %}  
+                //non parametrizable plugins
+                    {{mapeaPlugin.plugin.code~';'|raw}} 
+                {% else %}
+               //parametrizable plugins
+                    {{mapeaPlugin.plugin.code|replace({'()': '(' ~ mapeaPlugin.pluginConfig.configuration ~')'})|raw}};
+                {% endif %}
+            {% endfor %}
+            //controls configuration
+            {% for mapeaControl in mapeaMap.mapeaControls %}
+                {% if mapeaControl.controlConfig.configuration == "default" %}  
+                //non parametrizable control
+                    {{mapeaControl.control.code~';'|raw}}             
+                {% else %}
+                //parametrizable control
+                    {{mapeaControl.control.code|replace({'()': '(' ~ mapeaControl.controlConfig.configuration ~')'})|raw}};
+                {% endif %}
+            {% endfor %}
 
         {% endblock %}
         </script>
