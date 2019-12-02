@@ -61,7 +61,9 @@
                         tiled: true
                     },{
                         params: {
+                            {% if not mapeaLayerWMS.layerStyle == 'default' %}
                             style:"{{mapeaLayerWMS.layerStyle}}",
+                            {% endif %}
                             layers: "{{mapeaLayerWMS.layerName}}"
                         }
                     });
