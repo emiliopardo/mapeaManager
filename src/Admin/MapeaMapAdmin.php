@@ -183,6 +183,7 @@ final class MapeaMapAdmin extends AbstractAdmin
                     */
                     ->add('mapeaControls', ModelType::class, array(
                         'multiple' => true,
+                        'required' => false,
                     ))
                 ->end()
             ->end()
@@ -190,6 +191,7 @@ final class MapeaMapAdmin extends AbstractAdmin
                 ->with('Plugins')
                     ->add('mapeaPlugins', ModelType::class, array(
                         'multiple' => true,
+                        'required' => false,
                     ))
                     /*
                     ->add('mapeaPlugins', EntityType::class, [
@@ -204,6 +206,7 @@ final class MapeaMapAdmin extends AbstractAdmin
                 ->with('Layers WMS')
                     ->add('mapeaLayersWMS', ModelType::class, array(
                         'multiple' => true,
+                        'required' => false,
                     ))
                     /*
                     ->add('mapeaLayersWMS', EntityType::class, [
@@ -214,11 +217,17 @@ final class MapeaMapAdmin extends AbstractAdmin
                     */
                 ->end()
                 ->with('Web Map Context')
+                    ->add('mapeaWMC', ModelType::class, array(
+                        'multiple' => true,
+                        'required' => false,
+                    ))
+                    /*
                     ->add('mapeaWMC', EntityType::class, [
                         'class' => MapeaWMC::class,
                         'multiple' => true,
                         'expanded' => true,
                     ])
+                    */
                 ->end()
             ->end()
 
