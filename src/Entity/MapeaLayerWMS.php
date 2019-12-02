@@ -43,7 +43,7 @@ class MapeaLayerWMS
     private $LayerDescription;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true ,options={"default": "default"})
+     * @ORM\Column(type="string", length=255 ,options={"default": "default"})
      */
     private $layerStyle;
 
