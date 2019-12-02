@@ -95,8 +95,8 @@ class MapeaLayerWMSMapConfigured
         return $this->getMapeaLayerWMS()->getLayerStyle();
     }
 
-    public function getLayerLegend(){
-        return $this->getMapeaLayerWMS()->getLayerLegend();
+    public function getImage(){
+        return $this->getMapeaLayerWMS()->getImage();
     }
 
     public function __toString(){
