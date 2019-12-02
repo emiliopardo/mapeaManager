@@ -47,6 +47,11 @@ class MapeaLayerWMS
      */
     private $layerStyle;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\MapeaLayerWMSLegendImage" ,cascade={"persist", "remove"}, fetch="EAGER")
+     */
+    private $image;
+
     public function __construct()
     {
        
@@ -120,5 +125,17 @@ class MapeaLayerWMS
     public function __toString()
     {
         return $this->layerTitle;
+    }
+
+    public function getImage(): ?MapeaLayerWMSLegendImage
+    {
+        return $this->image;
+    }
+
+    public function setImage(?MapeaLayerWMSLegendImage $image): self
+    {
+        $this->image = $image;
+
+        return $this;
     }
 }
