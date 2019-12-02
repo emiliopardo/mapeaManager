@@ -67,6 +67,10 @@
                             layers: "{{mapeaLayerWMS.layerName}}"
                         }
                     });
+
+                    {% if mapeaLayerWMS.image is not null and mapeaLayerWMS.image is not empty%}
+                    {{mapeaLayerWMS.layerName}}.setLegendURL('{{ app.request.getSchemeAndHttpHost()}}{{ asset('uploads/legends/')}}{{mapeaLayerWMS.image.urlPath}}');
+                    {% endif %}
                 {% endfor %} 
             {% endif %}
 
