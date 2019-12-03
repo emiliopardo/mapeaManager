@@ -12,22 +12,25 @@ sonata_admin:
                 label: Mapea
                 items:
                     - admin.mapea_core
+            sonata_mapea_controls:
+                label: Controls
+                items:
                     - admin.mapea_control
                     - admin.mapea_control_config
+                    - admin.mapea_configured_control
+            sonata_mapea_plugins:
+                label: Plugins
+                items:
                     - admin.mapea_plugin
                     - admin.mapea_plugin_config
-            sonata_mapea_configuration:
-                label: Configurations
-                items:
-                    - admin.mapea_configured_control
-                    - admin.mapea_configured_plugin 
-                    - admin.mapea_layer_wms_map_configured
+                    - admin.mapea_configured_plugin           
             sonata_layers:
                 label: Layers
                 items:
                     - admin.mapea_wmc
                     - admin.mapea_layer_wms
                     - admin.mapea_layer_wms_legend_image
+                    - admin.mapea_layer_wms_map_configured
             sonata_user:
                 label: User
                 items:
