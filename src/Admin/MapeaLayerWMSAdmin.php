@@ -58,7 +58,9 @@ final class MapeaLayerWMSAdmin extends AbstractAdmin
                 'required'   => false,
                 'empty_data'  => 'default',
             ])
-            ->add('image', ModelType::class)
+            ->add('image', ModelType::class,[
+                'required' =>false,
+            ] )
             ->setHelps([
                 'layerWMSUrl' => 'Write WMS service url.',
                 'layerName' => 'Write Layer name, the same of the capabilities name.',
