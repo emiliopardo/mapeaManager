@@ -47,7 +47,7 @@
         
         {% block body_javascripts %}
         <!-- script -->
-        <script>
+        <script type='text/javascript'>
             {% if mapeaMap.mapeaLayersWMS is not null and mapeaMap.mapeaLayersWMS is not empty %}
                 {% for mapeaLayerWMS in mapeaMap.mapeaLayersWMS %}
                     let {{mapeaLayerWMS.layerName}} = new M.layer.WMS({
