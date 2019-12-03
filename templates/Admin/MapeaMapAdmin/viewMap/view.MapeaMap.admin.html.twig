@@ -63,6 +63,9 @@
         layers: '{{mapeaLayerWMS.layerName}}'
         }
     });
+{% if mapeaLayerWMS.opacity is not null and mapeaLayerWMS.opacity is not empty%}
+    {{mapeaLayerWMS.layerName}}.setOpacity({{mapeaLayerWMS.opacity}});
+{% endif %}    
 {% if mapeaLayerWMS.image is not null and mapeaLayerWMS.image is not empty%}
     {{mapeaLayerWMS.layerName}}.setLegendURL('{{ app.request.getSchemeAndHttpHost()}}{{ asset('uploads/legends/')}}{{mapeaLayerWMS.image.urlPath}}');
 {% endif %} 
