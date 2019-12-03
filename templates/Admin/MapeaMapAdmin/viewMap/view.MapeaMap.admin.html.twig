@@ -1,36 +1,30 @@
-{#
-{% extends '@SonataAdmin/standard_layout.html.twig' %}
-
-{% block sonata_admin_content %}
-    Your content here
-{% endblock %}
-#}
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
-         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+        <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <title>{% block title %}{{mapeaMap.name}}{% endblock %}</title>
         {% block stylesheets %}
-        <!-- Styles-->
-        <!-- Style Core Mapea -->
+<!-- Style Core Mapea -->
         <link href="{{mapeaMap.mapeaCore.style|raw}}" rel="stylesheet" /> 
-        <!-- Style Plugins Mapea -->  
+        {% if  mapeaMap.mapeaPlugins is not null and  mapeaMap.mapeaPlugins is not empty %}
+<!-- Style Plugins Mapea -->  
             {% for mapeaPlugin in mapeaMap.mapeaPlugins %}
                 <link href="{{mapeaPlugin.plugin.style|raw}}" rel="stylesheet" /> 
-            {% endfor %}   
+            {% endfor %} 
+        {% endif %}  
         {% endblock %}
-
-        {% block javascripts %}
-        <!-- javascripts-->
-        <!-- scripts Core Mapea -->
-            <script type="text/javascript" src="{{mapeaMap.mapeaCore.javascript|raw}}"></script>
-            <script type="text/javascript" src="{{mapeaMap.mapeaCore.configuration|raw}}"></script>
-        <!-- scripts plugins Mapea -->
+{% block javascripts %}
+<!-- javascripts Core Mapea -->
+        <script type="text/javascript" src="{{mapeaMap.mapeaCore.javascript|raw}}"></script>
+        <script type="text/javascript" src="{{mapeaMap.mapeaCore.configuration|raw}}"></script>
+            {% if  mapeaMap.mapeaPlugins is not null and  mapeaMap.mapeaPlugins is not empty %}
+<!-- javascripts plugins Mapea -->
             {% for mapeaPlugin in mapeaMap.mapeaPlugins %}
                 <script type="text/javascript" src="{{mapeaPlugin.plugin.javascript|raw}}"></script>
             {% endfor %}
-        {% endblock %}
+            {% endif %} 
+{% endblock %}
         <style>
             html,body,#map {
                 padding: 0;
@@ -44,109 +38,89 @@
         </style>
     </head>
     <body>
-        {% block body %} 
-            <div id="map"></div>
-        {% endblock %}
-        
-        {% block body_javascripts %}
-        <!-- script -->
-        <script type='text/javascript'>
-            {% if mapeaMap.mapeaLayersWMS is not null and mapeaMap.mapeaLayersWMS is not empty %}
-                {% for mapeaLayerWMS in mapeaMap.mapeaLayersWMS %}
-                    let {{mapeaLayerWMS.layerName}} = new M.layer.WMS({
-                        url: '{{mapeaLayerWMS.layerWMSUrl}}',
-                        name: '{{mapeaLayerWMS.layerName}}',
-                        legend: '{{mapeaLayerWMS.layerTitle}}',
-                        {% if mapeaLayerWMS.baseLayer %}
-                            transparent: false,
-                         {% else %}
-                            transparent: true,
-                        {% endif %}
-                        tiled: true
-                    },{
-                        params: {
-                            {% if not mapeaLayerWMS.layerStyle == 'default' %}
-                            style:"{{mapeaLayerWMS.layerStyle}}",
-                            {% endif %}
-                            layers: "{{mapeaLayerWMS.layerName}}"
-                        }
-                    });
+{% block body %} 
+    <div id="map"></div>
+{% endblock %}        
+{% block body_javascripts %}
+    <script type='text/javascript'>
+{% if mapeaMap.mapeaLayersWMS is not null and mapeaMap.mapeaLayersWMS is not empty %}
+{% for mapeaLayerWMS in mapeaMap.mapeaLayersWMS %}
+    let {{mapeaLayerWMS.layerName}} = new M.layer.WMS({
+        url: '{{mapeaLayerWMS.layerWMSUrl}}',
+        name: '{{mapeaLayerWMS.layerName}}',
+        legend: '{{mapeaLayerWMS.layerTitle}}',
+    {% if mapeaLayerWMS.baseLayer %}
+    transparent: false,
+    {% else %}
+    transparent: true,
+    {% endif %}
+    tiled: true
+        },{
+            params: {
+        {% if not mapeaLayerWMS.layerStyle == 'default' %}
+        style:"{{mapeaLayerWMS.layerStyle}}",
+        {% endif %}
+        layers: "{{mapeaLayerWMS.layerName}}"
+        }
+    });
+{% if mapeaLayerWMS.image is not null and mapeaLayerWMS.image is not empty%}
+    {{mapeaLayerWMS.layerName}}.setLegendURL('{{ app.request.getSchemeAndHttpHost()}}{{ asset('uploads/legends/')}}{{mapeaLayerWMS.image.urlPath}}');
+{% endif %} 
+{% endfor %} 
+{% endif %}
 
-                    {% if mapeaLayerWMS.image is not null and mapeaLayerWMS.image is not empty%}
-                    {{mapeaLayerWMS.layerName}}.setLegendURL('{{ app.request.getSchemeAndHttpHost()}}{{ asset('uploads/legends/')}}{{mapeaLayerWMS.image.urlPath}}');
-                    {% endif %}
-                {% endfor %} 
-            {% endif %}
-
-            mapajs = M.map({
-            container:"map",
-            {% if mapeaMap.mapeaWMC is not null and mapeaMap.mapeaWMC is not empty %}
-                wmcfiles: [
-                {% for mapeaWMC in mapeaMap.mapeaWMC %}
-                
-               '{{ app.request.getSchemeAndHttpHost()}}{{ asset('uploads/wmc/')}}{{mapeaWMC.urlPath}}*{{mapeaWMC.title}}',
-                {% endfor %}
-                ],
-            {% endif %}
-            {% if mapeaMap.mapeaLayersWMS is not null and mapeaMap.mapeaLayersWMS is not empty %}
-                layers: [
-                {% for mapeaLayerWMS in mapeaMap.mapeaLayersWMS %}
-                {{mapeaLayerWMS.layerName}},
-                {% endfor %} 
-                ]
-            {% endif %}                
-
-            });
-
-            //maps options 
-            {% if mapeaMap.zoom is not null and mapeaMap.zoom is not empty %}
-                mapajs.setZoom({{mapeaMap.zoom}});
-            {% endif %}
-            {% if mapeaMap.bbox is not null and mapeaMap.bbox is not empty %}
-                mapajs.setBbox({{mapeaMap.bbox}});
-            {% endif %}
-            {% if mapeaMap.maxExtent is not null and mapeaMap.maxExtent is not empty %}
-                mapajs.setMaxExtent ({{mapeaMap.maxExtent}});
-            {% endif %}
-            {% if mapeaMap.projection is not null and mapeaMap.projection is not empty %}
-                mapajs.setProjection ("{{mapeaMap.projection}}");
-            {% endif %}            
-            {% if mapeaMap.center is not null and mapeaMap.center is not empty %}
-                mapajs.setCenter({{mapeaMap.center}});
-            {% endif %}
-            {% if mapeaMap.label is not null and mapeaMap.label is not empty %}
-                mapajs.addLabel("{{mapeaMap.label|raw}}"); 
-            {% endif %}
-            {% if mapeaMap.resolutions is not null and mapeaMap.resolutions is not empty %}
-                mapajs.setResolutions({{mapeaMap.resolutions}}); 
-            {% endif %}
-
-            //plugins configuration
-            {% for mapeaPlugin in mapeaMap.mapeaPlugins %}
-                {% if mapeaPlugin.pluginConfig.configuration == "default" %}  
-                //non parametrizable plugins
-                    {{mapeaPlugin.plugin.code~';'|raw}} 
-                {% else %}
-               //parametrizable plugins
-                    {{mapeaPlugin.plugin.code|replace({'()': '(' ~ mapeaPlugin.pluginConfig.configuration ~')'})|raw}};
-                {% endif %}
-            {% endfor %}
-            //controls configuration
-            {% for mapeaControl in mapeaMap.mapeaControls %}
-                {% if mapeaControl.controlConfig.configuration == "default" %}  
-                //non parametrizable control
-                    {{mapeaControl.control.code~';'|raw}}             
-                {% else %}
-                //parametrizable control
-                    {{mapeaControl.control.code|replace({'()': '(' ~ mapeaControl.controlConfig.configuration ~')'})|raw}};
-                {% endif %}
-            {% endfor %}
-
-        {% endblock %}
-        </script>
-        <!-- End script>  -->
-    </body>
+    mapajs = M.map({
+        container:"map",
+{% if mapeaMap.mapeaWMC is not null and mapeaMap.mapeaWMC is not empty %}
+            wmcfiles: [{% for mapeaWMC in mapeaMap.mapeaWMC %}'{{ app.request.getSchemeAndHttpHost()}}{{ asset('uploads/wmc/')}}{{mapeaWMC.urlPath}}*{{mapeaWMC.title}}',{% endfor %}],
+{% endif %}
+{% if mapeaMap.mapeaLayersWMS is not null and mapeaMap.mapeaLayersWMS is not empty %}
+        layers: [{% for mapeaLayerWMS in mapeaMap.mapeaLayersWMS %}{{mapeaLayerWMS.layerName}},{% endfor %}]
+{% endif %}                
+        });
+    //maps options 
+{% if mapeaMap.zoom is not null and mapeaMap.zoom is not empty %}
+    mapajs.setZoom({{mapeaMap.zoom}});
+{% endif %}            
+{% if mapeaMap.bbox is not null and mapeaMap.bbox is not empty %}
+    mapajs.setBbox({{mapeaMap.bbox}});
+{% endif %}
+{% if mapeaMap.maxExtent is not null and mapeaMap.maxExtent is not empty %}
+    mapajs.setMaxExtent ({{mapeaMap.maxExtent}});
+{% endif %}
+{% if mapeaMap.projection is not null and mapeaMap.projection is not empty %}
+    mapajs.setProjection ("{{mapeaMap.projection}}");
+{% endif %}  
+{% if mapeaMap.center is not null and mapeaMap.center is not empty %}
+    mapajs.setCenter({{mapeaMap.center}});
+{% endif %}
+{% if mapeaMap.label is not null and mapeaMap.label is not empty %}
+    mapajs.addLabel("{{mapeaMap.label|raw}}"); 
+{% endif %}
+{% if mapeaMap.resolutions is not null and mapeaMap.resolutions is not empty %}
+    mapajs.setResolutions({{mapeaMap.resolutions}}); 
+{% endif %}
+    
+{% for mapeaPlugin in mapeaMap.mapeaPlugins %}
+    {% if mapeaPlugin.pluginConfig.configuration == "default" %}  
+    //no parametrizable plugins
+    {{mapeaPlugin.plugin.code~';'|raw}} 
+    {% else %}
+    //parametrizable plugins
+    {{mapeaPlugin.plugin.code|replace({'()': '(' ~ mapeaPlugin.pluginConfig.configuration ~')'})|raw}};
+    {% endif %}
+{% endfor %}
+    
+{% for mapeaControl in mapeaMap.mapeaControls %}
+    {% if mapeaControl.controlConfig.configuration == "default" %}  
+    //no parametrizable control
+    {{mapeaControl.control.code~';'|raw}}             
+    {% else %}
+    //parametrizable control
+    {{mapeaControl.control.code|replace({'()': '(' ~ mapeaControl.controlConfig.configuration ~')'})|raw}};
+    {% endif %}
+{% endfor %}
+{% endblock %}
+</script>
+</body>
 </html>
-
-
-
