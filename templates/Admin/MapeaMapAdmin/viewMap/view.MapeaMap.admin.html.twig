@@ -39,7 +39,7 @@
     </head>
     <body>
 {% block body %} 
-    <div id="map"></div>
+    <div id='map'></div>
 {% endblock %}        
 {% block body_javascripts %}
     <script type='text/javascript'>
@@ -58,9 +58,9 @@
         },{
             params: {
         {% if not mapeaLayerWMS.layerStyle == 'default' %}
-        style:"{{mapeaLayerWMS.layerStyle}}",
+        style:'{{mapeaLayerWMS.layerStyle}}',
         {% endif %}
-        layers: "{{mapeaLayerWMS.layerName}}"
+        layers: '{{mapeaLayerWMS.layerName}}'
         }
     });
 {% if mapeaLayerWMS.image is not null and mapeaLayerWMS.image is not empty%}
@@ -70,7 +70,7 @@
 {% endif %}
 
     mapajs = M.map({
-        container:"map",
+        container:'map',
 {% if mapeaMap.mapeaWMC is not null and mapeaMap.mapeaWMC is not empty %}
             wmcfiles: [{% for mapeaWMC in mapeaMap.mapeaWMC %}'{{ app.request.getSchemeAndHttpHost()}}{{ asset('uploads/wmc/')}}{{mapeaWMC.urlPath}}*{{mapeaWMC.title}}',{% endfor %}],
 {% endif %}
@@ -89,13 +89,13 @@
     mapajs.setMaxExtent ({{mapeaMap.maxExtent}});
 {% endif %}
 {% if mapeaMap.projection is not null and mapeaMap.projection is not empty %}
-    mapajs.setProjection ("{{mapeaMap.projection}}");
+    mapajs.setProjection ('{{mapeaMap.projection}}');
 {% endif %}  
 {% if mapeaMap.center is not null and mapeaMap.center is not empty %}
     mapajs.setCenter({{mapeaMap.center}});
 {% endif %}
 {% if mapeaMap.label is not null and mapeaMap.label is not empty %}
-    mapajs.addLabel("{{mapeaMap.label|raw}}"); 
+    mapajs.addLabel('{{mapeaMap.label|raw}}'); 
 {% endif %}
 {% if mapeaMap.resolutions is not null and mapeaMap.resolutions is not empty %}
     mapajs.setResolutions({{mapeaMap.resolutions}}); 
@@ -114,7 +114,7 @@
 {% for mapeaControl in mapeaMap.mapeaControls %}
     {% if mapeaControl.controlConfig.configuration == "default" %}  
     //no parametrizable control
-    {{mapeaControl.control.code~';'|raw}}             
+    {{mapeaControl.control.code|raw}};
     {% else %}
     //parametrizable control
     {{mapeaControl.control.code|replace({'()': '(' ~ mapeaControl.controlConfig.configuration ~')'})|raw}};
