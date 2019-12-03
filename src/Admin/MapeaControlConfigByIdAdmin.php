@@ -18,7 +18,6 @@ final class MapeaControlConfigByIdAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper): void
     {
         $datagridMapper
-            //->add('id')
             ->add('description')
             ->add('configuration')
             ;
@@ -27,7 +26,6 @@ final class MapeaControlConfigByIdAdmin extends AbstractAdmin
     protected function configureListFields(ListMapper $listMapper): void
     {
         $listMapper
-            //->add('id')
             ->add('description')
             ->add('configuration')
             ->add('_action', null, [
@@ -42,7 +40,6 @@ final class MapeaControlConfigByIdAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper): void
     {
         $formMapper
-            //->add('id')
             ->add('description')
             ->add('configuration')
             ;
@@ -51,13 +48,10 @@ final class MapeaControlConfigByIdAdmin extends AbstractAdmin
     protected function configureShowFields(ShowMapper $showMapper): void
     {
         $showMapper
-            //->add('id')
             ->add('description')
             ->add('configuration')
             ;
     }
-
-
 
     protected function configureRoutes(RouteCollection $collection)
     {

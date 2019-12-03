@@ -78,7 +78,7 @@ final class MapeaConfiguredPluginAdmin extends AbstractAdmin
             ->add('name')
             ->add('plugin', 'text')
             ->add('pluginConfig', 'text', array('admin_code' => 'admin.mapea_plugin_config'))
-            ->add('subcategory', null, array('admin_code' => 'admin.map_sub_category'))
+            //->add('subcategory', null, array('admin_code' => 'admin.map_sub_category'))
             ;
     }
 

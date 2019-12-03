@@ -35,7 +35,6 @@ final class MapeaMapAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper): void
     {
         $datagridMapper
-            //->add('id')
             ->add('zoom')
             ->add('bbox')
             ->add('maxExtent')
@@ -174,13 +173,6 @@ final class MapeaMapAdmin extends AbstractAdmin
             ->end()
             ->tab('Controls', ['description' => 'This section contains controls for configure maps'])
                 ->with('Controls')
-                    /*
-                    ->add('mapeaControls', EntityType::class, [
-                        'class' => MapeaConfiguredControl::class,
-                        'multiple' => true,
-                        'expanded' => true,
-                    ])
-                    */
                     ->add('mapeaControls', ModelType::class, array(
                         'multiple' => true,
                         'required' => false,
@@ -193,13 +185,6 @@ final class MapeaMapAdmin extends AbstractAdmin
                         'multiple' => true,
                         'required' => false,
                     ))
-                    /*
-                    ->add('mapeaPlugins', EntityType::class, [
-                        'class' => MapeaConfiguredPlugin::class,
-                        'multiple' => true,
-                        'expanded' => true,
-                    ])
-                    */
                 ->end()
             ->end()
             ->tab('layers', ['description' => 'This section contains layers and WMC the can be used for configure maps'])
@@ -208,26 +193,12 @@ final class MapeaMapAdmin extends AbstractAdmin
                         'multiple' => true,
                         'required' => false,
                     ))
-                    /*
-                    ->add('mapeaLayersWMS', EntityType::class, [
-                        'class' => MapeaLayerWMS::class,
-                        'multiple' => true,
-                        'expanded' => true,
-                    ])
-                    */
                 ->end()
                 ->with('Web Map Context')
                     ->add('mapeaWMC', ModelType::class, array(
                         'multiple' => true,
                         'required' => false,
                     ))
-                    /*
-                    ->add('mapeaWMC', EntityType::class, [
-                        'class' => MapeaWMC::class,
-                        'multiple' => true,
-                        'expanded' => true,
-                    ])
-                    */
                 ->end()
             ->end()
 
@@ -258,7 +229,12 @@ final class MapeaMapAdmin extends AbstractAdmin
         $showMapper
             ->add('name')
             ->add('description')
-            ->add('owner','text')
+            ->add('owner','text')     
+            ->add('category','text')
+            ->add('subcategory', 'text', array('admin_code' => 'admin.map_sub_category'))
+            ->add('mapeaCore','text')
+            ->add('mapeaControls')
+            ->add('mapeaPlugins')
             ->add('zoom')
             ->add('bbox')
             ->add('maxExtent')
@@ -266,13 +242,12 @@ final class MapeaMapAdmin extends AbstractAdmin
             ->add('center')
             ->add('label')
             ->add('resolutions')
-            ->add('mapeaCore','text')
-            ->add('category','text')
-            ->add('subcategory', 'text', array('admin_code' => 'admin.map_sub_category'))
-            ->add('mapeaControls')
-            ->add('mapeaPlugins')
-            ->add('mapeaLayersWMS')
-            ->add('mapeaWMC')
+            ->add('mapeaLayersWMS', null, array(
+                'label'=>'WMS Layer',
+            ))
+            ->add('mapeaWMC', null, array(
+                'label'=>'WMC Layer',
+            ))
             ;
     }
 

@@ -16,18 +16,14 @@ final class MapeaControlConfigAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper): void
     {
         $datagridMapper
-            ->add('id')
             ->add('description')
-            //->add('configuration')
             ;
     }
 
     protected function configureListFields(ListMapper $listMapper): void
     {
         $listMapper
-            //->add('id')
             ->add('description')
-            //->add('configuration')
             ->add('mapeaControl', 'text')
             ->add('_action', null, [
                 'actions' => [
@@ -41,7 +37,6 @@ final class MapeaControlConfigAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper): void
     {
         $formMapper
-            //->add('id')
             ->add('description')
             ->add('configuration')
             ->add('mapeaControl')
@@ -56,7 +51,6 @@ final class MapeaControlConfigAdmin extends AbstractAdmin
     protected function configureShowFields(ShowMapper $showMapper): void
     {
         $showMapper
-            ->add('id')
             ->add('description')
             ->add('configuration')
             ->add('mapeaControl', 'text')

@@ -26,7 +26,7 @@ class MapeaLayerWMSMapConfigured
     private $baseLayer;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\MapeaLayerWMS")
+     * @ORM\ManyToOne(targetEntity="App\Entity\MapeaLayerWMS", fetch="EAGER")
      * @ORM\JoinColumn(nullable=false)
      */
     private $mapeaLayerWMS;

@@ -16,7 +16,6 @@ final class MapSubCategoryAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper): void
     {
         $datagridMapper
-            //->add('id')
             ->add('name')
             ->add('description')
             ;
@@ -25,13 +24,14 @@ final class MapSubCategoryAdmin extends AbstractAdmin
     protected function configureListFields(ListMapper $listMapper): void
     {
         $listMapper
-            //->add('id')
+            ->add('category','text', array(
+                'label'=>'Parent Category',
+            ))
             ->add('name')
             ->add('description')
-            ->add('category', 'text')
-            ->add('users', 'array')
-            ->add('mapeaConfiguredControls', 'array')
-            ->add('mapeaConfiguredPlugins', 'array')
+            //->add('users', 'array')
+            //->add('mapeaConfiguredControls', 'array')
+            //->add('mapeaConfiguredPlugins', 'array')
             ->add('_action', null, [
                 'actions' => [
                     'show' => [],
@@ -44,7 +44,6 @@ final class MapSubCategoryAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper): void
     {
         $formMapper
-            //->add('id')
             ->add('name')
             ->add('category')
             ->add('users')
@@ -65,7 +64,6 @@ final class MapSubCategoryAdmin extends AbstractAdmin
     protected function configureShowFields(ShowMapper $showMapper): void
     {
         $showMapper
-            //->add('id')
             ->add('name')
             ->add('category', 'text')
             ->add('users', 'array')

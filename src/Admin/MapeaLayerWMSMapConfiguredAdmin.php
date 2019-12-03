@@ -16,7 +16,6 @@ final class MapeaLayerWMSMapConfiguredAdmin extends AbstractAdmin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper): void
     {
         $datagridMapper
-            //->add('id')
             ->add('mapeaLayerWMS')
             ->add('baseLayer')
             ;
@@ -25,8 +24,9 @@ final class MapeaLayerWMSMapConfiguredAdmin extends AbstractAdmin
     protected function configureListFields(ListMapper $listMapper): void
     {
         $listMapper
-            //->add('id')
-            ->add('mapeaLayerWMS')
+            ->add('mapeaLayerWMS', 'text', array(
+                'label'=>'WMS Layer',
+            ))
             ->add('baseLayer')
             ->add('_action', null, [
                 'actions' => [
@@ -40,7 +40,6 @@ final class MapeaLayerWMSMapConfiguredAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper): void
     {
         $formMapper
-            //->add('id')
             ->add('mapeaLayerWMS')
             ->add('baseLayer')          
             ;
@@ -49,9 +48,25 @@ final class MapeaLayerWMSMapConfiguredAdmin extends AbstractAdmin
     protected function configureShowFields(ShowMapper $showMapper): void
     {
         $showMapper
-            //->add('id')
-            ->add('mapeaLayerWMS')
-            ->add('baseLayer')
+            ->add('mapeaLayerWMS', null, array(
+                'label'=>'WMS Layer',
+            ))
+            ->add('mapeaLayerWMS.layerWMSUrl', null, array(
+                'label'=>'WMS url',
+            ))
+            ->add('mapeaLayerWMS.layerName', null, array(
+                'label'=>'WMS Layer Name',
+            ))
+            ->add('mapeaLayerWMS.layerStyle', null, array(
+                'label'=>'WMS Layer Style',
+            ))
+            ->add('mapeaLayerWMS.image.urlPath', null, array(
+                'label'=>'Custom legend',
+                'template' => 'Admin/MapeaLayerWMSLegendImageAdmin/show/show_urlpath.html.twig',
+                ))
+            ->add('baseLayer', null, array(
+                'label'=>'Base layer',
+            ))
             ;
     }
 }

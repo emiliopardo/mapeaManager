@@ -81,7 +81,7 @@ final class MapeaConfiguredControlAdmin extends AbstractAdmin
             ->add('name')
             ->add('control', 'text')
             ->add('controlConfig', 'text', array('admin_code' => 'admin.mapea_control_config'))
-            ->add('subcategory', null, array('admin_code' => 'admin.map_sub_category'))
+            //->add('subcategory', null, array('admin_code' => 'admin.map_sub_category'))
             ;
     }
 
