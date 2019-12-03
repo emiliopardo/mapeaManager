@@ -31,7 +31,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `fos_user` WRITE;
 /*!40000 ALTER TABLE `fos_user` DISABLE KEYS */;
-INSERT INTO `fos_user` VALUES ('03d9a9ff-aed8-4160-8fb0-d05a5ff05f22','publicador','publicador','publicador@publicador.es','publicador@publicador.es',1,NULL,'$2y$10$kfoY2TA9xFpkph6VqlU8MOEuTb10sMJKdOLDt7PTrUj9bsJKDp/jq','2019-11-19 10:51:17',NULL,NULL,'a:0:{}'),('3d9e1792-5dc8-42c5-bc37-8b5285f49248','superadmin','superadmin','superadmin@superadmin.es','superadmin@superadmin.es',1,NULL,'$2y$10$CiSjBeARMcathVs0xCSXW.bV/4C/TrWw5feuguVuu2Tp2muLSyRuS','2019-12-01 08:31:51',NULL,NULL,'a:0:{}'),('7f823767-22f3-4f31-a74d-f8d69021a11d','admin','admin','admin@admin.es','admin@admin.es',1,NULL,'$2y$10$njggTcqozdKxhQMpYwWz7eN0IIYzvSE.5OkvQ9IYIndBFQSUfmAdm','2019-11-19 10:51:39',NULL,NULL,'a:0:{}'),('a40b7eac-b55e-489a-9ac3-3a3329b55600','user','user','user@user.es','user@user.es',1,NULL,'$2y$10$N5VDq3vCGGhwvzPPDOqIAuSwalA.Pwp66/nLwn.9JsRX5JTY3Nube','2019-11-19 10:50:20',NULL,NULL,'a:0:{}'),('d4307506-b0aa-4aa6-bfaf-0258863c4184','editor','editor','editor@editor.es','editor@editor.es',1,NULL,'$2y$10$eOo8QtCg/yby2rZz4wdH6eeHpR8dK3QGAOj51u4.Cl0mzsF3VYmsK','2019-11-19 10:50:33',NULL,NULL,'a:0:{}');
+INSERT INTO `fos_user` VALUES ('03d9a9ff-aed8-4160-8fb0-d05a5ff05f22','publicador','publicador','publicador@publicador.es','publicador@publicador.es',1,NULL,'$2y$10$kfoY2TA9xFpkph6VqlU8MOEuTb10sMJKdOLDt7PTrUj9bsJKDp/jq','2019-11-19 10:51:17',NULL,NULL,'a:0:{}'),('3d9e1792-5dc8-42c5-bc37-8b5285f49248','superadmin','superadmin','superadmin@superadmin.es','superadmin@superadmin.es',1,NULL,'$2y$10$CiSjBeARMcathVs0xCSXW.bV/4C/TrWw5feuguVuu2Tp2muLSyRuS','2019-12-03 06:01:27',NULL,NULL,'a:0:{}'),('7f823767-22f3-4f31-a74d-f8d69021a11d','admin','admin','admin@admin.es','admin@admin.es',1,NULL,'$2y$10$njggTcqozdKxhQMpYwWz7eN0IIYzvSE.5OkvQ9IYIndBFQSUfmAdm','2019-11-19 10:51:39',NULL,NULL,'a:0:{}'),('a40b7eac-b55e-489a-9ac3-3a3329b55600','user','user','user@user.es','user@user.es',1,NULL,'$2y$10$N5VDq3vCGGhwvzPPDOqIAuSwalA.Pwp66/nLwn.9JsRX5JTY3Nube','2019-11-19 10:50:20',NULL,NULL,'a:0:{}'),('d4307506-b0aa-4aa6-bfaf-0258863c4184','editor','editor','editor@editor.es','editor@editor.es',1,NULL,'$2y$10$eOo8QtCg/yby2rZz4wdH6eeHpR8dK3QGAOj51u4.Cl0mzsF3VYmsK','2019-11-19 10:50:33',NULL,NULL,'a:0:{}');
 /*!40000 ALTER TABLE `fos_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -131,7 +131,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `mapea_core` WRITE;
 /*!40000 ALTER TABLE `mapea_core` DISABLE KEYS */;
-INSERT INTO `mapea_core` VALUES ('ee952a77-9a9e-45b2-ae06-f5d7a03f5ad9','v4.3.0','http://localhost:8080/mapea/js/configuration-4.3.0.js','http://localhost:8080/mapea/js/mapea-4.3.0.ol.min.js','http://localhost:8080/mapea/assets/css/mapea-4.3.0.ol.min.css','Versión de mapea  4.3.0'),('f7ef8e74-7bcf-4f92-a5ab-4e7efcc5d97a','v5.0.0','http://localhost:8080/mapea/js/configuration-5.0.0.js','http://localhost:8080/mapea/js/mapea-5.0.0.ol.min.js','http://localhost:8080/mapea/assets/css/mapea-5.0.0.ol.min.css','Versión de mapea 5.0.0');
+INSERT INTO `mapea_core` VALUES ('ee952a77-9a9e-45b2-ae06-f5d7a03f5ad9','v4.3.0','http://localhost:8080/mapea/js/configuration-4.3.0.js','http://localhost:8080/mapea/js/mapea-4.3.0.ol.min.js','http://localhost:8080/mapea/assets/css/mapea-4.3.0.ol.min.css','Versión de mapea  4.3.0'),('f7ef8e74-7bcf-4f92-a5ab-4e7efcc5d97a','v5.1.0','http://localhost:8080/mapea/js/configuration-5.1.0.js','http://localhost:8080/mapea/js/mapea-5.1.0.ol.min.js','http://localhost:8080/mapea/assets/css/mapea-5.1.0.ol.min.css','Versión de mapea 5.1.0');
 /*!40000 ALTER TABLE `mapea_core` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -141,8 +141,18 @@ UNLOCK TABLES;
 
 LOCK TABLES `mapea_layer_wms` WRITE;
 /*!40000 ALTER TABLE `mapea_layer_wms` DISABLE KEYS */;
-INSERT INTO `mapea_layer_wms` VALUES ('09b2a2f7-7662-43a9-805a-5134739dcc0f','http://www.ideandalucia.es/wms/ortofoto2016?','ortofotografia_2016_infrarrojo','Ortofotografía Infrarroja de Andalucía (Año 2016)','Ortofotografía Infrarroja de Andalucía (Año 2016)',NULL,NULL),('09d589d9-8bb7-4356-8453-bd53b6c25eee','http://www.ideandalucia.es/wms/mta10r_2001-2013?','mta10_raster_2013','Mapa Topográfico de Andalucía año 2013 (color poligonos transparentes)','Mapa Topográfico de Andalucía año 2013 (color poligonos transparentes)','Ráster 2013. Color polígonos transparentes',NULL),('336783b0-dafd-41e3-98dd-210f829aab8e','http://www.ideandalucia.es/services/DERA_g9_transport_com/wms?','g09_14_RedCarreteras','Red de Carreteras','Red de Carreteras de Andalucía',NULL,NULL),('56e888a5-87aa-4720-a7db-9cac944d3c70','http://www.ideandalucia.es/wms/ortofoto2016?','ortofotografia_2016_rgb','Ortofotografía Color de Andalucía (Año 2016)','Ortofotografía Color de Andalucía (Año 2016)',NULL,NULL),('6ff52fa4-c4b9-4a36-bc0b-60674490d2a7','http://www.ideandalucia.es/wms/mta10r_2001-2013?','mta10_raster_2013','Mapa Topográfico de Andalucía año 2013 (Monocromo Negro)','Ráster 2013. Monocromo negro','Ráster 2013. Monocromo negro',NULL),('83c222f9-cc67-4c88-97a5-b251cbd315d6','http://www.ideandalucia.es/wms/ortofoto2016?','ortofotografia_2016_pancromatico','Ortofotografía Pancromática de Andalucía (Año 2016)','Ortofotografía Pancromática de Andalucía (Año 2016)',NULL,NULL),('b16660ca-1bb6-4bef-8ad5-de5f814bb53f','http://www.ideandalucia.es/services/DERA_g7_sistema_urbano/wms?','g07_04_Manzana','Sistema Urbano','Sistema Urbano (Manzanas)',NULL,NULL),('d077af03-e6b6-49a5-81ae-4e1da2cea4ae','http://www.ideandalucia.es/wms/mta10r_2001-2013?','mta10_raster_2013','Mapa Topográfico de Andalucía año 2013 (color)','Mapa Topográfico de Andalucía año 2013 (color)','Ráster 2013. Color polígonos sólidos',NULL),('e11ce3ea-393a-432a-a7b8-2c874c4b4332','http://www.ideandalucia.es/wms/mta10r_2001-2013?','mta10_raster_2013','Mapa Topográfico de Andalucía año 2013 (Monocromo Gris)','Mapa Topográfico de Andalucía año 2013 (Monocromo Gris)','Ráster 2013. Monocromo gris',NULL);
+INSERT INTO `mapea_layer_wms` VALUES ('09b2a2f7-7662-43a9-805a-5134739dcc0f','http://www.ideandalucia.es/wms/ortofoto2016?','ortofotografia_2016_infrarrojo','Ortofotografía Infrarroja de Andalucía (Año 2016)','Ortofotografía Infrarroja de Andalucía (Año 2016)','default','d2b99d4b-33b5-4a48-864d-d98196dad627'),('09d589d9-8bb7-4356-8453-bd53b6c25eee','http://www.ideandalucia.es/wms/mta10r_2001-2013?','mta10_raster_2013','Mapa Topográfico de Andalucía año 2013 (color poligonos transparentes)','Mapa Topográfico de Andalucía año 2013 (color poligonos transparentes)','default',NULL),('336783b0-dafd-41e3-98dd-210f829aab8e','http://www.ideandalucia.es/services/DERA_g9_transport_com/wms?','g09_14_RedCarreteras','Red de Carreteras','Red de Carreteras de Andalucía','default',NULL),('56e888a5-87aa-4720-a7db-9cac944d3c70','http://www.ideandalucia.es/wms/ortofoto2016?','ortofotografia_2016_rgb','Ortofotografía Color de Andalucía (Año 2016)','Ortofotografía Color de Andalucía (Año 2016)','default','b2ca6e75-8243-4258-83b7-89041eb10fda'),('6ff52fa4-c4b9-4a36-bc0b-60674490d2a7','http://www.ideandalucia.es/wms/mta10r_2001-2013?','mta10_raster_2013','Mapa Topográfico de Andalucía año 2013 (Monocromo Negro)','Ráster 2013. Monocromo negro','default',NULL),('83c222f9-cc67-4c88-97a5-b251cbd315d6','http://www.ideandalucia.es/wms/ortofoto2016?','ortofotografia_2016_pancromatico','Ortofotografía Pancromática de Andalucía (Año 2016)','Ortofotografía Pancromática de Andalucía (Año 2016)','default','1f3a5ac8-582c-445c-8d54-4dfda5c3369b'),('9b752998-991a-4810-981b-7b85b823c7f6','https://www.ideandalucia.es/services/andalucia/wms?','00_Mapa_Andalucia','Mapa Base de Andalucia','Mapa Base de Andalucía  Multiescala','default','58a2f805-af42-483b-a5b1-dcb40452a024'),('b16660ca-1bb6-4bef-8ad5-de5f814bb53f','http://www.ideandalucia.es/services/DERA_g7_sistema_urbano/wms?','g07_04_Manzana','Sistema Urbano','Sistema Urbano (Manzanas)','default',NULL),('d077af03-e6b6-49a5-81ae-4e1da2cea4ae','http://www.ideandalucia.es/wms/mta10r_2001-2013?','mta10_raster_2013','Mapa Topográfico de Andalucía año 2013 (color)','Mapa Topográfico de Andalucía año 2013 (color)','default',NULL),('e11ce3ea-393a-432a-a7b8-2c874c4b4332','http://www.ideandalucia.es/wms/mta10r_2001-2013?','mta10_raster_2013','Mapa Topográfico de Andalucía año 2013 (Monocromo Gris)','Mapa Topográfico de Andalucía año 2013 (Monocromo Gris)','default',NULL);
 /*!40000 ALTER TABLE `mapea_layer_wms` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping data for table `mapea_layer_wmslegend_image`
+--
+
+LOCK TABLES `mapea_layer_wmslegend_image` WRITE;
+/*!40000 ALTER TABLE `mapea_layer_wmslegend_image` DISABLE KEYS */;
+INSERT INTO `mapea_layer_wmslegend_image` VALUES ('1f3a5ac8-582c-445c-8d54-4dfda5c3369b','ortofoto2016_pancromatico.png','f8597076-dc21-4cf3-8d16-2a16d46bff57.png','Ortofoto Digital de Andalucía Pancromático','Ortofoto Digital de Andalucía Pancromático','2019-12-01 16:30:53','f8597076-dc21-4cf3-8d16-2a16d46bff57.png','/home/epardo/proyecto/mapeaManager/public/uploads/legends/f8597076-dc21-4cf3-8d16-2a16d46bff57.png'),('58a2f805-af42-483b-a5b1-dcb40452a024','Mapa_Base_Andalucia.png','fc81b93a-4314-4dc1-912f-5fdd3829d8fc.png','Leyenda mapa Base','Leyenda mapa Base','2019-12-01 17:35:58','fc81b93a-4314-4dc1-912f-5fdd3829d8fc.png','/home/epardo/proyecto/mapeaManager/public/uploads/legends/fc81b93a-4314-4dc1-912f-5fdd3829d8fc.png'),('b2ca6e75-8243-4258-83b7-89041eb10fda','ortofoto2016_color.png','8668fe82-f384-44a1-9548-af41d9fe8dad.png','Ortofoto Digital de Andalucía Color','Ortofoto Digital de Andalucía Color','2019-12-01 16:30:23','8668fe82-f384-44a1-9548-af41d9fe8dad.png','/home/epardo/proyecto/mapeaManager/public/uploads/legends/8668fe82-f384-44a1-9548-af41d9fe8dad.png'),('d2b99d4b-33b5-4a48-864d-d98196dad627','ortofoto2016_infrarrojo.png','58dd460d-7983-446b-b22d-17f4ea3fe59f.png','Ortofoto Digital de Andalucía Infrarrojo','Ortofoto Digital de Andalucía Infrarrojo','2019-12-01 16:42:23','58dd460d-7983-446b-b22d-17f4ea3fe59f.png','/home/epardo/proyecto/mapeaManager/public/uploads/legends/58dd460d-7983-446b-b22d-17f4ea3fe59f.png');
+/*!40000 ALTER TABLE `mapea_layer_wmslegend_image` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -151,7 +161,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `mapea_layer_wmsmap_configured` WRITE;
 /*!40000 ALTER TABLE `mapea_layer_wmsmap_configured` DISABLE KEYS */;
-INSERT INTO `mapea_layer_wmsmap_configured` VALUES ('6d52e51d-795e-407a-80ec-e0d7c472a139','336783b0-dafd-41e3-98dd-210f829aab8e',0),('a491f79f-869b-44f0-aa3e-4e5153aa346b','09b2a2f7-7662-43a9-805a-5134739dcc0f',1);
+INSERT INTO `mapea_layer_wmsmap_configured` VALUES ('51ec7cf2-0922-418d-8f9e-cd5f427eb07d','d077af03-e6b6-49a5-81ae-4e1da2cea4ae',0),('651eb2c9-8bba-48ab-940f-6c586b6dce4c','56e888a5-87aa-4720-a7db-9cac944d3c70',1),('6c85f2ae-5b41-453b-9028-bd0492110855','09d589d9-8bb7-4356-8453-bd53b6c25eee',1),('6d52e51d-795e-407a-80ec-e0d7c472a139','336783b0-dafd-41e3-98dd-210f829aab8e',0),('a491f79f-869b-44f0-aa3e-4e5153aa346b','09b2a2f7-7662-43a9-805a-5134739dcc0f',1),('be85f4ea-f792-4181-b232-92430b8281f9','6ff52fa4-c4b9-4a36-bc0b-60674490d2a7',1);
 /*!40000 ALTER TABLE `mapea_layer_wmsmap_configured` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -161,7 +171,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `mapea_map` WRITE;
 /*!40000 ALTER TABLE `mapea_map` DISABLE KEYS */;
-INSERT INTO `mapea_map` VALUES ('3f4c3623-7da0-4c5c-ba7e-f892c578e207','a40b7eac-b55e-489a-9ac3-3a3329b55600','d1da790d-271d-4525-ba6d-d3ff4c881b79','f7ef8e74-7bcf-4f92-a5ab-4e7efcc5d97a','1f3df6b5-559e-486d-b744-3bf7b06cbdb4',NULL,NULL,NULL,'EPSG:25830*m',NULL,NULL,NULL,'ortofoto 2016 (Color)','ortofoto 2016 (Color)');
+INSERT INTO `mapea_map` VALUES ('3f4c3623-7da0-4c5c-ba7e-f892c578e207','a40b7eac-b55e-489a-9ac3-3a3329b55600','d1da790d-271d-4525-ba6d-d3ff4c881b79','ee952a77-9a9e-45b2-ae06-f5d7a03f5ad9','1f3df6b5-559e-486d-b744-3bf7b06cbdb4',NULL,NULL,NULL,'EPSG:25830*m',NULL,NULL,NULL,'ortofoto 2016 (Color)','ortofoto 2016 (Color)'),('40442cb0-3f8b-473a-9926-35ce49ce367d','3d9e1792-5dc8-42c5-bc37-8b5285f49248','ebaddb75-99c6-4fb3-ba9e-c297184a6bca','f7ef8e74-7bcf-4f92-a5ab-4e7efcc5d97a','1f3df6b5-559e-486d-b744-3bf7b06cbdb4',NULL,NULL,NULL,'EPSG:25830*m',NULL,NULL,NULL,'cdau hibrido','cdau hibrido'),('c8d988d9-e76a-4255-b75f-a52d23d08a7a','3d9e1792-5dc8-42c5-bc37-8b5285f49248','ebaddb75-99c6-4fb3-ba9e-c297184a6bca','f7ef8e74-7bcf-4f92-a5ab-4e7efcc5d97a','1f3df6b5-559e-486d-b744-3bf7b06cbdb4',NULL,NULL,NULL,'EPSG:25830*m',NULL,NULL,NULL,'mta10r_2013','llamando a capa con estilos diferentes');
 /*!40000 ALTER TABLE `mapea_map` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -171,7 +181,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `mapea_map_mapea_configured_control` WRITE;
 /*!40000 ALTER TABLE `mapea_map_mapea_configured_control` DISABLE KEYS */;
-INSERT INTO `mapea_map_mapea_configured_control` VALUES ('3f4c3623-7da0-4c5c-ba7e-f892c578e207','4bf35c69-2149-48f9-8c65-1d497fcbf5d7');
+INSERT INTO `mapea_map_mapea_configured_control` VALUES ('3f4c3623-7da0-4c5c-ba7e-f892c578e207','07c4fbf6-6bc0-46d5-afd8-daeaf68b43a3'),('3f4c3623-7da0-4c5c-ba7e-f892c578e207','1fd0f2e1-1dc9-4d27-84ce-523b11f5d6ed'),('c8d988d9-e76a-4255-b75f-a52d23d08a7a','2dec496a-bc24-47b5-bca7-e2c5f5a7418d');
 /*!40000 ALTER TABLE `mapea_map_mapea_configured_control` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -190,7 +200,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `mapea_map_mapea_layer_wmsmap_configured` WRITE;
 /*!40000 ALTER TABLE `mapea_map_mapea_layer_wmsmap_configured` DISABLE KEYS */;
-INSERT INTO `mapea_map_mapea_layer_wmsmap_configured` VALUES ('3f4c3623-7da0-4c5c-ba7e-f892c578e207','6d52e51d-795e-407a-80ec-e0d7c472a139'),('3f4c3623-7da0-4c5c-ba7e-f892c578e207','a491f79f-869b-44f0-aa3e-4e5153aa346b');
+INSERT INTO `mapea_map_mapea_layer_wmsmap_configured` VALUES ('3f4c3623-7da0-4c5c-ba7e-f892c578e207','651eb2c9-8bba-48ab-940f-6c586b6dce4c'),('3f4c3623-7da0-4c5c-ba7e-f892c578e207','6d52e51d-795e-407a-80ec-e0d7c472a139'),('c8d988d9-e76a-4255-b75f-a52d23d08a7a','51ec7cf2-0922-418d-8f9e-cd5f427eb07d');
 /*!40000 ALTER TABLE `mapea_map_mapea_layer_wmsmap_configured` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -200,6 +210,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `mapea_map_mapea_wmc` WRITE;
 /*!40000 ALTER TABLE `mapea_map_mapea_wmc` DISABLE KEYS */;
+INSERT INTO `mapea_map_mapea_wmc` VALUES ('40442cb0-3f8b-473a-9926-35ce49ce367d','bb92db3f-9b6e-4e99-b443-9c4b2b060470'),('c8d988d9-e76a-4255-b75f-a52d23d08a7a','3453f0d7-4e2b-47f0-8fca-25ec54770641');
 /*!40000 ALTER TABLE `mapea_map_mapea_wmc` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -229,7 +240,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `mapea_wmc` WRITE;
 /*!40000 ALTER TABLE `mapea_wmc` DISABLE KEYS */;
-INSERT INTO `mapea_wmc` VALUES ('127b00f3-a3e2-4815-8b90-1f793452bd49','mapa_base.xml','1cbbd24e-caa0-4f02-8d91-1a22422975a7.xml','base','WMC Base','2019-07-16 12:13:44','1cbbd24e-caa0-4f02-8d91-1a22422975a7.xml','/home/epardo/proyecto/mapeaManager/public/uploads/wmc/1cbbd24e-caa0-4f02-8d91-1a22422975a7.xml');
+INSERT INTO `mapea_wmc` VALUES ('127b00f3-a3e2-4815-8b90-1f793452bd49','mapa_base.xml','60b4a9d2-b018-47a1-9672-d97a4502af29.xml','Mapa Base IDEAndalucia','Mapa Base de la Infraestructura de Datos Espaciales de Andalucía','2019-07-16 12:13:44','1cbbd24e-caa0-4f02-8d91-1a22422975a7.xml','/home/epardo/proyecto/mapeaManager/public/uploads/wmc/1cbbd24e-caa0-4f02-8d91-1a22422975a7.xml'),('3453f0d7-4e2b-47f0-8fca-25ec54770641','CDAU_Satelite.xml','b43530fe-aecb-48cf-b5ab-995ac0c72d77.xml','CDAU Satélite','Callejero Digital de Andalucía. CDAU Satélite','2019-12-01 11:29:54','b43530fe-aecb-48cf-b5ab-995ac0c72d77.xml','/home/epardo/proyecto/mapeaManager/public/uploads/wmc/b43530fe-aecb-48cf-b5ab-995ac0c72d77.xml'),('87aa7b14-6076-47c2-ad4d-f4f31b511d6f','CDAU_Base.xml','f89c06a3-ca4e-43d6-be32-bae98337bdf5.xml','CDAU Base','Callejero Digital de Andalucía. Cartografía base','2019-12-01 11:29:11','f89c06a3-ca4e-43d6-be32-bae98337bdf5.xml','/home/epardo/proyecto/mapeaManager/public/uploads/wmc/f89c06a3-ca4e-43d6-be32-bae98337bdf5.xml'),('bb92db3f-9b6e-4e99-b443-9c4b2b060470','CDAU_Hibrido.xml','a34fe770-b0eb-4163-ab27-0ef78febe2de.xml','CDAU Híbrido','Callejero Digital de Andalucía. CDAU Híbrido','2019-12-01 11:30:24','a34fe770-b0eb-4163-ab27-0ef78febe2de.xml','/home/epardo/proyecto/mapeaManager/public/uploads/wmc/a34fe770-b0eb-4163-ab27-0ef78febe2de.xml');
 /*!40000 ALTER TABLE `mapea_wmc` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -239,7 +250,7 @@ UNLOCK TABLES;
 
 LOCK TABLES `migration_versions` WRITE;
 /*!40000 ALTER TABLE `migration_versions` DISABLE KEYS */;
-INSERT INTO `migration_versions` VALUES ('20191130111038','2019-11-30 11:11:16'),('20191201062209','2019-12-01 06:22:30'),('20191201062431','2019-12-01 06:24:36'),('20191201063301','2019-12-01 06:33:24'),('20191201063646','2019-12-01 06:37:05'),('20191201071600','2019-12-01 07:16:06'),('20191201071628','2019-12-01 07:16:34'),('20191201071652','2019-12-01 07:16:57'),('20191201081108','2019-12-01 08:11:14'),('20191201081425','2019-12-01 08:14:32');
+INSERT INTO `migration_versions` VALUES ('20191130111038','2019-11-30 11:11:16'),('20191201062209','2019-12-01 06:22:30'),('20191201062431','2019-12-01 06:24:36'),('20191201063301','2019-12-01 06:33:24'),('20191201063646','2019-12-01 06:37:05'),('20191201071600','2019-12-01 07:16:06'),('20191201071628','2019-12-01 07:16:34'),('20191201071652','2019-12-01 07:16:57'),('20191201081108','2019-12-01 08:11:14'),('20191201081425','2019-12-01 08:14:32'),('20191201105908','2019-12-01 10:59:32'),('20191201153554','2019-12-01 15:36:17'),('20191201153750','2019-12-01 15:37:57'),('20191201162731','2019-12-01 16:27:36'),('20191201163252','2019-12-01 16:32:58'),('20191201163433','2019-12-01 16:35:42'),('20191201163616','2019-12-01 16:36:20'),('20191202160545','2019-12-02 16:06:03');
 /*!40000 ALTER TABLE `migration_versions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -261,4 +272,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-12-01 10:02:04
+-- Dump completed on 2019-12-03  6:19:30
