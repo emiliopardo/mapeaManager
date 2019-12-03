@@ -9,6 +9,7 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
+use Symfony\Component\Form\Extension\Core\Type\RangeType;
 
 final class MapeaLayerWMSMapConfiguredAdmin extends AbstractAdmin
 {
@@ -18,6 +19,7 @@ final class MapeaLayerWMSMapConfiguredAdmin extends AbstractAdmin
         $datagridMapper
             ->add('mapeaLayerWMS')
             ->add('baseLayer')
+            ->add('opacity')
             ;
     }
 
@@ -28,6 +30,7 @@ final class MapeaLayerWMSMapConfiguredAdmin extends AbstractAdmin
                 'label'=>'WMS Layer',
             ))
             ->add('baseLayer')
+            ->add('opacity')
             ->add('_action', null, [
                 'actions' => [
                     'show' => [],
@@ -41,6 +44,15 @@ final class MapeaLayerWMSMapConfiguredAdmin extends AbstractAdmin
     {
         $formMapper
             ->add('mapeaLayerWMS')
+            ->add('opacity', RangeType::class, [
+                'attr' => [
+                    'min' => 0,
+                    'max' => 1,
+                    'step'=> 0.1,               
+                    'class' => 'custom-range',     
+                ],
+                
+            ])
             ->add('baseLayer')          
             ;
     }
@@ -67,6 +79,7 @@ final class MapeaLayerWMSMapConfiguredAdmin extends AbstractAdmin
             ->add('baseLayer', null, array(
                 'label'=>'Base layer',
             ))
+            ->add('opacity')
             ;
     }
 }

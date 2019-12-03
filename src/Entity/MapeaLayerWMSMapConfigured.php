@@ -37,6 +37,11 @@ class MapeaLayerWMSMapConfigured
      */
     private $mapeaMap;
 
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $opacity;
+
 
     public function getId()
     {
@@ -105,5 +110,17 @@ class MapeaLayerWMSMapConfigured
             $string=' (Capa Base)';
         }
         return $this->getMapeaLayerWMS()->getLayerTitle().$string;
+    }
+
+    public function getOpacity(): ?float
+    {
+        return $this->opacity;
+    }
+
+    public function setOpacity(?float $opacity): self
+    {
+        $this->opacity = $opacity;
+
+        return $this;
     }
 }
