@@ -66,14 +66,14 @@ services:
         class: App\Admin\MapeaWMCAdmin
         arguments: [~, App\Entity\MapeaWMC, App\Controller\MapeaWMCAdminController]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: sonata_layers, label: 'WMC' }
+            - { name: sonata.admin, manager_type: orm, group: sonata_layers, label: 'WMC Layers' }
         public: true
 
     admin.mapea_layer_wms:
         class: App\Admin\MapeaLayerWMSAdmin
         arguments: [~, App\Entity\MapeaLayerWMS, App\Controller\MapeaLayerWMSAdminController]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: sonata_layers, label: "WMS Layer" }
+            - { name: sonata.admin, manager_type: orm, group: sonata_layers, label: "WMS Layers" }
         public: true
 
     admin.mapea_control_config_by_id:
@@ -115,14 +115,14 @@ services:
         class: App\Admin\MapeaConfiguredPluginAdmin
         arguments: [~, App\Entity\MapeaConfiguredPlugin, App\Controller\MapeaConfiguredPluginAdminController]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: admin, label: MapeaConfiguredPlugin }
+            - { name: sonata.admin, manager_type: orm, group: admin, label: "Configured Plugins" }
         public: true
 
     admin.mapea_configured_control:
         class: App\Admin\MapeaConfiguredControlAdmin
         arguments: [~, App\Entity\MapeaConfiguredControl, App\Controller\MapeaConfiguredControlAdminController]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: admin, label: MapeaConfiguredControl }
+            - { name: sonata.admin, manager_type: orm, group: admin, label: "Configured Controls" }
         public: true
 
     admin.map_category:
@@ -160,12 +160,12 @@ services:
         class: App\Admin\MapeaLayerWMSMapConfiguredAdmin
         arguments: [~, App\Entity\MapeaLayerWMSMapConfigured, App\Controller\MapeaLayerWMSMapConfiguredAdminController]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: admin, label: MapeaConfiguredLayerWMS }
+            - { name: sonata.admin, manager_type: orm, group: admin, label: "WMS Layers" }
         public: true
 
     admin.mapea_layer_wms_legend_image:
         class: App\Admin\MapeaLayerWMSLegendImageAdmin
         arguments: [~, App\Entity\MapeaLayerWMSLegendImage, App\Controller\MapeaLayerWMSLegendImageAdminController]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: admin, label: 'Leyenda' }
+            - { name: sonata.admin, manager_type: orm, group: admin, label: "Legend Images" }
         public: true
