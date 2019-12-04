@@ -1,6 +1,8 @@
 sonata_admin:
     title: 'Mapea Manager'
     title_logo: build/static/sigCorporativo150x150.png
+    assets:
+        extra_stylesheets: ['css/sonataAdminCustom/sonataAdminCustom.css']
     #options:
     #   use_select2:    false # disable select2
     dashboard:
@@ -56,3 +58,5 @@ sonata_block:
     blocks:
         sonata.admin.block.admin_list:
             contexts: [admin]
+
+
