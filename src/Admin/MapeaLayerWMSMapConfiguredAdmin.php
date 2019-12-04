@@ -43,17 +43,26 @@ final class MapeaLayerWMSMapConfiguredAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper): void
     {
         $formMapper
-            ->add('mapeaLayerWMS')
+            ->add('mapeaLayerWMS', null, array(
+                'label'=>'WMS Layer',
+            ))
             ->add('opacity', RangeType::class, [
                 'attr' => [
                     'min' => 0,
                     'max' => 1,
                     'step'=> 0.1,               
-                    'class' => 'custom-range',     
+                    'class' => 'slider',     
                 ],
                 
             ])
-            ->add('baseLayer')          
+            ->add('baseLayer', null, array(
+                'label'=>'Base layer',
+            )) 
+            ->setHelps([
+                'mapeaLayerWMS' => 'Select WMS Layer.',
+                'opacity' => 'Set Opacity.',
+                'baseLayer' => 'It is Base Layer?'
+            ])         
             ;
     }
 
