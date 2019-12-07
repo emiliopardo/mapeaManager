@@ -2,7 +2,23 @@ sonata_admin:
     title: 'Mapea Manager'
     title_logo: build/static/sigCorporativo150x150.png
     assets:
-        extra_stylesheets: ['css/sonataAdminCustom/sonataAdminCustom.css']
+       # extra_stylesheets: []
+
+        extra_javascripts:
+            # ...
+            - bundles/fosckeditor/ckeditor.js
+            - bundles/sonataformatter/vendor/markitup-markitup/markitup/jquery.markitup.js
+            - bundles/sonataformatter/markitup/sets/markdown/set.js
+            - bundles/sonataformatter/markitup/sets/html/set.js
+            - bundles/sonataformatter/markitup/sets/textile/set.js
+
+        extra_stylesheets:
+            # ...
+            - bundles/sonataformatter/markitup/skins/sonata/style.css
+            - bundles/sonataformatter/markitup/sets/markdown/style.css
+            - bundles/sonataformatter/markitup/sets/html/style.css
+            - bundles/sonataformatter/markitup/sets/textile/style.css
+            - 'css/sonataAdminCustom/sonataAdminCustom.css'
     #options:
     #   use_select2:    false # disable select2
     dashboard:
@@ -58,5 +74,3 @@ sonata_block:
     blocks:
         sonata.admin.block.admin_list:
             contexts: [admin]
-
-
