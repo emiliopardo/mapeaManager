@@ -1,0 +1,61 @@
+DEMO 1
+
+URL SERVICIO SIOSE 2013:
+    http://www.ideandalucia.es/wms/siose_2013?
+
+LAYER:
+    sombreado_siose_2013 (Base layer)
+
+LEYENDA (DESCARGAR):
+    https://www.ideandalucia.es/visor/leyendas/siose_2013.png
+
+####################################################
+
+DEMO 2
+URL SERVICIO MDT 2016:
+    https://www.ideandalucia.es/wms/mdt_2016?
+
+LAYER:
+    modelo_digital_terreno_2016_color
+    sombreado_orografico_2016 (Base Layer)
+
+LEYENDA (DESCARGAR):
+    https://www.ideandalucia.es/visor/leyendas/mdt_2016_tintas_hipsometricas.png
+
+
+URL SERVICIO MAPA ANDALUCIA:
+    https://www.ideandalucia.es/services/andalucia/wms?
+
+LAYER:
+    02_Textos_Relieve
+
+##################################################################
+    
+DEMO 3
+URL SERVICIO VUELO AMERICANO:
+
+    http://www.juntadeandalucia.es/medioambiente/mapwms/REDIAM_Ortofoto_Andalucia_1956?
+
+LAYER:
+    ortofoto_1956 (CAPA BASE)
+LEYENDA:
+    coger ortofoto pancromatica
+
+
+##################################################################
+
+DEMO 4:
+
+IES PUNTA DEL VERDE WMC CALLEJERO
+
+COORDENADAS
+    {x:235258,y:4138587,draw: true}
+IMAGEN
+    http://www.iespuntadelverde.es/images/curso1920/logoiespuntadelverde.jpg
+
+TEXTO:
+    IES PUNTA DEL VERDE (SEVILLA) 
+    C/ Barrio Nuevo, 4. 41012 Sevilla
+    Teléfono: 955 62 38 24 
+    Fax: 955 62 38 29
+    Código del Centro:  41700178
