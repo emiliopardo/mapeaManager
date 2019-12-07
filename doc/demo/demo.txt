@@ -49,7 +49,7 @@ DEMO 4:
 IES PUNTA DEL VERDE WMC CALLEJERO
 
 COORDENADAS
-    {x:235258,y:4138587,draw: true}
+    {x:235258,y:4138500,draw: true}
 IMAGEN
     http://www.iespuntadelverde.es/images/curso1920/logoiespuntadelverde.jpg
 
