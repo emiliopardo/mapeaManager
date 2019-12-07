@@ -1,15 +1,11 @@
 {% extends "base.html.twig" %}
 {% block body %}
-<div class="container py-5">
-    <div class="row">
-        <div class="col-md-12">            
-            <div class="row">
-                <div class="col-md-6 mx-auto">
-                    <!-- form card login -->
-                    <div class="card rounded-0">
+
+                <div class="container col-md-4 h-100">
+                    <div class="card rounded vertical-center">
                         <div class="card-header">
-                            <h3 class="mb-2 text-center">Mapea Manager</h3>
-                            <img src="./build/static/sigCorporativo150x150.png" alt="Logo Sigcorporativo" title="Logo Sigcorporativo" class="rounded mx-auto d-block rounded">
+                            <h5 class="h5 mb-2 text-center">Mapea Manager</h5>
+                            <img src="./build/static/sigCorporativo150x150.png" alt="Logo Sigcorporativo" title="Logo Sigcorporativo" class="rounded mx-auto d-block rounded img-fluid">
                         </div>
                         <div class="card-body">
                             <div class="alert alert-danger" role="alert">
@@ -22,18 +18,8 @@
                                     <a href="{{ url('fos_user_security_login')}}">volver a la página de login</a>
                                 </p>
                             </div>
-                        </div>
-                        <!--/card-block-->
-                    </div>
-                    <!-- /form card login -->
-                </div>
-            </div>
-            <!--/row-->
-        </div>
-        <!--/col-->
-    </div>
-    <!--/row-->
-</div>
-<!--/container-->
+                        </div>              
+                    </div> 
+                </div> 
 {% endblock %}
 
