@@ -1,3 +1,6 @@
 fos_ck_editor:
         configs:
-            default: ~
+            default:
+              toolbar: 
+                  - [Bold, Italic, Underline, TextColor, BGColor, -, Cut, Copy, Paste,PasteText, PasteFromWord, -, Undo, Redo, -,NumberedList, BulletedList, -, Outdent, Indent, -,Blockquote, -, Image, Link, Unlink, Table]
+                  - [Format, Maximize, Source]
