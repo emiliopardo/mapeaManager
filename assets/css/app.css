@@ -1,4 +1,16 @@
 
 body {
     background-color: white;
+    height: 100vh;
+}
+.img-fluid {
+    max-width: auto;
+    max-height: 10vh;
+}
+
+.vertical-center{
+    margin: 0;
+    top: 50%;
+    -ms-transform: translateY(50%);
+    transform: translateY(-50%);
 }
