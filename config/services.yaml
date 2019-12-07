@@ -160,7 +160,7 @@ services:
         class: App\Admin\MapeaLayerWMSMapConfiguredAdmin
         arguments: [~, App\Entity\MapeaLayerWMSMapConfigured, App\Controller\MapeaLayerWMSMapConfiguredAdminController]
         tags:
-            - { name: sonata.admin, manager_type: orm, group: admin, label: "WMS Layers" }
+            - { name: sonata.admin, manager_type: orm, group: admin, label: "WMS Layers configured" }
         public: true
 
     admin.mapea_layer_wms_legend_image:
