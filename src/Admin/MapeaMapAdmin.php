@@ -14,6 +14,7 @@ use Sonata\AdminBundle\Show\ShowMapper;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Sonata\AdminBundle\Form\Type\ModelType;
+use Sonata\FormatterBundle\Form\Type\SimpleFormatterType;
 
 use App\Entity\MapSubCategory;
 use App\Entity\MapCategory;
@@ -167,7 +168,10 @@ final class MapeaMapAdmin extends AbstractAdmin
                     ->add('maxExtent')
                     ->add('projection', null, ['data' => 'EPSG:25830*m' ])
                     ->add('center')
-                    ->add('label')
+                    ->add('label', SimpleFormatterType::class, [
+                        'format' => 'richhtml',
+                        'ckeditor_context' => 'default', // optional
+                    ])
                     ->add('resolutions')
                 ->end()
             ->end()
