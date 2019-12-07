@@ -10,6 +10,7 @@ use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
 use Symfony\Component\Form\Extension\Core\Type\RangeType;
+use Sonata\AdminBundle\Form\Type\ModelType;
 
 final class MapeaLayerWMSMapConfiguredAdmin extends AbstractAdmin
 {
@@ -43,7 +44,9 @@ final class MapeaLayerWMSMapConfiguredAdmin extends AbstractAdmin
     protected function configureFormFields(FormMapper $formMapper): void
     {
         $formMapper
-            ->add('mapeaLayerWMS', null, array(
+            ->add('mapeaLayerWMS', ModelType::class, array(
+                'multiple' => true,
+                'required' => false,
                 'label'=>'WMS Layer',
             ))
             ->add('opacity', RangeType::class, [
@@ -51,7 +54,8 @@ final class MapeaLayerWMSMapConfiguredAdmin extends AbstractAdmin
                     'min' => 0,
                     'max' => 1,
                     'step'=> 0.1,               
-                    'class' => 'slider',     
+                    'class' => 'slider', 
+                    'empty_data' => 1,    
                 ],
                 
             ])
