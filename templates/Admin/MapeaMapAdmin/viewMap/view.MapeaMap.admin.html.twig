@@ -98,7 +98,7 @@
     mapajs.setCenter({{mapeaMap.center}});
 {% endif %}
 {% if mapeaMap.label is not null and mapeaMap.label is not empty %}
-    mapajs.addLabel('{{mapeaMap.label|raw}}'); 
+    mapajs.addLabel('{{mapeaMap.label|replace({"\n": "", "\r": "", "\t": ""})|raw}}'); 
 {% endif %}
 {% if mapeaMap.resolutions is not null and mapeaMap.resolutions is not empty %}
     mapajs.setResolutions({{mapeaMap.resolutions}}); 
