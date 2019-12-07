@@ -1,19 +1,8 @@
-{% trans_default_domain 'FOSUserBundle' %}
-{#
-{% if error %}
-    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-{% endif %}
-#}
-<div class="container py-5">
-    <div class="row">
-        <div class="col-md-12">            
-            <div class="row">
-                <div class="col-md-6 mx-auto">
-                    <!-- form card login -->
-                    <div class="card rounded-0">
+{% trans_default_domain 'FOSUserBundle' %}             
+                    <div class="card rounded vertical-center">
                         <div class="card-header">
-                            <h3 class="mb-2 text-center">Mapea Manager</h3>
-                            <img src="./build/static/sigCorporativo150x150.png" alt="Logo Sigcorporativo" title="Logo Sigcorporativo" class="rounded mx-auto d-block rounded">
+                            <h5 class="h5 mb-2 text-center">Mapea Manager</h5>
+                            <img src="./build/static/sigCorporativo150x150.png" alt="Logo Sigcorporativo" title="Logo Sigcorporativo" class="rounded mx-auto d-block rounded img-fluid">
                         </div>
                         <div class="card-body">
                             <form action="{{ path("fos_user_security_check") }}" method="post"  autocomplete="off" novalidate=""class="form">
@@ -22,26 +11,15 @@
                                 {% endif %}    
                                 <div class="form-group">
                                     <label for="username">{{ 'security.login.username'|trans }}</label>
-                                    <input type="text" class="form-control form-control-lg rounded-0" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username">
+                                    <input type="text" class="form-control form-control-md rounded-0" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username">
                                     <div class="invalid-feedback">Oops, you missed this one.</div>
                                 </div>
                                 <div class="form-group">
                                     <label>{{ 'security.login.password'|trans }}</label>
-                                    <input type="password" class="form-control form-control-lg rounded-0" id="password" name="_password" required="required" autocomplete="current-password">
+                                    <input type="password" class="form-control form-control-md rounded-0" id="password" name="_password" required="required" autocomplete="current-password">
                                     <div class="invalid-feedback">Enter your password too!</div>
                                 </div>
-                                <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" class="btn btn-success btn-lg float-right"/>
+                                <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" class="btn btn-success btn-md float-right"/>
                             </form>
-                        </div>
-                        <!--/card-block-->
-                    </div>
-                    <!-- /form card login -->
-                </div>
-            </div>
-            <!--/row-->
-        </div>
-        <!--/col-->
-    </div>
-    <!--/row-->
-</div>
-<!--/container-->
+                        </div>              
+                    </div>             
